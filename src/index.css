@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #4A908F;
+  --color-secondary: #f4f4f5;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply text-gray-800 antialiased bg-white font-sans;
+  }
+
+  /* Smooth focus transitions on all inputs */
+  input, textarea, select {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Subtle button hover scale globally */
+  button, a {
+    transition: all 0.3s ease;
+  }
+}
+
+/* ─── Optimized Image System ─── */
+
+/* Container: ensures no layout shift */
+.optimized-image-container {
+  display: block;
+  line-height: 0;
+  background-color: #f3f4f6; /* gray-100 — placeholder bg */
+}
+
+/* Image: GPU-accelerated transitions */
+.optimized-image {
+  will-change: filter, transform;
+  backface-visibility: hidden;
+}
+
+/* Aspect ratio containers */
+.image-aspect-container,
+.image-fixed-container {
+  display: block;
+  line-height: 0;
+  background-color: #f3f4f6;
+}
+
+/* Accessibility: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
