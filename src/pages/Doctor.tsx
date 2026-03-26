@@ -45,7 +45,7 @@ const Doctor = () => {
               </FadeIn>
 
               <FadeIn>
-                <Link to="/booking" className="w-full flex items-center justify-center gap-2 bg-[#4A908F] text-white py-4 rounded-xl font-semibold hover:bg-[#4A908F]/90 hover:scale-[1.02] transition-all shadow-md">
+                <Link to="/booking" className="w-full flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-xl font-semibold hover:bg-primary/90 hover:scale-[1.02] transition-all shadow-md">
                   <Calendar size={20} /> Book an Appointment
                 </Link>
               </FadeIn>
@@ -60,12 +60,12 @@ const Doctor = () => {
               viewport={defaultViewport}
             >
               <StaggerContainer className="grid grid-cols-2 gap-6 mb-12">
-                <StaggerItem className="bg-[#4A908F]/5 p-6 rounded-2xl border border-[#4A908F]/10">
-                  <p className="text-4xl lg:text-5xl font-bold text-[#4A908F] mb-2">16</p>
+                <StaggerItem className="bg-primary/5 p-6 rounded-2xl border border-primary/10">
+                  <p className="text-4xl lg:text-5xl font-bold text-primary mb-2">16</p>
                   <p className="text-gray-800 font-semibold">Years Total Experience</p>
                 </StaggerItem>
-                <StaggerItem className="bg-[#4A908F]/5 p-6 rounded-2xl border border-[#4A908F]/10">
-                  <p className="text-4xl lg:text-5xl font-bold text-[#4A908F] mb-2">10+</p>
+                <StaggerItem className="bg-primary/5 p-6 rounded-2xl border border-primary/10">
+                  <p className="text-4xl lg:text-5xl font-bold text-primary mb-2">10+</p>
                   <p className="text-gray-800 font-semibold">Years as Specialist</p>
                 </StaggerItem>
               </StaggerContainer>
@@ -78,13 +78,13 @@ const Doctor = () => {
                 
                 {/* Timeline Item 1 */}
                 <StaggerItem className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-gray-100 group-[.is-active]:bg-[#4A908F] text-gray-500 group-[.is-active]:text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-gray-100 group-[.is-active]:bg-primary text-gray-500 group-[.is-active]:text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
                   <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-center justify-between space-x-2 mb-1">
                       <div className="font-bold text-gray-800">Present</div>
-                      <time className="font-medium text-[#4A908F]">2014 - Present</time>
+                      <time className="font-medium text-primary">2014 - Present</time>
                     </div>
                     <div className="text-gray-600">Lead Audiologist at Hearwell Speech and Hearing Centre.</div>
                   </div>
@@ -93,7 +93,7 @@ const Doctor = () => {
                 {/* Timeline Item 2 */}
                 <StaggerItem className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
                   <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-gray-100 text-gray-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                    <div className="w-2 h-2 bg-[#4A908F] rounded-full"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
                   </div>
                   <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl border border-gray-100 bg-gray-50 shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-center justify-between space-x-2 mb-1">
@@ -107,7 +107,7 @@ const Doctor = () => {
                 {/* Timeline Item 3 */}
                 <StaggerItem className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
                   <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-gray-100 text-gray-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                    <div className="w-2 h-2 bg-[#4A908F] rounded-full"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
                   </div>
                   <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl border border-gray-100 bg-gray-50 shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-center justify-between space-x-2 mb-1">
@@ -122,7 +122,7 @@ const Doctor = () => {
               
               <FadeIn className="mt-16">
                 <div className="bg-gray-50 rounded-2xl p-8 relative">
-                   <div className="absolute top-4 left-4 text-7xl text-[#4A908F]/10 font-serif leading-none">"</div>
+                   <div className="absolute top-4 left-4 text-7xl text-primary/10 font-serif leading-none">"</div>
                    <p className="text-xl text-gray-700 italic font-medium relative z-10 leading-relaxed text-center">
                     My commitment is to restore the joy of sound and communication to every patient through personalized, expert care.
                    </p>

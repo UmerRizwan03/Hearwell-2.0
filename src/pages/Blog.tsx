@@ -19,7 +19,7 @@ const Blog = () => {
           {/* Featured Article */}
           <FadeScaleIn className="mb-20">
             <Link to="#" className="group block bg-white modern-card relative overflow-hidden rounded-[32px] overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition-all relative">
-               <div className="absolute top-6 left-6 z-20 bg-[#4A908F] text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+               <div className="absolute top-6 left-6 z-20 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
                  Featured
                </div>
                <div className="relative h-64 md:h-96 w-full bg-gray-200 overflow-hidden">
@@ -54,14 +54,14 @@ const Blog = () => {
                  </div>
                  <div className="flex flex-col justify-center flex-grow py-2">
                    <div className="flex items-center gap-3 text-sm text-gray-500 font-medium mb-3">
-                      <span className="text-[#4A908F] bg-[#4A908F]/10 px-2 py-0.5 rounded">Hearing Care</span>
+                      <span className="text-primary bg-primary/10 px-2 py-0.5 rounded">Hearing Care</span>
                       <span>Oct 12</span>
                    </div>
-                   <h4 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 group-hover:text-[#4A908F] transition-colors line-clamp-2">
+                   <h4 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 group-hover:text-primary transition-colors line-clamp-2">
                       How Custom Hearing Aids Improve Quality of Life
                    </h4>
                    <p className="text-gray-600 mb-4 line-clamp-2">Discover the profound impact that properly fitted, modern digital hearing aids can have on daily interactions and mental wellbeing.</p>
-                   <Link to="#" className="inline-flex items-center gap-1.5 text-[#4A908F] font-semibold text-sm group-hover:gap-2 transition-all mt-auto">
+                   <Link to="#" className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2 transition-all mt-auto">
                      Read Full Article <ExternalLink size={16} />
                    </Link>
                  </div>
@@ -75,14 +75,14 @@ const Blog = () => {
                  </div>
                  <div className="flex flex-col justify-center flex-grow py-2">
                    <div className="flex items-center gap-3 text-sm text-gray-500 font-medium mb-3">
-                      <span className="text-[#4A908F] bg-[#4A908F]/10 px-2 py-0.5 rounded">Child Development</span>
+                      <span className="text-primary bg-primary/10 px-2 py-0.5 rounded">Child Development</span>
                       <span>Oct 08</span>
                    </div>
-                   <h4 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 group-hover:text-[#4A908F] transition-colors line-clamp-2">
+                   <h4 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 group-hover:text-primary transition-colors line-clamp-2">
                       5 Signs Your Child Might Need an IEP
                    </h4>
                    <p className="text-gray-600 mb-4 line-clamp-2">Understanding the subtle early indicators that your child could benefit from an Individualised Education Program at school.</p>
-                   <Link to="#" className="inline-flex items-center gap-1.5 text-[#4A908F] font-semibold text-sm group-hover:gap-2 transition-all mt-auto">
+                   <Link to="#" className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2 transition-all mt-auto">
                      Read Full Article <ExternalLink size={16} />
                    </Link>
                  </div>
@@ -96,14 +96,14 @@ const Blog = () => {
                  </div>
                  <div className="flex flex-col justify-center flex-grow py-2">
                    <div className="flex items-center gap-3 text-sm text-gray-500 font-medium mb-3">
-                      <span className="text-[#4A908F] bg-[#4A908F]/10 px-2 py-0.5 rounded">Audiology</span>
+                      <span className="text-primary bg-primary/10 px-2 py-0.5 rounded">Audiology</span>
                       <span>Sep 29</span>
                    </div>
-                   <h4 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 group-hover:text-[#4A908F] transition-colors line-clamp-2">
+                   <h4 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 group-hover:text-primary transition-colors line-clamp-2">
                       What to Expect During a Newborn Hearing Screening (OAE)
                    </h4>
                    <p className="text-gray-600 mb-4 line-clamp-2">A comprehensive parent's guide to the OAE process right after birth, explaining why it is painless and utterly crucial.</p>
-                   <Link to="#" className="inline-flex items-center gap-1.5 text-[#4A908F] font-semibold text-sm group-hover:gap-2 transition-all mt-auto">
+                   <Link to="#" className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2 transition-all mt-auto">
                      Read Full Article <ExternalLink size={16} />
                    </Link>
                  </div>
@@ -115,7 +115,7 @@ const Blog = () => {
       </SectionReveal>
 
       {/* Newsletter Signup */}
-      <SectionReveal className="bg-[#4A908F] py-20">
+      <SectionReveal className="bg-primary py-20">
         <div className="container mx-auto px-4">
           <FadeIn className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Stay informed on hearing care.</h2>
@@ -130,7 +130,7 @@ const Blog = () => {
               />
               <button 
                 type="submit"
-                className="bg-white text-[#4A908F] font-bold px-8 py-4 rounded-full hover:bg-gray-50 hover:shadow-lg hover:scale-[1.02] transition-all"
+                className="bg-white text-primary font-bold px-8 py-4 rounded-full hover:bg-gray-50 hover:shadow-lg hover:scale-[1.02] transition-all"
               >
                 Subscribe
               </button>

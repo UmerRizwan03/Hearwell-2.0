@@ -47,7 +47,7 @@ const About = () => {
               <div className="w-full h-full bg-gray-300 rounded-[24px] overflow-hidden relative shadow-lg">
                 <OptimizedImage src="src/assets/images/about/aboutTile.webp" alt="Hearwell Clinic Interior" />
               </div>
-              <div className="absolute -bottom-8 -left-8 bg-[#4A908F] text-white p-8 rounded-2xl shadow-xl max-w-xs overflow-hidden">
+              <div className="absolute -bottom-8 -left-8 bg-primary text-white p-8 rounded-2xl shadow-xl max-w-xs overflow-hidden">
                 <div className="absolute inset-0 opacity-20 pointer-events-none">
                   <OptimizedImage src="/images/blog-banner.png" alt="" className="grayscale" disableBlur />
                 </div>
@@ -59,54 +59,57 @@ const About = () => {
             </motion.div>
           </div>
 
-          {/* Core Values - Staggered List */}
-          <div className="mb-28">
-            <FadeIn className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800">Core Values</h2>
-            </FadeIn>
+        </div>
+      </SectionReveal>
 
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
-              <StaggerItem className="flex gap-6 group">
-                <div className="shrink-0 w-16 h-16 rounded-full bg-[#4A908F]/10 flex items-center justify-center text-[#4A908F] group-hover:bg-[#4A908F] group-hover:text-white transition-colors duration-300">
-                  <ShieldCheck size={32} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">Trust</h3>
-                  <p className="text-gray-600 leading-relaxed">We build lasting relationships through transparent, honest, and reliable care.</p>
-                </div>
-              </StaggerItem>
+      {/* Core Values - Staggered List */}
+      <SectionReveal className="py-20 lg:py-28 bg-gray-50 border-t border-gray-100">
+        <div className="container mx-auto px-4 md:px-6">
+          <FadeIn className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800">Core Values</h2>
+          </FadeIn>
 
-              <StaggerItem className="flex gap-6 group md:translate-y-8">
-                <div className="shrink-0 w-16 h-16 rounded-full bg-[#4A908F]/10 flex items-center justify-center text-[#4A908F] group-hover:bg-[#4A908F] group-hover:text-white transition-colors duration-300">
-                  <Heart size={32} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">Compassionate Care</h3>
-                  <p className="text-gray-600 leading-relaxed">Every patient is treated with empathy, understanding, and respect for their unique needs.</p>
-                </div>
-              </StaggerItem>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
+            <StaggerItem className="flex gap-6 group">
+              <div className="shrink-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <ShieldCheck size={32} />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Trust</h3>
+                <p className="text-gray-600 leading-relaxed">We build lasting relationships through transparent, honest, and reliable care.</p>
+              </div>
+            </StaggerItem>
 
-              <StaggerItem className="flex gap-6 group">
-                <div className="shrink-0 w-16 h-16 rounded-full bg-[#4A908F]/10 flex items-center justify-center text-[#4A908F] group-hover:bg-[#4A908F] group-hover:text-white transition-colors duration-300">
-                  <Award size={32} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">Professionalism</h3>
-                  <p className="text-gray-600 leading-relaxed">We adhere to the highest clinical standards and continuous medical education.</p>
-                </div>
-              </StaggerItem>
+            <StaggerItem className="flex gap-6 group md:translate-y-8">
+              <div className="shrink-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <Heart size={32} />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Compassionate Care</h3>
+                <p className="text-gray-600 leading-relaxed">Every patient is treated with empathy, understanding, and respect for their unique needs.</p>
+              </div>
+            </StaggerItem>
 
-              <StaggerItem className="flex gap-6 group md:translate-y-8">
-                <div className="shrink-0 w-16 h-16 rounded-full bg-[#4A908F]/10 flex items-center justify-center text-[#4A908F] group-hover:bg-[#4A908F] group-hover:text-white transition-colors duration-300">
-                  <Activity size={32} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">Results-Driven</h3>
-                  <p className="text-gray-600 leading-relaxed">Our therapies and solutions are designed to provide measurable, life-improving outcomes.</p>
-                </div>
-              </StaggerItem>
-            </StaggerContainer>
-          </div>
+            <StaggerItem className="flex gap-6 group">
+              <div className="shrink-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <Award size={32} />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Professionalism</h3>
+                <p className="text-gray-600 leading-relaxed">We adhere to the highest clinical standards and continuous medical education.</p>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem className="flex gap-6 group md:translate-y-8">
+              <div className="shrink-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <Activity size={32} />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Results-Driven</h3>
+                <p className="text-gray-600 leading-relaxed">Our therapies and solutions are designed to provide measurable, life-improving outcomes.</p>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </SectionReveal>
 
@@ -115,17 +118,17 @@ const About = () => {
         <div className="container mx-auto px-4 md:px-6">
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-200">
             <StaggerItem className="p-6">
-              <p className="text-5xl lg:text-7xl font-bold text-[#4A908F] mb-4">10+</p>
+              <p className="text-5xl lg:text-7xl font-bold text-primary mb-4">10+</p>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Years</h3>
               <p className="text-gray-500 uppercase tracking-widest text-sm font-medium">Specialist Experience</p>
             </StaggerItem>
             <StaggerItem className="p-6">
-              <p className="text-5xl lg:text-7xl font-bold text-[#4A908F] mb-4">5k+</p>
+              <p className="text-5xl lg:text-7xl font-bold text-primary mb-4">5k+</p>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Patients</h3>
               <p className="text-gray-500 uppercase tracking-widest text-sm font-medium">Lives Transformed</p>
             </StaggerItem>
             <StaggerItem className="p-6">
-              <p className="text-5xl lg:text-7xl font-bold text-[#4A908F] mb-4">2</p>
+              <p className="text-5xl lg:text-7xl font-bold text-primary mb-4">2</p>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Clinics</h3>
               <p className="text-gray-500 uppercase tracking-widest text-sm font-medium">In Kerala</p>
             </StaggerItem>

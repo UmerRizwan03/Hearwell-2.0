@@ -40,7 +40,7 @@ const Programs = () => {
               <ul className="space-y-4 mb-8">
                 {['Fine and gross motor skill development', 'Sensory integration and processing', 'Self-care routines', 'Play and social interaction skills'].map((item, i) => (
                   <li key={i} className="flex gap-3 text-gray-700 font-medium">
-                    <CheckCircle2 size={24} className="text-[#4A908F] shrink-0" />
+                    <CheckCircle2 size={24} className="text-primary shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -96,7 +96,7 @@ const Programs = () => {
               <ul className="space-y-4 mb-8">
                 {['Autism Spectrum Disorder support', 'Attention Deficit therapies', 'Learning disability accommodations', 'Behavioral intervention plans'].map((item, i) => (
                   <li key={i} className="flex gap-3 text-gray-700 font-medium">
-                    <CheckCircle2 size={24} className="text-[#4A908F] shrink-0" />
+                    <CheckCircle2 size={24} className="text-primary shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -108,15 +108,12 @@ const Programs = () => {
       </SectionReveal>
 
       {/* CTA Section */}
-      <SectionReveal className="bg-[#4A908F] py-20">
+      <SectionReveal className="bg-primary py-20">
         <div className="container mx-auto px-4 text-center max-w-3xl">
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Give your child the best start.</h2>
-            <p className="text-lg text-white/90 mb-10 leading-relaxed font-medium">
-              Schedule an initial assessment with our pediatric specialists to build a roadmap for your child's success.
-            </p>
-            <Link to="/booking" className="inline-block bg-white text-[#4A908F] px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 hover:scale-[1.02] transition-all shadow-xl">
-              Enroll Your Child Today
+          <FadeIn className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">Ready to support your child's journey?</h2>
+            <Link to="/booking" className="btn-white text-lg px-10">
+              Book an Assessment
             </Link>
           </FadeIn>
         </div>

@@ -44,11 +44,11 @@ const Home = () => {
               <motion.p variants={heroItem} className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-[90%]">
                 Professional hearing care and speech therapy services for children and adults aiming to restore the joy of sound.
               </motion.p>
-              <motion.div variants={heroItem} className="flex flex-col sm:flex-row gap-4">
-                <Link to="/booking" className="bg-[#1D544F] text-white px-8 py-4 rounded-full font-semibold text-center hover:bg-[#153f3a] hover:shadow-xl hover:shadow-[#1D544F]/20 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
-                  Book an Appointment <ArrowRight size={18} />
+              <motion.div variants={heroItem} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Link to="/booking" className="btn-primary w-full sm:w-auto">
+                  Book an Appointment
                 </Link>
-                <Link to="/services" className="bg-transparent text-[#1D544F] px-8 py-4 rounded-full font-semibold text-center hover:bg-[#f0f7f6] hover:-translate-y-0.5 border-2 border-[#1D544F] transition-all flex items-center justify-center">
+                <Link to="/services" className="btn-white bg-transparent border-2 border-primary text-primary hover:bg-primary/5 hover:border-primary w-full sm:w-auto">
                   Explore Services
                 </Link>
               </motion.div>
@@ -102,12 +102,12 @@ const Home = () => {
       <SectionReveal className="py-20 lg:py-28 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <FadeIn className="max-w-3xl mx-auto text-center">
-            <h2 className="text-sm font-semibold text-[#4A908F] uppercase tracking-wider mb-3">About The Clinic</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">About The Clinic</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Expert care focused on your well-being.</h3>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               Established in 2014, Hearwell provides early childhood intervention, individualized education programs, and advanced audiology services designed for lasting results.
             </p>
-            <Link to="/about" className="inline-flex items-center gap-2 text-[#4A908F] font-semibold hover:text-[#4A908F]/80 hover:gap-3 transition-all">
+            <Link to="/about" className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary/80 hover:gap-3 transition-all">
               Learn more about us <ArrowRight size={18} />
             </Link>
           </FadeIn>
@@ -125,7 +125,7 @@ const Home = () => {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-12 gap-6">
             {/* Hearing Aids - large card */}
             <StaggerItem className="md:col-span-8 bg-white modern-card relative overflow-hidden rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#4A908F]/5 rounded-bl-[100px] -mr-10 -mt-10 overflow-hidden group-hover:scale-110 transition-transform duration-700">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-bl-[100px] -mr-10 -mt-10 overflow-hidden group-hover:scale-110 transition-transform duration-700">
                 <OptimizedImage src={images.home.testingAidTile} alt="Audiometry Equipment" className="opacity-40 group-hover:opacity-60 transition-opacity" disableBlur />
               </div>
               <div className="relative z-10 flex flex-col h-full justify-between">
@@ -133,14 +133,14 @@ const Home = () => {
                   <h3 className="text-2xl font-bold text-gray-800 mb-3">Hearing Testing & Aids</h3>
                   <p className="text-gray-600 max-w-md mb-8">Digital hearing aids, OAE (Newborn Screening), and comprehensive diagnostic evaluations.</p>
                 </div>
-                <Link to="/hearing-aids" className="inline-flex items-center gap-2 text-[#4A908F] font-semibold group-hover:gap-3 transition-all">
+                <Link to="/hearing-aids" className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
                   Explore Solutions <ArrowRight size={18} />
                 </Link>
               </div>
             </StaggerItem>
 
             {/* Speech Therapy - small card */}
-            <StaggerItem className="md:col-span-4 bg-[#4A908F] text-white rounded-3xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between group relative overflow-hidden">
+            <StaggerItem className="md:col-span-4 bg-primary text-white rounded-3xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between group relative overflow-hidden">
               <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity group-hover:scale-110 transition-transform duration-700">
                 <OptimizedImage src="/images/speech-therapy.png" alt="Speech Therapy session" disableBlur />
               </div>
@@ -155,7 +155,7 @@ const Home = () => {
 
             {/* Child Dev - wide card */}
             <StaggerItem className="md:col-span-12 bg-white modern-card relative overflow-hidden rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 flex flex-col lg:flex-row gap-8 items-center justify-between hover:shadow-md hover:-translate-y-1 transition-all group relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-1/3 h-full bg-[#4A908F]/5 rounded-l-[100px] overflow-hidden hidden lg:block">
+              <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 rounded-l-[100px] overflow-hidden hidden lg:block">
                 <OptimizedImage src="/images/child-development.png" alt="Pediatric Therapy" className="opacity-20 group-hover:opacity-40 transition-opacity" disableBlur />
               </div>
               <div className="max-w-2xl relative z-10">
@@ -166,7 +166,7 @@ const Home = () => {
                   <span className="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">Special Care & Education</span>
                 </div>
               </div>
-              <Link to="/programs" className="relative z-10 shrink-0 bg-gray-50 text-gray-700 w-14 h-14 rounded-full flex items-center justify-center border border-gray-200 group-hover:bg-[#4A908F] group-hover:text-white group-hover:border-[#4A908F] transition-all">
+              <Link to="/programs" className="relative z-10 shrink-0 bg-gray-50 text-gray-700 w-14 h-14 rounded-full flex items-center justify-center border border-gray-200 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
                 <ArrowRight size={20} />
               </Link>
             </StaggerItem>
@@ -195,7 +195,7 @@ const Home = () => {
 
               <div className="absolute -bottom-6 -right-6 lg:-right-10 bg-white p-5 rounded-2xl shadow-xl border border-gray-50 z-20 max-w-[200px]">
                 <div className="flex items-center gap-3 font-semibold text-gray-800 mb-1">
-                  <CheckCircle2 size={20} className="text-[#4A908F]" /> BASLP
+                  <CheckCircle2 size={20} className="text-primary" /> BASLP
                 </div>
                 <p className="text-xs text-gray-500">AWH Special College</p>
               </div>
@@ -208,7 +208,7 @@ const Home = () => {
               whileInView="visible"
               viewport={defaultViewport}
             >
-              <h2 className="text-sm font-semibold text-[#4A908F] uppercase tracking-wider mb-3">Lead Audiologist</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Lead Audiologist</h2>
               <h3 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">Ms. Babitha Fazal</h3>
               <p className="text-xl text-gray-500 font-medium mb-8 pb-8 border-b border-gray-100">16 years total experience • Audiologist</p>
 
@@ -216,7 +216,7 @@ const Home = () => {
                 "My commitment is to restore the joy of sound and communication to every patient through personalized, expert care."
               </blockquote>
 
-              <Link to="/doctor" className="inline-flex items-center gap-2 text-[#4A908F] font-semibold hover:text-[#4A908F]/80 hover:gap-3 transition-all">
+              <Link to="/doctor" className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary/80 hover:gap-3 transition-all">
                 View Full Profile <ArrowRight size={18} />
               </Link>
             </motion.div>
