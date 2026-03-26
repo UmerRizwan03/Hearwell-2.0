@@ -20,7 +20,7 @@ const Booking = () => {
 
       <SectionReveal className="py-20 lg:py-28">
         <div className="container mx-auto px-4 md:px-6">
-          <FadeIn className="max-w-3xl mx-auto bg-white rounded-[32px] p-8 md:p-12 shadow-md border border-gray-100">
+          <FadeIn className="max-w-3xl mx-auto bg-white modern-card relative overflow-hidden rounded-[32px] p-8 md:p-12 shadow-md border border-gray-100">
             
             <form onSubmit={(e) => e.preventDefault()}>
               {/* Section 1: Patient Info */}

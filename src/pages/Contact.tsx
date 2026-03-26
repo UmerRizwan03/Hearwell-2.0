@@ -1,8 +1,60 @@
+import { useState } from 'react';
 import PageHeader from '../components/PageHeader';
-import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, ChevronDown } from 'lucide-react';
 import { FadeIn, SectionReveal, StaggerContainer, StaggerItem } from '../components/Motion';
 
+const faqs = [
+  {
+    q: 'What are the modes of payment accepted?',
+    a: 'We accept payments via Cash, Cheque, and Demand Draft.',
+  },
+  {
+    q: 'Which is the nearest landmark to the Perumbavoor clinic?',
+    a: 'Our Perumbavoor centre is located directly opposite Govt. Boys Higher Secondary School Ground on Hariharraiyyer Road. It is easy to locate.',
+  },
+  {
+    q: 'What are the hours of operation?',
+    a: 'We are open Monday through Saturday, 9:00 AM to 5:30 PM. The clinic is closed on Sundays.',
+  },
+  {
+    q: 'Do I need a prior appointment for a consultation?',
+    a: 'Walk-ins are welcome, but we strongly recommend booking an appointment to avoid waiting. You can book online through our website or call us directly.',
+  },
+  {
+    q: 'What age groups do you provide speech therapy for?',
+    a: 'We provide speech and language therapy for all age groups — from toddlers and young children to adolescents and adults. Early intervention is our specialty.',
+  },
+  {
+    q: 'Do you offer trial periods for hearing aids?',
+    a: 'Yes, we offer trial fittings so you can experience the hearing aid before committing to a purchase. Our audiologist will guide you through the entire process.',
+  },
+];
+
+const FAQItem = ({ faq, isOpen, toggle }: { faq: typeof faqs[0]; isOpen: boolean; toggle: () => void }) => (
+  <button
+    onClick={toggle}
+    className="w-full text-left bg-white rounded-2xl border border-gray-100 hover:border-primary/20 transition-all duration-300 overflow-hidden group"
+  >
+    <div className="flex items-center justify-between p-6 gap-4">
+      <h4 className="font-semibold text-gray-800 group-hover:text-primary transition-colors">{faq.q}</h4>
+      <ChevronDown
+        size={20}
+        className={`shrink-0 text-gray-400 group-hover:text-primary transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+      />
+    </div>
+    <div
+      className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+    >
+      <div className="overflow-hidden">
+        <p className="px-6 pb-6 text-gray-500 leading-relaxed text-[15px]">{faq.a}</p>
+      </div>
+    </div>
+  </button>
+);
+
 const Contact = () => {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <div className="bg-gray-50 min-h-screen">
       <PageHeader 
@@ -126,6 +178,27 @@ const Contact = () => {
               </div>
             </FadeIn>
 
+          </div>
+        </div>
+      </SectionReveal>
+
+      {/* FAQ Section */}
+      <SectionReveal className="py-20 lg:py-28 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+          <FadeIn className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 tracking-tight">Frequently Asked Questions</h2>
+            <p className="text-gray-500">Quick answers to the questions we hear most often.</p>
+          </FadeIn>
+
+          <div className="space-y-4">
+            {faqs.map((faq, i) => (
+              <FAQItem
+                key={i}
+                faq={faq}
+                isOpen={openFaq === i}
+                toggle={() => setOpenFaq(openFaq === i ? null : i)}
+              />
+            ))}
           </div>
         </div>
       </SectionReveal>

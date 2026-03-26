@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #4A908F;
+  --color-primary: #1D544F;
   --color-secondary: #f4f4f5;
   --font-sans: "Inter", sans-serif;
 }
@@ -19,6 +19,49 @@
   /* Subtle button hover scale globally */
   button, a {
     transition: all 0.3s ease;
+  }
+}
+
+@layer components {
+  /* ─── Modern Card System ─── */
+  .modern-card {
+    isolation: isolate;
+  }
+  
+  .modern-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -10;
+    background: radial-gradient(circle at top right, rgba(29,84,79,0.04), transparent 60%),
+                radial-gradient(circle at bottom left, rgba(130,207,176,0.04), transparent 60%);
+    opacity: 0.6;
+    transition: opacity 0.5s ease;
+  }
+  
+  .modern-card:hover::before {
+    opacity: 1;
+  }
+
+  .modern-card::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    background: rgba(29,84,79,0.02);
+    pointer-events: none;
+    z-index: -10;
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .modern-card:hover::after {
+    transform: scale(1.5) translate(-10px, -10px);
+    background: rgba(29,84,79,0.04);
+    border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
   }
 }
 
@@ -53,4 +96,10 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ─── Infinite Scroll Marquee ─── */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

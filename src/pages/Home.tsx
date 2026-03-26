@@ -5,37 +5,50 @@ import { FadeIn, FadeScaleIn, SectionReveal, StaggerContainer, StaggerItem } fro
 import { heroContainer, heroItem, slideInLeft, slideInRight, defaultViewport } from '../utils/motion';
 import OptimizedImage from '../components/OptimizedImage';
 import { images } from '../utils/images';
+import GoogleReviews from '../components/GoogleReviews';
 
 const Home = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 bg-[#4A908F]/5">
+      <section className="relative overflow-hidden pt-12 pb-20 lg:pt-32 lg:pb-40 bg-white">
+        {/* Abstract Background Waves */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.15]">
+          <svg className="w-full h-full" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M-100,400 Q200,200 500,400 T1100,400 T1600,300" stroke="#1D544F" strokeWidth="2" fill="none" />
+            <path d="M-100,450 Q250,550 550,450 T1150,450 T1600,550" stroke="#1D544F" strokeWidth="1" fill="none" />
+            <path d="M-100,500 Q300,300 600,500 T1200,500 T1600,400" stroke="#1D544F" strokeWidth="1" fill="none" strokeDasharray="4 4" />
+          </svg>
+        </div>
+        <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[80%] bg-[radial-gradient(circle,rgba(130,207,176,0.15)_0%,transparent_60%)] -z-10" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[70%] bg-[radial-gradient(circle,rgba(29,84,79,0.08)_0%,transparent_70%)] -z-10" />
+        
         <div className="container mx-auto px-4 md:px-6 z-10 relative">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
 
             {/* Hero Text — Staggered reveal */}
             <motion.div
-              className="flex-1 max-w-2xl"
+              className="flex-1 max-w-[540px] xl:max-w-[600px] relative z-10"
               variants={heroContainer}
               initial="hidden"
               animate="visible"
             >
-              <motion.div variants={heroItem} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[#4A908F] text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm border border-[#4A908F]/10">
-                <span className="w-2 h-2 rounded-full bg-[#4A908F] animate-pulse"></span>
-                Hearwell Speech & Hearing
+              <motion.div variants={heroItem} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm text-[#277A75] text-[11px] font-bold uppercase tracking-[0.2em] mb-6 border border-[#277A75]/20 shadow-[0_4px_15px_-3px_rgba(39,122,117,0.1)]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#277A75]"></span>
+                HEARWELL SPEECH & HEARING
               </motion.div>
-              <motion.h1 variants={heroItem} className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-[1.15] mb-6 tracking-tight">
-                Solve your hearing problem in just <span className="text-[#4A908F]">one day.</span>
+              <motion.h1 variants={heroItem} className="font-serif text-[2.75rem] md:text-5xl lg:text-[4rem] text-[#1E2A38] leading-[1.05] mb-6 tracking-tight">
+                Solve your hearing problem in just <br />
+                <span className="font-sans font-black text-transparent bg-clip-text bg-gradient-to-r from-[#1D544F] to-[#6BBD9D] uppercase text-[3.25rem] md:text-6xl lg:text-[4.5rem] xl:text-[5rem] tracking-tight drop-shadow-sm block mt-2">ONE DAY</span>
               </motion.h1>
-              <motion.p variants={heroItem} className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed font-medium">
+              <motion.p variants={heroItem} className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-[90%]">
                 Professional hearing care and speech therapy services for children and adults aiming to restore the joy of sound.
               </motion.p>
               <motion.div variants={heroItem} className="flex flex-col sm:flex-row gap-4">
-                <Link to="/booking" className="bg-[#4A908F] text-white px-8 py-4 rounded-full font-semibold text-center hover:bg-[#4A908F]/90 hover:shadow-lg hover:shadow-[#4A908F]/20 hover:scale-[1.02] transition-all flex items-center justify-center gap-2">
+                <Link to="/booking" className="bg-[#1D544F] text-white px-8 py-4 rounded-full font-semibold text-center hover:bg-[#153f3a] hover:shadow-xl hover:shadow-[#1D544F]/20 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
                   Book an Appointment <ArrowRight size={18} />
                 </Link>
-                <Link to="/services" className="bg-white text-gray-700 px-8 py-4 rounded-full font-semibold text-center hover:bg-gray-50 hover:scale-[1.02] border border-gray-200 transition-all">
+                <Link to="/services" className="bg-transparent text-[#1D544F] px-8 py-4 rounded-full font-semibold text-center hover:bg-[#f0f7f6] hover:-translate-y-0.5 border-2 border-[#1D544F] transition-all flex items-center justify-center">
                   Explore Services
                 </Link>
               </motion.div>
@@ -43,16 +56,41 @@ const Home = () => {
 
             {/* Hero Image — Fade + Scale */}
             <FadeScaleIn className="flex-1 w-full relative">
-              <div className="absolute inset-0 bg-[#4A908F]/10 rounded-full blur-3xl transform -translate-x-12 translate-y-12"></div>
-              <div className="relative h-[400px] md:h-[500px] w-full max-w-lg mx-auto lg:ml-auto">
-                <div className="absolute top-0 right-0 w-[80%] h-[80%] rounded-[32px] rounded-tr-[120px] bg-gray-200 overflow-hidden shadow-xl">
-                  <OptimizedImage src={images.hero.main} alt="Audiologist showing hearing aid to patient" priority aspectRatio="4/3" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[130%] bg-[#1D544F]/5 rounded-full blur-3xl -z-10 hidden lg:block"></div>
+              
+              {/* Abstract Wave Behind Image */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 opacity-30">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-[120%] h-[120%] text-[#82CFB0]">
+                  <path fill="currentColor" d="M42.7,-73.4C55.9,-65.4,67.6,-54.3,77.5,-41.2C87.4,-28.1,95.5,-14,94.2,-0.7C92.9,12.5,82.3,25.1,72.4,36.5C62.5,47.9,53.3,58.3,41.9,65.8C30.4,73.4,16.8,78.2,2.7,73.8C-11.4,69.5,-25.9,56,-39.8,47.3C-53.7,38.6,-67,34.7,-77.1,25C-87.2,15.3,-94.1,-0.3,-89.7,-13C-85.3,-25.7,-69.6,-35.4,-55.8,-42.8C-42,-50.2,-30.1,-55.3,-17.8,-61.6C-5.5,-67.9,7.2,-75.4,20.5,-75.8C33.8,-76.2,47.7,-69.5,42.7,-73.4Z" transform="translate(100 100)" />
+                </svg>
+              </div>
+
+              <div className="relative w-full aspect-[4/3] max-w-2xl mx-auto lg:ml-auto mt-12 lg:mt-0 lg:mr-8 relative z-10">
+                <div className="w-full h-full rounded-[40%_60%_70%_30%/40%_50%_60%_50%] overflow-hidden shadow-[0_20px_50px_rgba(29,84,79,0.15)] border-[8px] border-white/90 backdrop-blur-sm transition-all duration-700 hover:rounded-[50%_50%_40%_60%/60%_40%_50%_50%] relative z-10 bg-gray-100">
+                  <OptimizedImage src={images.hero.main} alt="Audiologist showing hearing aid to patient" priority className="w-full h-full object-cover scale-105" containerClassName="w-full h-full" />
                 </div>
-                <div className="absolute bottom-0 left-0 w-[55%] h-[50%] rounded-[24px] rounded-bl-[80px] bg-white p-2 shadow-2xl z-10">
-                  <div className="w-full h-full rounded-[16px] rounded-bl-[72px] bg-gradient-to-tr from-[#4A908F]/20 to-[#4A908F]/5 flex items-center justify-center flex-col p-4 text-center">
-                    <span className="text-[#4A908F] font-bold text-4xl mb-1">10+</span>
-                    <span className="text-gray-600 text-xs font-semibold uppercase tracking-wider">Years Exp</span>
+                
+                {/* Custom "10+ YEARS EXP" Badge with Soundwave */}
+                <div className="absolute -bottom-8 -left-6 lg:-bottom-12 lg:-left-16 z-20 flex items-center">
+                  {/* Left Soundwave swoosh */}
+                  <svg className="w-20 h-20 text-[#1D544F] opacity-90 -mr-8 z-0 hidden lg:block" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,50 C40,50 40,20 60,50 C80,80 80,50 100,50" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+                  </svg>
+                  
+                  {/* Badge */}
+                  <div className="relative z-10 w-[130px] h-[130px] lg:w-[150px] lg:h-[150px] bg-gradient-to-br from-[#1D544F] to-[#123834] rounded-full flex flex-col items-center justify-center p-4 border-[6px] border-white shadow-[0_15px_30px_-5px_rgba(29,84,79,0.4)] transition-transform hover:scale-105">
+                    <span className="text-white font-black text-3xl lg:text-4xl mb-0 leading-none">10+</span>
+                    <span className="text-[#82CFB0] text-[9px] lg:text-[10px] font-bold uppercase tracking-[0.15em] mt-1 relative">Years Exp
+                      <div className="absolute -top-6 -right-6 w-3 h-3 bg-[#82CFB0] rounded-full opacity-50 blur-[2px]"></div>
+                    </span>
                   </div>
+
+                  {/* Right Soundwave wave */}
+                  <svg className="w-32 h-20 text-[#1D544F] opacity-90 -ml-6 z-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,50 C20,50 20,80 40,50 C60,20 60,50 80,50 C90,50 95,50 100,50" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+                    <path d="M10,50 C25,50 25,70 40,50 C55,30 55,50 70,50" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
+                    <path d="M15,50 C30,50 30,60 45,50" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.4"/>
+                  </svg>
                 </div>
               </div>
             </FadeScaleIn>
@@ -86,7 +124,7 @@ const Home = () => {
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-12 gap-6">
             {/* Hearing Aids - large card */}
-            <StaggerItem className="md:col-span-8 bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all relative overflow-hidden group">
+            <StaggerItem className="md:col-span-8 bg-white modern-card relative overflow-hidden rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#4A908F]/5 rounded-bl-[100px] -mr-10 -mt-10 overflow-hidden group-hover:scale-110 transition-transform duration-700">
                 <OptimizedImage src={images.home.testingAidTile} alt="Audiometry Equipment" className="opacity-40 group-hover:opacity-60 transition-opacity" disableBlur />
               </div>
@@ -116,7 +154,7 @@ const Home = () => {
             </StaggerItem>
 
             {/* Child Dev - wide card */}
-            <StaggerItem className="md:col-span-12 bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 flex flex-col lg:flex-row gap-8 items-center justify-between hover:shadow-md hover:-translate-y-1 transition-all group relative overflow-hidden">
+            <StaggerItem className="md:col-span-12 bg-white modern-card relative overflow-hidden rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 flex flex-col lg:flex-row gap-8 items-center justify-between hover:shadow-md hover:-translate-y-1 transition-all group relative overflow-hidden">
               <div className="absolute top-0 right-0 w-1/3 h-full bg-[#4A908F]/5 rounded-l-[100px] overflow-hidden hidden lg:block">
                 <OptimizedImage src="/images/child-development.png" alt="Pediatric Therapy" className="opacity-20 group-hover:opacity-40 transition-opacity" disableBlur />
               </div>
@@ -135,6 +173,9 @@ const Home = () => {
           </StaggerContainer>
         </div>
       </SectionReveal>
+
+      {/* Google Reviews */}
+      <GoogleReviews />
 
       {/* Doctor Profile Snippet */}
       <SectionReveal className="py-20 lg:py-28 bg-white overflow-hidden">

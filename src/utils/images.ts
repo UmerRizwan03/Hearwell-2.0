@@ -28,7 +28,7 @@
  */
 
 /* ─── Hero Images ─── */
-import heroMain from '../assets/images/hero/hero.png';
+import heroMain from '../assets/images/hero/hero.webp';
 
 /* ─── Service Images ─── */
 import hearingAid from '../assets/images/services/hearing-aid.png';

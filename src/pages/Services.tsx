@@ -18,7 +18,7 @@ const Services = () => {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           
           {/* Feature Block: Audiology (Full Width) */}
-          <FadeIn className="flex flex-col lg:flex-row bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 mb-10 group hover:shadow-md transition-shadow">
+          <FadeIn className="flex flex-col lg:flex-row bg-white modern-card relative overflow-hidden rounded-3xl overflow-hidden shadow-sm border border-gray-100 mb-10 group hover:shadow-md transition-shadow">
             <FadeScaleIn className="w-full lg:w-1/2 bg-gray-100 min-h-[300px] relative overflow-hidden">
                <OptimizedImage src="/images/hearing-test.png" alt="Hearing Test Diagnostic" className="group-hover:scale-105 transition-transform duration-700" />
             </FadeScaleIn>
@@ -61,7 +61,7 @@ const Services = () => {
               </div>
             </StaggerItem>
 
-            <StaggerItem className="w-full lg:w-1/2 bg-white rounded-3xl p-10 lg:p-12 border-2 border-[#4A908F]/10 hover:border-[#4A908F]/30 hover:shadow-md hover:-translate-y-1 transition-all group relative overflow-hidden">
+            <StaggerItem className="w-full lg:w-1/2 bg-white modern-card relative overflow-hidden rounded-3xl p-10 lg:p-12 border-2 border-[#4A908F]/10 hover:border-[#4A908F]/30 hover:shadow-md hover:-translate-y-1 transition-all group relative overflow-hidden">
                <div className="absolute inset-0 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity">
                 <OptimizedImage src="/images/child-development.png" alt="" className="sepia-[.2]" disableBlur />
               </div>
@@ -105,7 +105,7 @@ const Services = () => {
 
               {/* Stacked Small Blocks */}
               <div className="md:col-span-1 flex flex-col gap-6">
-                <StaggerItem className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all flex-grow flex flex-col group">
+                <StaggerItem className="bg-white modern-card relative overflow-hidden rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all flex-grow flex flex-col group">
                   <div className="flex items-center gap-3 mb-3">
                     <Puzzle size={20} className="text-[#4A908F]" />
                     <h4 className="font-bold text-gray-800 text-lg">Occupational Therapy</h4>
@@ -114,7 +114,7 @@ const Services = () => {
                   <Link to="/programs" className="mt-auto text-sm text-[#4A908F] font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">Details <ArrowRight size={14} /></Link>
                 </StaggerItem>
                 
-                <StaggerItem className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all flex-grow flex flex-col group">
+                <StaggerItem className="bg-white modern-card relative overflow-hidden rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all flex-grow flex flex-col group">
                    <div className="flex items-center gap-3 mb-3">
                     <ShieldCheck size={20} className="text-[#4A908F]" />
                     <h4 className="font-bold text-gray-800 text-lg">IEP & Special Care</h4>

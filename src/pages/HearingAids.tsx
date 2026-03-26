@@ -87,7 +87,7 @@ const HearingAids = () => {
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             
-            <StaggerItem className="bg-white rounded-3xl p-8 text-center shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all">
+            <StaggerItem className="bg-white modern-card relative overflow-hidden rounded-3xl p-8 text-center shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all">
               <div className="w-32 h-32 mx-auto bg-gray-100 rounded-full mb-6 flex items-center justify-center">
                 <Ear size={48} className="text-gray-400" />
               </div>
@@ -96,7 +96,7 @@ const HearingAids = () => {
               <p className="text-gray-600 text-sm leading-relaxed mb-6">Designed to fit completely inside the ear canal for ultimate discretion. Custom-molded for maximum comfort.</p>
             </StaggerItem>
 
-            <StaggerItem className="bg-white rounded-3xl p-8 text-center shadow-sm border border-[#4A908F]/20 relative hover:shadow-md hover:-translate-y-1 transition-all transform md:scale-105 z-10">
+            <StaggerItem className="bg-white modern-card relative overflow-hidden rounded-3xl p-8 text-center shadow-sm border border-[#4A908F]/20 relative hover:shadow-md hover:-translate-y-1 transition-all transform md:scale-105 z-10">
               <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-[#4A908F] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">MOST POPULAR</div>
               <div className="w-40 h-40 mx-auto bg-gray-100 rounded-full mb-6 flex items-center justify-center">
                 <Ear size={56} className="text-[#4A908F]" />
@@ -106,7 +106,7 @@ const HearingAids = () => {
               <p className="text-gray-600 text-sm leading-relaxed mb-6">Small, discreet, and powerful. The speaker rests directly in the ear canal for crisp, clear sound quality.</p>
             </StaggerItem>
 
-            <StaggerItem className="bg-white rounded-3xl p-8 text-center shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all">
+            <StaggerItem className="bg-white modern-card relative overflow-hidden rounded-3xl p-8 text-center shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all">
               <div className="w-32 h-32 mx-auto bg-gray-100 rounded-full mb-6 flex items-center justify-center">
                 <Ear size={48} className="text-gray-400" />
               </div>

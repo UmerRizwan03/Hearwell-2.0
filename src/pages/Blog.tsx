@@ -18,7 +18,7 @@ const Blog = () => {
           
           {/* Featured Article */}
           <FadeScaleIn className="mb-20">
-            <Link to="#" className="group block bg-white rounded-[32px] overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition-all relative">
+            <Link to="#" className="group block bg-white modern-card relative overflow-hidden rounded-[32px] overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition-all relative">
                <div className="absolute top-6 left-6 z-20 bg-[#4A908F] text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
                  Featured
                </div>
