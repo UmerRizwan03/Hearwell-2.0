@@ -45,7 +45,7 @@ const Doctor = () => {
               </FadeIn>
 
               <FadeIn>
-                <Link to="/booking" className="w-full flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-xl font-semibold hover:bg-primary/90 hover:scale-[1.02] transition-all shadow-md">
+                <Link to="/booking" className="btn-primary w-full">
                   <Calendar size={20} /> Book an Appointment
                 </Link>
               </FadeIn>

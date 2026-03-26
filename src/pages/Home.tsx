@@ -14,14 +14,14 @@ const Home = () => {
       <section className="relative overflow-hidden pt-12 pb-20 lg:pt-32 lg:pb-40 bg-white">
         {/* Abstract Background Waves */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.15]">
-          <svg className="w-full h-full" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <svg className="w-full h-full animate-float-slow" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
             <path d="M-100,400 Q200,200 500,400 T1100,400 T1600,300" stroke="#1D544F" strokeWidth="2" fill="none" />
             <path d="M-100,450 Q250,550 550,450 T1150,450 T1600,550" stroke="#1D544F" strokeWidth="1" fill="none" />
             <path d="M-100,500 Q300,300 600,500 T1200,500 T1600,400" stroke="#1D544F" strokeWidth="1" fill="none" strokeDasharray="4 4" />
           </svg>
         </div>
-        <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[80%] bg-[radial-gradient(circle,rgba(130,207,176,0.15)_0%,transparent_60%)] -z-10" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[70%] bg-[radial-gradient(circle,rgba(29,84,79,0.08)_0%,transparent_70%)] -z-10" />
+        <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[80%] bg-[radial-gradient(circle,rgba(130,207,176,0.15)_0%,transparent_60%)] -z-10 animate-pulse-subtle" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[70%] bg-[radial-gradient(circle,rgba(29,84,79,0.08)_0%,transparent_70%)] -z-10 animate-float-reverse" />
         
         <div className="container mx-auto px-4 md:px-6 z-10 relative">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
@@ -37,9 +37,9 @@ const Home = () => {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#277A75]"></span>
                 HEARWELL SPEECH & HEARING
               </motion.div>
-              <motion.h1 variants={heroItem} className="font-serif text-[2.75rem] md:text-5xl lg:text-[4rem] text-[#1E2A38] leading-[1.05] mb-6 tracking-tight">
+              <motion.h1 variants={heroItem} className="font-sans font-extrabold text-[2.75rem] md:text-5xl lg:text-[4rem] text-[#1E2A38] leading-[1.05] mb-6 tracking-tight">
                 Solve your hearing problem in just <br />
-                <span className="font-sans font-black text-transparent bg-clip-text bg-gradient-to-r from-[#1D544F] to-[#6BBD9D] uppercase text-[3.25rem] md:text-6xl lg:text-[4.5rem] xl:text-[5rem] tracking-tight drop-shadow-sm block mt-2">ONE DAY</span>
+                <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-[#1D544F] to-[#6BBD9D] uppercase text-[3.25rem] md:text-6xl lg:text-[4.5rem] xl:text-[5rem] tracking-tight drop-shadow-sm block mt-2">ONE DAY</span>
               </motion.h1>
               <motion.p variants={heroItem} className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-[90%]">
                 Professional hearing care and speech therapy services for children and adults aiming to restore the joy of sound.
@@ -59,7 +59,7 @@ const Home = () => {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[130%] bg-[#1D544F]/5 rounded-full blur-3xl -z-10 hidden lg:block"></div>
               
               {/* Abstract Wave Behind Image */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 opacity-30">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 opacity-30 animate-float">
                 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-[120%] h-[120%] text-[#82CFB0]">
                   <path fill="currentColor" d="M42.7,-73.4C55.9,-65.4,67.6,-54.3,77.5,-41.2C87.4,-28.1,95.5,-14,94.2,-0.7C92.9,12.5,82.3,25.1,72.4,36.5C62.5,47.9,53.3,58.3,41.9,65.8C30.4,73.4,16.8,78.2,2.7,73.8C-11.4,69.5,-25.9,56,-39.8,47.3C-53.7,38.6,-67,34.7,-77.1,25C-87.2,15.3,-94.1,-0.3,-89.7,-13C-85.3,-25.7,-69.6,-35.4,-55.8,-42.8C-42,-50.2,-30.1,-55.3,-17.8,-61.6C-5.5,-67.9,7.2,-75.4,20.5,-75.8C33.8,-76.2,47.7,-69.5,42.7,-73.4Z" transform="translate(100 100)" />
                 </svg>

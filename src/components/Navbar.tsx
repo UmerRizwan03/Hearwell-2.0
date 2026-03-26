@@ -63,7 +63,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <Link
               to="/booking"
-              className="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm"
+              className="btn-primary px-6 py-2.5 text-sm shadow-md"
             >
               Book Appointment
             </Link>
@@ -103,7 +103,7 @@ const Navbar = () => {
               <Link
                 to="/booking"
                 onClick={closeMenu}
-                className="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors w-full text-center"
+                className="btn-primary w-full"
               >
                 Book Appointment
               </Link>

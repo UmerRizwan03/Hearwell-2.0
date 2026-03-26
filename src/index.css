@@ -3,7 +3,8 @@
 @theme {
   --color-primary: #1D544F;
   --color-secondary: #f4f4f5;
-  --font-sans: "Inter", sans-serif;
+  --font-sans: "Outfit", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
 }
 
 @layer base {
@@ -111,4 +112,38 @@
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+/* ─── Premium "Living" Animations ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  33% { transform: translateY(-15px) rotate(2deg); }
+  66% { transform: translateY(10px) rotate(-1deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  33% { transform: translateY(15px) rotate(-2deg); }
+  66% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.05); }
+}
+
+.animate-float {
+  animation: float 10s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 15s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 12s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 8s ease-in-out infinite;
 }

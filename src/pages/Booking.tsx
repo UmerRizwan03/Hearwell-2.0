@@ -112,7 +112,7 @@ const Booking = () => {
                 
                 <button 
                   type="submit"
-                  className="w-full shadow-lg shadow-primary/20 text-white bg-primary hover:bg-primary/90 focus:ring-4 focus:outline-none focus:ring-primary/50 font-bold rounded-full text-lg px-8 py-5 text-center flex items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.01]"
+                  className="btn-primary w-full text-lg py-5 shadow-xl"
                 >
                   <CalendarCheck size={24} /> Confirm Appointment Request
                 </button>

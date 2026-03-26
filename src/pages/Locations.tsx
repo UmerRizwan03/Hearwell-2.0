@@ -71,7 +71,7 @@ const Locations = () => {
                   </div>
                 </div>
 
-                <a href="https://www.google.com/maps/search/Hearwell+Speech+and+Hearing+Centre+Opp+Govt+Boys+Higher+Secondary+School+Ground+Hariharraiyyer+Road+Perumbavoor" target="_blank" rel="noreferrer" className="flex items-center justify-center w-full gap-2 border-2 border-primary/20 text-primary py-4 rounded-xl font-bold tracking-wide hover:bg-primary hover:border-primary hover:text-white hover:shadow-[0_8px_20px_-6px_rgba(29,84,79,0.3)] hover:-translate-y-0.5 transition-all duration-300">
+                <a href="https://www.google.com/maps/search/Hearwell+Speech+and+Hearing+Centre+Opp+Govt+Boys+Higher+Secondary+School+Ground+Hariharraiyyer+Road+Perumbavoor" target="_blank" rel="noreferrer" className="btn-primary w-full bg-transparent border-2 border-primary/30 text-primary hover:bg-primary hover:text-white shadow-none hover:shadow-lg py-4">
                   <Navigation size={18} /> GET DIRECTIONS
                 </a>
               </div>
@@ -133,7 +133,7 @@ const Locations = () => {
                   </div>
                 </div>
 
-                <a href="https://www.google.com/maps/search/Hearwell+Speech+and+Hearing+Centre+Near+Vadakke+Bus+Stop+Perinjanam+Kerala+680686" target="_blank" rel="noreferrer" className="flex items-center justify-center w-full gap-2 border-2 border-primary/20 text-primary py-4 rounded-xl font-bold tracking-wide hover:bg-primary hover:border-primary hover:text-white hover:shadow-[0_8px_20px_-6px_rgba(29,84,79,0.3)] hover:-translate-y-0.5 transition-all duration-300">
+                <a href="https://www.google.com/maps/search/Hearwell+Speech+and+Hearing+Centre+Near+Vadakke+Bus+Stop+Perinjanam+Kerala+680686" target="_blank" rel="noreferrer" className="btn-primary w-full bg-transparent border-2 border-primary/30 text-primary hover:bg-primary hover:text-white shadow-none hover:shadow-lg py-4">
                   <Navigation size={18} /> GET DIRECTIONS
                 </a>
               </div>

@@ -114,7 +114,7 @@ const About = () => {
       </SectionReveal>
 
       {/* Experience Stats */}
-      <SectionReveal className="bg-gray-50 py-20 border-y border-gray-100">
+      <SectionReveal className="bg-white py-20 border-y border-gray-100">
         <div className="container mx-auto px-4 md:px-6">
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-200">
             <StaggerItem className="p-6">
