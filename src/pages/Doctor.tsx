@@ -16,7 +16,7 @@ const Doctor = () => {
       />
 
       <SectionReveal className="py-20 lg:py-28">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
             
             {/* Left: Portrait & Credentials */}
@@ -123,7 +123,7 @@ const Doctor = () => {
               <FadeIn className="mt-16">
                 <div className="bg-gray-50 rounded-2xl p-8 relative">
                    <div className="absolute top-4 left-4 text-7xl text-primary/10 font-serif leading-none">"</div>
-                   <p className="text-xl text-gray-700 italic font-medium relative z-10 leading-relaxed text-center">
+                   <p className="text-xl text-gray-700 italic font-serif font-medium relative z-10 leading-relaxed text-center">
                     My commitment is to restore the joy of sound and communication to every patient through personalized, expert care.
                    </p>
                 </div>

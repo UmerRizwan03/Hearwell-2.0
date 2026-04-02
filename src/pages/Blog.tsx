@@ -14,7 +14,7 @@ const Blog = () => {
       />
 
       <SectionReveal className="py-16 md:py-24">
-        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+        <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
           
           {/* Featured Article */}
           <FadeScaleIn className="mb-20">
@@ -71,7 +71,7 @@ const Blog = () => {
             <StaggerItem>
               <article className="flex flex-col sm:flex-row gap-6 md:gap-8 group border-b border-gray-100 pb-10">
                  <div className="shrink-0 w-full sm:w-40 md:w-48 aspect-video sm:aspect-square bg-gray-100 rounded-2xl overflow-hidden relative">
-                    <div className="absolute inset-0 bg-gradient-to-bl from-gray-300 to-gray-200 transform group-hover:scale-110 transition-transform duration-500"></div>
+                    <OptimizedImage src="/images/blog-child-iep.png" alt="Child in educational therapy session" className="transform group-hover:scale-110 transition-transform duration-500" disableBlur />
                  </div>
                  <div className="flex flex-col justify-center flex-grow py-2">
                    <div className="flex items-center gap-3 text-sm text-gray-500 font-medium mb-3">
@@ -92,7 +92,7 @@ const Blog = () => {
             <StaggerItem>
               <article className="flex flex-col sm:flex-row gap-6 md:gap-8 group border-b border-gray-100 pb-10">
                  <div className="shrink-0 w-full sm:w-40 md:w-48 aspect-video sm:aspect-square bg-gray-100 rounded-2xl overflow-hidden relative">
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-300 to-gray-200 transform group-hover:scale-110 transition-transform duration-500"></div>
+                    <OptimizedImage src="/images/blog-newborn-screening.png" alt="Newborn hearing screening" className="transform group-hover:scale-110 transition-transform duration-500" disableBlur />
                  </div>
                  <div className="flex flex-col justify-center flex-grow py-2">
                    <div className="flex items-center gap-3 text-sm text-gray-500 font-medium mb-3">
@@ -115,8 +115,8 @@ const Blog = () => {
       </SectionReveal>
 
       {/* Newsletter Signup */}
-      <SectionReveal className="bg-primary py-20">
-        <div className="container mx-auto px-4">
+      <SectionReveal className="bg-primary-gradient py-20">
+        <div className="container mx-auto px-6 lg:px-8">
           <FadeIn className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Stay informed on hearing care.</h2>
             <p className="text-white/80 mb-10 text-lg">Subscribe to our monthly newsletter for expert tips, clinic updates, and educational resources directly to your inbox.</p>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PageHeader from '../components/PageHeader';
-import { Phone, Mail, MapPin, MessageCircle, ChevronDown } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, ChevronDown, CheckCircle, Loader2 } from 'lucide-react';
 import { FadeIn, SectionReveal, StaggerContainer, StaggerItem } from '../components/Motion';
 
 const faqs = [
@@ -54,6 +54,20 @@ const FAQItem = ({ faq, isOpen, toggle }: { faq: typeof faqs[0]; isOpen: boolean
 
 const Contact = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate network request
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      // Reset after 5 seconds
+      setTimeout(() => setIsSuccess(false), 5000);
+    }, 1500);
+  };
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -64,7 +78,7 @@ const Contact = () => {
       />
 
       <SectionReveal className="py-20 lg:py-28">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 max-w-6xl mx-auto">
             
             {/* Contact Details Matrix */}
@@ -122,59 +136,81 @@ const Contact = () => {
               <div className="bg-white p-8 md:p-12 rounded-[32px] shadow-sm border border-gray-100 h-full">
                 <h3 className="text-3xl font-bold text-gray-800 mb-8">Send us a message</h3>
                 
-                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {isSuccess ? (
+                  <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center flex flex-col items-center justify-center h-[400px]">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
+                      <CheckCircle size={32} />
+                    </div>
+                    <h4 className="text-2xl font-bold text-gray-800 mb-2">Message Sent!</h4>
+                    <p className="text-gray-600">Thank you for reaching out. A member of our clinical team will get back to you within 24 hours.</p>
+                  </div>
+                ) : (
+                  <form className="space-y-6" onSubmit={handleSubmit}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label htmlFor="name" className="text-sm font-semibold text-gray-700">Full Name</label>
+                        <input 
+                          type="text" 
+                          id="name" 
+                          placeholder="John Doe" 
+                          className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl focus:ring-primary focus:border-primary block p-3.5 transition-colors duration-300 outline-none placeholder:text-gray-400"
+                          required
+                          disabled={isSubmitting}
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label htmlFor="phone" className="text-sm font-semibold text-gray-700">Phone Number</label>
+                        <input 
+                          type="tel" 
+                          id="phone" 
+                          placeholder="+91 99999 99999" 
+                          className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl focus:ring-primary focus:border-primary block p-3.5 transition-colors duration-300 outline-none placeholder:text-gray-400"
+                          required
+                          disabled={isSubmitting}
+                        />
+                      </div>
+                    </div>
+
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-semibold text-gray-700">Full Name</label>
+                      <label htmlFor="subject" className="text-sm font-semibold text-gray-700">Subject</label>
                       <input 
                         type="text" 
-                        id="name" 
-                        placeholder="John Doe" 
+                        id="subject" 
+                        placeholder="How can we help?" 
                         className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl focus:ring-primary focus:border-primary block p-3.5 transition-colors duration-300 outline-none placeholder:text-gray-400"
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
+
                     <div className="space-y-2">
-                      <label htmlFor="phone" className="text-sm font-semibold text-gray-700">Phone Number</label>
-                      <input 
-                        type="tel" 
-                        id="phone" 
-                        placeholder="+91 99999 99999" 
-                        className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl focus:ring-primary focus:border-primary block p-3.5 transition-colors duration-300 outline-none placeholder:text-gray-400"
+                      <label htmlFor="message" className="text-sm font-semibold text-gray-700">Message</label>
+                      <textarea 
+                        id="message" 
+                        rows={5}
+                        placeholder="Please describe your inquiry..." 
+                        className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl focus:ring-primary focus:border-primary block p-3.5 transition-colors duration-300 outline-none resize-none placeholder:text-gray-400"
                         required
-                      />
+                        disabled={isSubmitting}
+                      ></textarea>
                     </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-semibold text-gray-700">Subject</label>
-                    <input 
-                      type="text" 
-                      id="subject" 
-                      placeholder="How can we help?" 
-                      className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl focus:ring-primary focus:border-primary block p-3.5 transition-colors duration-300 outline-none placeholder:text-gray-400"
-                      required
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-semibold text-gray-700">Message</label>
-                    <textarea 
-                      id="message" 
-                      rows={5}
-                      placeholder="Please describe your inquiry..." 
-                      className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl focus:ring-primary focus:border-primary block p-3.5 transition-colors duration-300 outline-none resize-none placeholder:text-gray-400"
-                      required
-                    ></textarea>
-                  </div>
-
-                  <button 
-                    type="submit"
-                    className="btn-primary w-full text-lg py-4 shadow-md mt-4"
-                  >
-                    Send Message
-                  </button>
-                </form>
+                    <button 
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="btn-primary w-full text-lg py-4 shadow-md mt-4 flex justify-center items-center gap-2 disabled:opacity-70"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 size={20} className="animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        'Send Message'
+                      )}
+                    </button>
+                  </form>
+                )}
               </div>
             </FadeIn>
 
@@ -184,7 +220,7 @@ const Contact = () => {
 
       {/* FAQ Section */}
       <SectionReveal className="py-20 lg:py-28 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+        <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
           <FadeIn className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 tracking-tight">Frequently Asked Questions</h2>
             <p className="text-gray-500">Quick answers to the questions we hear most often.</p>

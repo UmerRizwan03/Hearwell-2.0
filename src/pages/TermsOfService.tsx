@@ -5,7 +5,7 @@ const TermsOfService = () => {
   return (
     <div className="bg-white">
       <SectionReveal className="py-20 lg:py-28 pt-32">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-6 lg:px-8">
           <FadeIn className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8 tracking-tight">Terms of Service</h1>
             <p className="text-gray-500 mb-12 text-sm uppercase tracking-widest font-semibold italic">Last Updated: April 2, 2026</p>

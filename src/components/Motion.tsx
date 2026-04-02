@@ -148,3 +148,14 @@ export const StaggerItem: React.FC<StaggerProps> = ({
     {children}
   </motion.div>
 );
+
+/* ─── Soundwave Section Divider ─── */
+export const SectionDivider: React.FC<{ className?: string }> = ({ className = '' }) => (
+  <div className={`w-full overflow-hidden h-16 md:h-24 flex items-center justify-center opacity-20 pointer-events-none ${className}`}>
+    <svg className="w-full h-full max-w-5xl" viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M-100,50 Q200,20 500,50 T1100,50 T1600,20" stroke="#1D544F" strokeWidth="2" fill="none" />
+      <path d="M-100,60 Q250,80 550,60 T1150,60 T1600,80" stroke="#1D544F" strokeWidth="1" fill="none" />
+      <path d="M-100,40 Q300,10 600,40 T1200,40 T1600,10" stroke="#1D544F" strokeWidth="1" fill="none" strokeDasharray="4 4" />
+    </svg>
+  </div>
+);

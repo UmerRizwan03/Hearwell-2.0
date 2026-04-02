@@ -14,7 +14,7 @@ const HearingAids = () => {
       />
 
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
              <FadeScaleIn>
                <div className="bg-gray-100 rounded-3xl aspect-square overflow-hidden shadow-lg border border-gray-100 p-8 flex items-center justify-center">
@@ -152,8 +152,8 @@ const HearingAids = () => {
       </SectionReveal>
 
       {/* CTA */}
-      <SectionReveal className="bg-primary py-20">
-        <div className="container mx-auto px-4 text-center">
+      <SectionReveal className="bg-primary-gradient py-20">
+        <div className="container mx-auto px-6 lg:px-8 text-center">
           <FadeIn className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Take the first step towards better hearing</h2>
             <p className="text-white/90 text-xl mx-auto mb-10">Schedule a comprehensive hearing evaluation with our specialists.</p>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Globe, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -19,17 +19,14 @@ const Footer = () => {
               Professional hearing care and speech therapy services for children and adults. Dedicated to restoring the joy of sound and clear communication since 2014.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors flex items-center justify-center text-white/70 border border-white/10">
+              <a href="https://www.facebook.com/profile.php?id=100063747556166" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors flex items-center justify-center text-white/70 border border-white/10">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors flex items-center justify-center text-white/70 border border-white/10">
+              <a href="https://www.instagram.com/hearwell_speech_and_hearing/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors flex items-center justify-center text-white/70 border border-white/10">
                 <Instagram size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors flex items-center justify-center text-white/70 border border-white/10">
-                <Twitter size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors flex items-center justify-center text-white/70 border border-white/10">
-                <Linkedin size={18} />
+              <a href="https://www.practo.com/ernakulam/clinic/hearwell-speech-and-hearing-centre-perumbavoor-1/audiologist-ps-62" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors flex items-center justify-center text-white/70 border border-white/10">
+                <Globe size={18} />
               </a>
             </div>
           </div>
@@ -38,12 +35,12 @@ const Footer = () => {
           <div className="lg:pl-8">
             <h3 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">Quick Links</h3>
             <ul className="flex flex-col gap-4 text-sm text-white/70">
-              <li><Link to="/about" className="hover:text-white hover:translate-x-1 transition-all inline-block">&rarr; About Clinic</Link></li>
-              <li><Link to="/doctor" className="hover:text-white hover:translate-x-1 transition-all inline-block">&rarr; Our Audiologist</Link></li>
-              <li><Link to="/services" className="hover:text-white hover:translate-x-1 transition-all inline-block">&rarr; All Services</Link></li>
-              <li><Link to="/programs" className="hover:text-white hover:translate-x-1 transition-all inline-block">&rarr; Child Programs</Link></li>
-              <li><Link to="/hearing-aids" className="hover:text-white hover:translate-x-1 transition-all inline-block">&rarr; Hearing Aids</Link></li>
-              <li><Link to="/blog" className="hover:text-white hover:translate-x-1 transition-all inline-block">&rarr; Latest News</Link></li>
+              <li><Link to="/about" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2"><ArrowRight size={14} /> About Clinic</Link></li>
+              <li><Link to="/doctor" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2"><ArrowRight size={14} /> Our Audiologist</Link></li>
+              <li><Link to="/services" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2"><ArrowRight size={14} /> All Services</Link></li>
+              <li><Link to="/programs" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2"><ArrowRight size={14} /> Child Programs</Link></li>
+              <li><Link to="/hearing-aids" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2"><ArrowRight size={14} /> Hearing Aids</Link></li>
+              <li><Link to="/blog" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2"><ArrowRight size={14} /> Latest News</Link></li>
             </ul>
           </div>
 

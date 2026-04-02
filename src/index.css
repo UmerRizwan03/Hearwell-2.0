@@ -2,9 +2,10 @@
 
 @theme {
   --color-primary: #1D544F;
-  --color-secondary: #f4f4f5;
+  --color-primary-dark: #123834;
   --font-sans: "Outfit", "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
 }
 
 @layer base {
@@ -72,11 +73,26 @@
 
   /* ─── Standardized Buttons ─── */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-[var(--color-primary)]/90 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 focus:ring-4 focus:ring-[var(--color-primary)]/50 focus:outline-none;
+    @apply inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] text-white px-8 py-4 rounded-full font-bold hover:bg-[var(--color-primary)]/90 hover:-translate-y-1 transition-all duration-300 focus:ring-4 focus:ring-[var(--color-primary)]/50 focus:outline-none;
+    box-shadow: 0 8px 30px -6px rgba(29,84,79,0.35);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 12px 40px -6px rgba(29,84,79,0.5);
   }
   
   .btn-white {
     @apply inline-flex items-center justify-center gap-2 bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-bold shadow-lg hover:bg-gray-50 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 focus:ring-4 focus:ring-white/50 focus:outline-none;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent text-[var(--color-primary)] px-8 py-4 rounded-full font-bold border-2 border-[var(--color-primary)]/30 hover:bg-[var(--color-primary)] hover:text-white hover:border-[var(--color-primary)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 focus:ring-4 focus:ring-[var(--color-primary)]/50 focus:outline-none;
+    box-shadow: none;
+  }
+
+  /* ─── Gradient CTA sections ─── */
+  .bg-primary-gradient {
+    background: linear-gradient(135deg, #1D544F 0%, #123834 100%);
   }
 }
 

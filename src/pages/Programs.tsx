@@ -22,7 +22,7 @@ const Programs = () => {
           {/* Program 1: Occupational Therapy */}
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
             <FadeScaleIn className="w-full lg:w-1/2">
-               <div className="bg-gray-100 rounded-[24px] aspect-video lg:aspect-square w-full shadow-lg relative overflow-hidden">
+               <div className="bg-gray-100 rounded-[32px] aspect-video lg:aspect-square w-full shadow-lg relative overflow-hidden">
                  <OptimizedImage src="/images/occupational-therapy.png" alt="Occupational Therapy session" />
                </div>
             </FadeScaleIn>
@@ -51,7 +51,7 @@ const Programs = () => {
           {/* Program 2: IEP (Reversed) */}
           <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center">
             <FadeScaleIn className="w-full lg:w-1/2">
-               <div className="bg-gray-100 rounded-[24px] aspect-video lg:aspect-square w-full shadow-lg relative overflow-hidden">
+               <div className="bg-gray-100 rounded-[32px] aspect-video lg:aspect-square w-full shadow-lg relative overflow-hidden">
                  <OptimizedImage src="/images/child-development.png" alt="Child learning" />
                </div>
             </FadeScaleIn>
@@ -67,7 +67,7 @@ const Programs = () => {
                 <p className="text-gray-600 text-lg mb-6 leading-relaxed">
                   Every child learns differently. We develop comprehensive IEPs tailored specifically to your child's unique educational and developmental needs to ensure academic inclusion.
                 </p>
-                <div className="bg-white rounded-xl p-5 border border-gray-100">
+                <div className="bg-white rounded-2xl p-5 border border-gray-100">
                   <h4 className="font-semibold text-gray-800 mb-2">Our IEP Process:</h4>
                   <p className="text-gray-600 text-sm">Assessment &rarr; Goal Setting &rarr; Implementation &rarr; Ongoing Review</p>
                 </div>
@@ -78,7 +78,7 @@ const Programs = () => {
           {/* Program 3: Special Care */}
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
             <FadeScaleIn className="w-full lg:w-1/2">
-               <div className="bg-gray-100 rounded-[24px] aspect-video lg:aspect-square w-full shadow-lg relative overflow-hidden">
+               <div className="bg-gray-100 rounded-[32px] aspect-video lg:aspect-square w-full shadow-lg relative overflow-hidden">
                  <OptimizedImage src="/images/clinic-interior.png" alt="Clinic care environment" />
                </div>
             </FadeScaleIn>
@@ -108,8 +108,8 @@ const Programs = () => {
       </SectionReveal>
 
       {/* CTA Section */}
-      <SectionReveal className="bg-primary py-20">
-        <div className="container mx-auto px-4 text-center max-w-3xl">
+      <SectionReveal className="bg-primary-gradient py-20">
+        <div className="container mx-auto px-6 lg:px-8 text-center max-w-3xl">
           <FadeIn className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">Ready to support your child's journey?</h2>
             <Link to="/booking" className="btn-white text-lg px-10">

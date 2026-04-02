@@ -1,7 +1,7 @@
 import PageHeader from '../components/PageHeader';
 import { Heart, Activity, Award, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { FadeIn, SectionReveal, StaggerContainer, StaggerItem } from '../components/Motion';
+import { FadeIn, SectionReveal, StaggerContainer, StaggerItem, SectionDivider } from '../components/Motion';
 import { slideInLeft, slideInRight, defaultViewport } from '../utils/motion';
 import OptimizedImage from '../components/OptimizedImage';
 
@@ -17,7 +17,7 @@ const About = () => {
       <SectionReveal className="py-20 lg:py-28">
         <div className="container mx-auto px-6 lg:px-8">
           {/* Clinic Story - Asymmetrical Layout */}
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center mb-28">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center mb-20">
             <motion.div
               className="w-full lg:w-1/2"
               variants={slideInLeft}
@@ -61,6 +61,8 @@ const About = () => {
 
         </div>
       </SectionReveal>
+
+      <SectionDivider />
 
       {/* Core Values - Staggered List */}
       <SectionReveal className="py-20 lg:py-28 bg-gray-50 border-t border-gray-100">

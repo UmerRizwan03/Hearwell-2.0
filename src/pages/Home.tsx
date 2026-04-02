@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { FadeIn, FadeScaleIn, SectionReveal, StaggerContainer, StaggerItem } from '../components/Motion';
+import { FadeIn, FadeScaleIn, SectionReveal, StaggerContainer, StaggerItem, SectionDivider } from '../components/Motion';
 import { heroContainer, heroItem, slideInLeft, slideInRight, defaultViewport } from '../utils/motion';
 import OptimizedImage from '../components/OptimizedImage';
 import { images } from '../utils/images';
@@ -44,12 +44,12 @@ const Home = () => {
               <motion.p variants={heroItem} className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-[90%]">
                 Professional hearing care and speech therapy services for children and adults aiming to restore the joy of sound.
               </motion.p>
-              <motion.div variants={heroItem} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <motion.div variants={heroItem} className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start">
                 <Link to="/booking" className="btn-primary w-full sm:w-auto">
                   Book an Appointment
                 </Link>
-                <Link to="/services" className="btn-white bg-transparent border-2 border-primary text-primary hover:bg-primary/5 hover:border-primary w-full sm:w-auto">
-                  Explore Services
+                <Link to="/services" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all text-lg">
+                  Explore Services <ArrowRight size={18} />
                 </Link>
               </motion.div>
             </motion.div>
@@ -98,6 +98,8 @@ const Home = () => {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* About Snippet */}
       <SectionReveal className="py-20 lg:py-28 bg-white">
         <div className="container mx-auto px-6 lg:px-8">
@@ -124,7 +126,7 @@ const Home = () => {
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-12 gap-6">
             {/* Hearing Aids - large card */}
-            <StaggerItem className="md:col-span-8 bg-white modern-card relative overflow-hidden rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all relative overflow-hidden group">
+            <StaggerItem className="md:col-span-8 bg-white modern-card relative overflow-hidden rounded-[32px] p-8 md:p-12 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-bl-[100px] -mr-10 -mt-10 overflow-hidden group-hover:scale-110 transition-transform duration-700">
                 <OptimizedImage src={images.home.testingAidTile} alt="Audiometry Equipment" className="opacity-40 group-hover:opacity-60 transition-opacity" disableBlur />
               </div>
@@ -140,7 +142,7 @@ const Home = () => {
             </StaggerItem>
 
             {/* Speech Therapy - small card */}
-            <StaggerItem className="md:col-span-4 bg-primary text-white rounded-3xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between group relative overflow-hidden">
+            <StaggerItem className="md:col-span-4 bg-primary text-white rounded-[32px] p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between group relative overflow-hidden">
               <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity group-hover:scale-110 transition-transform duration-700">
                 <OptimizedImage src="/images/speech-therapy.png" alt="Speech Therapy session" disableBlur />
               </div>
@@ -154,7 +156,7 @@ const Home = () => {
             </StaggerItem>
 
             {/* Child Dev - wide card */}
-            <StaggerItem className="md:col-span-12 bg-white modern-card relative overflow-hidden rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 flex flex-col lg:flex-row gap-8 items-center justify-between hover:shadow-md hover:-translate-y-1 transition-all group relative overflow-hidden">
+            <StaggerItem className="md:col-span-12 bg-white modern-card relative overflow-hidden rounded-[32px] p-8 md:p-12 shadow-sm border border-gray-100 flex flex-col lg:flex-row gap-8 items-center justify-between hover:shadow-md hover:-translate-y-1 transition-all group relative overflow-hidden">
               <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 rounded-l-[100px] overflow-hidden hidden lg:block">
                 <OptimizedImage src="/images/child-development.png" alt="Pediatric Therapy" className="opacity-20 group-hover:opacity-40 transition-opacity" disableBlur />
               </div>
@@ -179,7 +181,7 @@ const Home = () => {
 
       {/* Doctor Profile Snippet */}
       <SectionReveal className="py-20 lg:py-28 bg-white overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6 relative">
+        <div className="container mx-auto px-6 lg:px-8 relative">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <motion.div
               className="w-full lg:w-5/12 relative"

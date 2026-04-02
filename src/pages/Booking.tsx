@@ -1,11 +1,25 @@
 import { useState } from 'react';
 import PageHeader from '../components/PageHeader';
-import { Lock, CalendarCheck } from 'lucide-react';
+import { CalendarCheck, Lock, CheckCircle, Loader2 } from 'lucide-react';
 import { FadeIn, SectionReveal } from '../components/Motion';
 
 const Booking = () => {
   const [selectedService, setSelectedService] = useState('Hearing Test');
   const [selectedLocation, setSelectedLocation] = useState('Perumbavoor');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate network request
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      // Reset after 5 seconds
+      setTimeout(() => setIsSuccess(false), 5000);
+    }, 1500);
+  };
 
   const services = ['Hearing Test', 'Speech Therapy', 'Hearing Aids', 'Pediatric Service'];
   const locations = ['Perumbavoor', 'Perinjanam'];
@@ -19,10 +33,25 @@ const Booking = () => {
       />
 
       <SectionReveal className="py-20 lg:py-28">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-6 lg:px-8">
           <FadeIn className="max-w-3xl mx-auto bg-white modern-card relative overflow-hidden rounded-[32px] p-8 md:p-12 shadow-md border border-gray-100">
             
-            <form onSubmit={(e) => e.preventDefault()}>
+            {isSuccess ? (
+              <div className="py-20 text-center flex flex-col items-center justify-center">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
+                  <CheckCircle size={40} />
+                </div>
+                <h3 className="text-3xl font-bold text-gray-800 mb-4">Request Received!</h3>
+                <p className="text-lg text-gray-600 max-w-md mx-auto mb-8">
+                  Thank you for choosing Hearwell. Our team will contact you shortly to confirm the exact time of your appointment.
+                </p>
+                <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 inline-block text-left text-sm">
+                  <p className="text-gray-500 mb-2"><strong className="text-gray-800 font-semibold mr-2">Service:</strong> {selectedService}</p>
+                  <p className="text-gray-500"><strong className="text-gray-800 font-semibold mr-2">Location:</strong> {selectedLocation}</p>
+                </div>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
               {/* Section 1: Patient Info */}
               <div className="mb-12">
                 <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-3">
@@ -100,7 +129,7 @@ const Booking = () => {
                   Preferred Date
                 </h3>
                 <div>
-                  <input type="date" className="w-full md:w-1/2 bg-gray-50 border border-gray-200 text-gray-800 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary p-3.5 transition-colors duration-300 outline-none" required />
+                  <input type="date" required disabled={isSubmitting} className="w-full md:w-1/2 bg-gray-50 border border-gray-200 text-gray-800 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary p-3.5 transition-colors duration-300 outline-none disabled:opacity-70" />
                 </div>
               </div>
 
@@ -112,14 +141,24 @@ const Booking = () => {
                 
                 <button 
                   type="submit"
-                  className="btn-primary w-full text-lg py-5 shadow-xl"
+                  disabled={isSubmitting}
+                  className="btn-primary w-full text-lg py-5 shadow-xl flex items-center justify-center gap-2 disabled:opacity-70"
                 >
-                  <CalendarCheck size={24} /> Confirm Appointment Request
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 size={24} className="animate-spin" /> Confirming...
+                    </>
+                  ) : (
+                    <>
+                      <CalendarCheck size={24} /> Confirm Appointment Request
+                    </>
+                  )}
                 </button>
                 <p className="text-xs text-gray-400 mt-4 text-center max-w-sm">Our team will call you shortly to confirm the exact time of your appointment.</p>
               </div>
 
             </form>
+            )}
 
           </FadeIn>
         </div>

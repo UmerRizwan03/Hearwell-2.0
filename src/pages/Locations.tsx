@@ -12,11 +12,11 @@ const Locations = () => {
       />
 
       <SectionReveal className="py-20 lg:py-28">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-6 lg:px-8">
           <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-10">
 
             {/* Clinic 1: Perumbavoor */}
-            <StaggerItem className="bg-white modern-card relative overflow-hidden rounded-[24px] shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col">
+            <StaggerItem className="bg-white modern-card relative overflow-hidden rounded-[32px] shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col">
               <a href="https://www.google.com/maps/search/Hearwell+Speech+and+Hearing+Centre+Opp+Govt+Boys+Higher+Secondary+School+Ground+Hariharraiyyer+Road+Perumbavoor" target="_blank" rel="noreferrer" className="block h-56 relative overflow-hidden group/map bg-gray-50/50">
                 {/* Modern Map Background */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-primary/5 to-primary/10"></div>
@@ -71,14 +71,14 @@ const Locations = () => {
                   </div>
                 </div>
 
-                <a href="https://www.google.com/maps/search/Hearwell+Speech+and+Hearing+Centre+Opp+Govt+Boys+Higher+Secondary+School+Ground+Hariharraiyyer+Road+Perumbavoor" target="_blank" rel="noreferrer" className="btn-primary w-full bg-transparent border-2 border-primary/30 text-primary hover:bg-primary hover:text-white shadow-none hover:shadow-lg py-4">
+                <a href="https://www.google.com/maps/search/Hearwell+Speech+and+Hearing+Centre+Opp+Govt+Boys+Higher+Secondary+School+Ground+Hariharraiyyer+Road+Perumbavoor" target="_blank" rel="noreferrer" className="btn-ghost w-full py-4">
                   <Navigation size={18} /> GET DIRECTIONS
                 </a>
               </div>
             </StaggerItem>
 
             {/* Clinic 2: Perinjanam */}
-             <StaggerItem className="bg-white modern-card relative overflow-hidden rounded-[24px] shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col">
+             <StaggerItem className="bg-white modern-card relative overflow-hidden rounded-[32px] shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col">
               <a href="https://www.google.com/maps/search/Hearwell+Speech+and+Hearing+Centre+Near+Vadakke+Bus+Stop+Perinjanam+Kerala+680686" target="_blank" rel="noreferrer" className="block h-56 relative overflow-hidden group/map bg-gray-50/50">
                 {/* Modern Map Background */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-primary/5 to-primary/10"></div>
@@ -133,7 +133,7 @@ const Locations = () => {
                   </div>
                 </div>
 
-                <a href="https://www.google.com/maps/search/Hearwell+Speech+and+Hearing+Centre+Near+Vadakke+Bus+Stop+Perinjanam+Kerala+680686" target="_blank" rel="noreferrer" className="btn-primary w-full bg-transparent border-2 border-primary/30 text-primary hover:bg-primary hover:text-white shadow-none hover:shadow-lg py-4">
+                <a href="https://www.google.com/maps/search/Hearwell+Speech+and+Hearing+Centre+Near+Vadakke+Bus+Stop+Perinjanam+Kerala+680686" target="_blank" rel="noreferrer" className="btn-ghost w-full py-4">
                   <Navigation size={18} /> GET DIRECTIONS
                 </a>
               </div>
