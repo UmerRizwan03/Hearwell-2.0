@@ -45,7 +45,7 @@ const About = () => {
             >
               <div className="absolute inset-0 bg-gray-100 rounded-[24px] transform translate-x-4 translate-y-4"></div>
               <div className="w-full h-full bg-gray-300 rounded-[24px] overflow-hidden relative shadow-lg">
-                <OptimizedImage src="src/assets/images/about/aboutTile.webp" alt="Hearwell Clinic Interior" />
+                <OptimizedImage src="src/assets/images/about/aboutTile.webp" alt="Hearwell Clinic Interior" containerClassName="w-full h-full" />
               </div>
               <div className="absolute -bottom-8 -left-8 bg-primary text-white p-8 rounded-2xl shadow-xl max-w-xs overflow-hidden">
                 <div className="absolute inset-0 opacity-20 pointer-events-none">

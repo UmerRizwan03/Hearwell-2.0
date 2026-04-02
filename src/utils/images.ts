@@ -34,7 +34,7 @@ import heroMain from '../assets/images/hero/hero.webp';
 import hearingAid from '../assets/images/services/hearing-aid.png';
 
 /* ─── Home Images ─── */
-import testingAidTile from '../assets/images/home/testingAidTile.webp';
+import testingAidTile from '../assets/images/home/hearing-testing-aids-new.png';
 
 /* ─── Doctor Images ─── */
 // When doctor.png is available, import it here:

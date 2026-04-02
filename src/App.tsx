@@ -15,6 +15,8 @@ import Locations from './pages/Locations';
 import Contact from './pages/Contact';
 import Booking from './pages/Booking';
 import Blog from './pages/Blog';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 import { useEffect } from 'react';
 
 /* Scroll to top on route change */
@@ -50,6 +52,8 @@ function AnimatedRoutes() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
         </Routes>
       </motion.div>
     </AnimatePresence>
