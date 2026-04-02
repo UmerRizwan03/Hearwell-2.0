@@ -85,7 +85,7 @@ const Services = () => {
 
       {/* Child Development Mosaic */}
       <SectionReveal className="py-20 lg:py-28 bg-gray-50 border-t border-gray-100">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-6 lg:px-8">
           <FadeIn className="flex items-center gap-4 mb-12">
             <h2 className="text-2xl font-bold text-gray-800">Child Development Programs</h2>
             <div className="h-px bg-gray-200 flex-grow"></div>

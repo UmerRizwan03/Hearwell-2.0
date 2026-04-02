@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-12 pb-20 lg:pt-32 lg:pb-40 bg-white">
+      <section className="relative overflow-hidden pt-6 pb-20 lg:pt-16 lg:pb-40 bg-white">
         {/* Abstract Background Waves */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.15]">
           <svg className="w-full h-full animate-float-slow" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -100,7 +100,7 @@ const Home = () => {
 
       {/* About Snippet */}
       <SectionReveal className="py-20 lg:py-28 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-6 lg:px-8">
           <FadeIn className="max-w-3xl mx-auto text-center">
             <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">About The Clinic</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Expert care focused on your well-being.</h3>
@@ -116,7 +116,7 @@ const Home = () => {
 
       {/* Services Overview - Staggered Masonry feel */}
       <SectionReveal className="py-20 bg-gray-50 border-y border-gray-100">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-6 lg:px-8">
           <FadeIn className="mb-12 md:mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Our Primary Services</h2>
             <p className="text-gray-600 max-w-2xl text-lg">Comprehensive diagnostic and therapeutic solutions.</p>

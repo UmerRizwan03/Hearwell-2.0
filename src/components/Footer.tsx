@@ -94,7 +94,7 @@ const Footer = () => {
 
         <div className="border-t border-white/10 pt-8 mt-4 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/50">
           <p>&copy; {new Date().getFullYear()} Hearwell Speech and Hearing Centre. All rights reserved.</p>
-          <div className="flex gap-6">
+          <div className="flex gap-6 mt-4 md:mt-0">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
