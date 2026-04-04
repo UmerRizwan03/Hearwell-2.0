@@ -8,8 +8,8 @@
 import type { Variants, Transition } from 'framer-motion';
 
 /* ─── Base Timing ─── */
-export const BASE_DURATION = 0.6;
-export const BASE_EASE = [0.25, 0.1, 0.25, 1] as [number, number, number, number]; // ease-out cubic
+export const BASE_DURATION = 0.8;
+export const BASE_EASE = [0.16, 1, 0.3, 1] as [number, number, number, number]; // premium slow ease-out
 
 export const baseTransition: Transition = {
   duration: BASE_DURATION,
@@ -88,13 +88,15 @@ export const staggerItem: Variants = {
 
 /* ─── Page transition ─── */
 export const pageTransition: Variants = {
-  initial: { opacity: 0 },
+  initial: { opacity: 0, y: 12 },
   animate: {
     opacity: 1,
-    transition: { duration: 0.25, ease: 'easeOut' },
+    y: 0,
+    transition: { duration: 0.3, ease: 'easeOut' },
   },
   exit: {
     opacity: 0,
+    y: -8,
     transition: { duration: 0.2, ease: 'easeIn' },
   },
 };
@@ -121,11 +123,22 @@ export const heroContainer: Variants = {
 };
 
 export const heroItem: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 10 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: BASE_EASE },
+    transition: { duration: BASE_DURATION, ease: BASE_EASE },
+  },
+};
+
+/* ─── Animated Structural Line ─── */
+export const animatedDivider: Variants = {
+  hidden: { scaleX: 0, opacity: 0, transformOrigin: 'left' },
+  visible: {
+    scaleX: 1,
+    opacity: 1,
+    transformOrigin: 'left',
+    transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] },
   },
 };
 

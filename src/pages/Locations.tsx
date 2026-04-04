@@ -1,17 +1,44 @@
-import PageHeader from '../components/PageHeader';
 import { MapPin, Clock, Phone, Navigation } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { SectionReveal, StaggerContainer, StaggerItem } from '../components/Motion';
+import { heroContainer, heroItem, animatedDivider } from '../utils/motion';
+import { MicroLabel } from '../components/MicroLabel';
 
 const Locations = () => {
   return (
-    <div className="bg-white">
-      <PageHeader 
-        title="Our Locations" 
-        subtitle="Find the nearest Hearwell centre and check our operating hours."
-        image="/images/clinic-interior.png"
-      />
+    <div className="bg-white z-0 relative">
+      {/* Typography-First Directory Header */}
+      <section className="relative isolate pt-6 pb-16 lg:pt-16 lg:pb-24 bg-[#F8FAF9]">
+        <div className="container mx-auto px-6 lg:px-8">
+          <motion.div variants={heroContainer} initial="hidden" animate="visible" className="max-w-4xl">
+            <MicroLabel label="Clinic Network" />
+            
+            <motion.h1 
+              variants={heroItem} 
+              className="text-5xl md:text-7xl lg:text-[5.5rem] font-sans font-medium text-gray-900 tracking-tighter leading-[1.05] mb-8"
+            >
+              Our <br />
+              <span className="text-gray-400 font-normal">Centres.</span>
+            </motion.h1>
+            
+            <motion.p 
+              variants={heroItem} 
+              className="text-xl lg:text-2xl text-gray-600 font-sans leading-relaxed text-balance"
+            >
+              Find the nearest Hearwell clinic. Professional care is closer than you think.
+            </motion.p>
+          </motion.div>
+        </div>
+        
+        <motion.div 
+          variants={animatedDivider} 
+          initial="hidden" 
+          animate="visible" 
+          className="absolute bottom-0 left-0 w-full h-[1px] bg-gray-200"
+        />
+      </section>
 
-      <SectionReveal className="py-20 lg:py-28">
+      <SectionReveal className="py-16 lg:py-24">
         <div className="container mx-auto px-6 lg:px-8">
           <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-10">
 

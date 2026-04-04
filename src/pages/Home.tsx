@@ -23,7 +23,7 @@ const Home = () => {
         <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[80%] bg-[radial-gradient(circle,rgba(130,207,176,0.15)_0%,transparent_60%)] -z-10 animate-pulse-subtle" />
         <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[70%] bg-[radial-gradient(circle,rgba(29,84,79,0.08)_0%,transparent_70%)] -z-10 animate-float-reverse" />
         
-        <div className="container mx-auto px-4 md:px-6 z-10 relative">
+        <div className="container mx-auto px-6 lg:px-8 z-10 relative">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
 
             {/* Hero Text — Staggered reveal */}
@@ -33,7 +33,7 @@ const Home = () => {
               initial="hidden"
               animate="visible"
             >
-              <motion.div variants={heroItem} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm text-[#277A75] text-[11px] font-bold uppercase tracking-[0.2em] mb-6 border border-[#277A75]/20 shadow-[0_4px_15px_-3px_rgba(39,122,117,0.1)]">
+              <motion.div variants={heroItem} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm text-[#277A75] text-[11px] font-bold uppercase tracking-[0.2em] mb-6 border border-[#277A75]/20">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#277A75]"></span>
                 HEARWELL SPEECH & HEARING
               </motion.div>
@@ -70,17 +70,17 @@ const Home = () => {
                   <OptimizedImage src={images.hero.main} alt="Audiologist showing hearing aid to patient" priority className="w-full h-full object-cover scale-105" containerClassName="w-full h-full" />
                 </div>
                 
-                {/* Custom "10+ YEARS EXP" Badge with Soundwave */}
-                <div className="absolute -bottom-8 -left-6 lg:-bottom-12 lg:-left-16 z-20 flex items-center">
+                {/* Custom "10+ YEARS EXP" Badge — inline on mobile, absolute on desktop */}
+                <div className="hidden lg:flex absolute -bottom-12 -left-16 z-20 items-center">
                   {/* Left Soundwave swoosh */}
-                  <svg className="w-20 h-20 text-[#1D544F] opacity-90 -mr-8 z-0 hidden lg:block" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="w-20 h-20 text-[#1D544F] opacity-90 -mr-8 z-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10,50 C40,50 40,20 60,50 C80,80 80,50 100,50" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
                   </svg>
                   
                   {/* Badge */}
-                  <div className="relative z-10 w-[130px] h-[130px] lg:w-[150px] lg:h-[150px] bg-gradient-to-br from-[#1D544F] to-[#123834] rounded-full flex flex-col items-center justify-center p-4 border-[6px] border-white shadow-[0_15px_30px_-5px_rgba(29,84,79,0.4)] transition-transform hover:scale-105">
-                    <span className="text-white font-black text-3xl lg:text-4xl mb-0 leading-none">10+</span>
-                    <span className="text-[#82CFB0] text-[9px] lg:text-[10px] font-bold uppercase tracking-[0.15em] mt-1 relative">Years Exp
+                  <div className="relative z-10 w-[150px] h-[150px] bg-gradient-to-br from-[#1D544F] to-[#123834] rounded-full flex flex-col items-center justify-center p-4 border-[6px] border-white shadow-[0_15px_30px_-5px_rgba(29,84,79,0.4)] transition-transform hover:scale-105">
+                    <span className="text-white font-black text-4xl mb-0 leading-none">10+</span>
+                    <span className="text-[#82CFB0] text-[10px] font-bold uppercase tracking-[0.15em] mt-1 relative">Years Exp
                       <div className="absolute -top-6 -right-6 w-3 h-3 bg-[#82CFB0] rounded-full opacity-50 blur-[2px]"></div>
                     </span>
                   </div>
@@ -93,6 +93,14 @@ const Home = () => {
                   </svg>
                 </div>
               </div>
+
+              {/* Mobile badge — inline below image */}
+              <div className="flex lg:hidden justify-center mt-6">
+                <div className="flex items-center gap-3 bg-gradient-to-r from-[#1D544F] to-[#123834] text-white px-6 py-3 rounded-full shadow-lg">
+                  <span className="font-black text-2xl">10+</span>
+                  <span className="text-[#82CFB0] text-xs font-bold uppercase tracking-wider">Years Experience</span>
+                </div>
+              </div>
             </FadeScaleIn>
           </div>
         </div>
@@ -101,7 +109,7 @@ const Home = () => {
       <SectionDivider />
 
       {/* About Snippet */}
-      <SectionReveal className="py-20 lg:py-28 bg-white">
+      <SectionReveal className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-6 lg:px-8">
           <FadeIn className="max-w-3xl mx-auto text-center">
             <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">About The Clinic</h2>
@@ -117,16 +125,16 @@ const Home = () => {
       </SectionReveal>
 
       {/* Services Overview - Staggered Masonry feel */}
-      <SectionReveal className="py-20 bg-gray-50 border-y border-gray-100">
+      <SectionReveal className="py-16 lg:py-24 bg-gray-50 border-y border-gray-100">
         <div className="container mx-auto px-6 lg:px-8">
           <FadeIn className="mb-12 md:mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Our Primary Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Primary Services</h2>
             <p className="text-gray-600 max-w-2xl text-lg">Comprehensive diagnostic and therapeutic solutions.</p>
           </FadeIn>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-12 gap-6">
             {/* Hearing Aids - large card */}
-            <StaggerItem className="md:col-span-8 bg-white modern-card relative overflow-hidden rounded-[32px] p-8 md:p-12 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all relative overflow-hidden group">
+            <StaggerItem className="md:col-span-8 bg-white modern-card card-hover-glow relative overflow-hidden rounded-[32px] p-8 md:p-12 shadow-sm border border-gray-100 relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-bl-[100px] -mr-10 -mt-10 overflow-hidden group-hover:scale-110 transition-transform duration-700">
                 <OptimizedImage src={images.home.testingAidTile} alt="Audiometry Equipment" className="opacity-40 group-hover:opacity-60 transition-opacity" disableBlur />
               </div>
@@ -142,7 +150,7 @@ const Home = () => {
             </StaggerItem>
 
             {/* Speech Therapy - small card */}
-            <StaggerItem className="md:col-span-4 bg-primary text-white rounded-[32px] p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between group relative overflow-hidden">
+            <StaggerItem className="md:col-span-4 bg-primary text-white rounded-[32px] p-8 shadow-sm card-hover-lift flex flex-col justify-between group relative overflow-hidden">
               <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity group-hover:scale-110 transition-transform duration-700">
                 <OptimizedImage src="/images/speech-therapy.png" alt="Speech Therapy session" disableBlur />
               </div>
@@ -156,7 +164,7 @@ const Home = () => {
             </StaggerItem>
 
             {/* Child Dev - wide card */}
-            <StaggerItem className="md:col-span-12 bg-white modern-card relative overflow-hidden rounded-[32px] p-8 md:p-12 shadow-sm border border-gray-100 flex flex-col lg:flex-row gap-8 items-center justify-between hover:shadow-md hover:-translate-y-1 transition-all group relative overflow-hidden">
+            <StaggerItem className="md:col-span-12 bg-white modern-card card-hover-border relative overflow-hidden rounded-[32px] p-8 md:p-12 shadow-sm border border-gray-100 flex flex-col lg:flex-row gap-8 items-center justify-between group relative overflow-hidden">
               <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 rounded-l-[100px] overflow-hidden hidden lg:block">
                 <OptimizedImage src="/images/child-development.png" alt="Pediatric Therapy" className="opacity-20 group-hover:opacity-40 transition-opacity" disableBlur />
               </div>
@@ -211,7 +219,7 @@ const Home = () => {
               viewport={defaultViewport}
             >
               <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Lead Audiologist</h2>
-              <h3 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">Ms. Babitha Fazal</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Ms. Babitha Fazal</h3>
               <p className="text-xl text-gray-500 font-medium mb-8 pb-8 border-b border-gray-100">16 years total experience • Audiologist</p>
 
               <blockquote className="text-xl lg:text-2xl text-gray-700 italic font-serif leading-relaxed mb-8">

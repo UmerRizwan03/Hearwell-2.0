@@ -17,7 +17,7 @@ import Booking from './pages/Booking';
 import Blog from './pages/Blog';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 /* Scroll to top on route change */
 function ScrollToTop() {
@@ -26,6 +26,25 @@ function ScrollToTop() {
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   }, [pathname]);
   return null;
+}
+
+/* Scroll progress indicator */
+function ScrollProgress() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      setProgress(scrollPercent);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return <div className="scroll-progress" style={{ width: `${progress}%` }} />;
 }
 
 /* Animated page wrapper */
@@ -64,6 +83,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <ScrollProgress />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow pt-[72px]">

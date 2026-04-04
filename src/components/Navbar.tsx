@@ -74,14 +74,14 @@ const Navbar = () => {
                 <li key={link.name} className="relative">
                   <Link
                     to={link.path}
-                    className={`text-sm font-medium transition-colors hover:text-primary ${
-                      location.pathname === link.path ? 'text-primary' : 'text-gray-600'
+                    className={`nav-link text-sm font-medium transition-colors hover:text-primary ${
+                      location.pathname === link.path ? 'text-primary font-semibold' : 'text-gray-600'
                     }`}
                   >
                     {link.name}
                   </Link>
                   {location.pathname === link.path && (
-                    <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-5 h-[3px] bg-primary rounded-full" />
+                    <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-5 h-[3px] bg-primary rounded-full" />
                   )}
                 </li>
               ))}

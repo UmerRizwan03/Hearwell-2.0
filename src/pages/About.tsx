@@ -1,23 +1,68 @@
-import PageHeader from '../components/PageHeader';
 import { Heart, Activity, Award, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { FadeIn, SectionReveal, StaggerContainer, StaggerItem, SectionDivider } from '../components/Motion';
-import { slideInLeft, slideInRight, defaultViewport } from '../utils/motion';
+import { heroContainer, heroItem, slideInLeft, slideInRight, defaultViewport } from '../utils/motion';
 import OptimizedImage from '../components/OptimizedImage';
+import { MicroLabel } from '../components/MicroLabel';
 
 const About = () => {
   return (
     <div className="bg-white">
-      <PageHeader
-        title="About Our Clinic"
-        subtitle="Serving the community with dedicated hearing and speech care since 2014."
-        image="src/assets/images/about/aboutBanner.webp"
-      />
+      {/* Typography-First Trust Anchor Header */}
+      <section className="relative isolate pt-6 pb-16 lg:pt-16 lg:pb-24 bg-[#F8FAF9] border-b border-gray-100 overflow-hidden">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* Left Typography Column */}
+            <div className="lg:col-span-7">
+              <motion.div variants={heroContainer} initial="hidden" animate="visible" className="max-w-2xl">
+                <MicroLabel label="About Our Practice" />
+                
+                <motion.h1 
+                  variants={heroItem} 
+                  className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif tracking-tight leading-[1.05] text-gray-900 mb-8"
+                >
+                  Restoring <br /><span className="italic">connection.</span>
+                </motion.h1>
+                
+                <motion.p 
+                  variants={heroItem} 
+                  className="text-xl lg:text-2xl text-gray-600 font-sans leading-relaxed text-balance"
+                >
+                  Serving the community with dedicated hearing and speech care grounded in clinical excellence since 2014.
+                </motion.p>
+              </motion.div>
+            </div>
 
-      <SectionReveal className="py-20 lg:py-28">
+            {/* Right Context Image Anchor */}
+            <div className="lg:col-span-5 relative mt-8 lg:mt-0">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                className="relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] aspect-[4/5] max-w-sm mr-auto lg:ml-auto lg:mr-0 z-10"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 to-transparent z-10 pointer-events-none"></div>
+                <OptimizedImage 
+                  src="src/assets/images/about/aboutBanner.webp" 
+                  alt="Hearwell Clinic Team" 
+                  containerClassName="w-full h-full" 
+                  priority 
+                  className="w-full h-full object-cover" 
+                  disableBlur 
+                />
+              </motion.div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+
+      <SectionReveal className="py-16 lg:py-24">
         <div className="container mx-auto px-6 lg:px-8">
           {/* Clinic Story - Asymmetrical Layout */}
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center mb-20">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center mb-16">
             <motion.div
               className="w-full lg:w-1/2"
               variants={slideInLeft}
@@ -25,7 +70,7 @@ const About = () => {
               whileInView="visible"
               viewport={defaultViewport}
             >
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 tracking-tight leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 tracking-tight leading-tight">
                 Established in 2014 to revolutionize hearing care.
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
@@ -65,7 +110,7 @@ const About = () => {
       <SectionDivider />
 
       {/* Core Values - Staggered List */}
-      <SectionReveal className="py-20 lg:py-28 bg-gray-50 border-t border-gray-100">
+      <SectionReveal className="py-16 lg:py-24 bg-gray-50 border-t border-gray-100">
         <div className="container mx-auto px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800">Core Values</h2>
@@ -116,7 +161,7 @@ const About = () => {
       </SectionReveal>
 
       {/* Experience Stats */}
-      <SectionReveal className="bg-white py-20 border-y border-gray-100">
+      <SectionReveal className="bg-white py-16 lg:py-20 border-y border-gray-100">
         <div className="container mx-auto px-6 lg:px-8">
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-200">
             <StaggerItem className="p-6">

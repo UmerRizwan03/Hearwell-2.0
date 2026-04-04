@@ -3,6 +3,7 @@
 @theme {
   --color-primary: #1D544F;
   --color-primary-dark: #123834;
+  --color-accent: #D4A853;
   --font-sans: "Outfit", "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-serif: "Playfair Display", Georgia, serif;
@@ -11,19 +12,17 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Adjusting for navbar height + buffer */
+    scroll-padding-top: 80px;
   }
 
   body {
     @apply text-gray-800 antialiased bg-white font-sans;
   }
 
-  /* Smooth focus transitions on all inputs */
   input, textarea, select {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
 
-  /* Subtle button hover scale globally */
   button, a {
     transition: all 0.3s ease;
   }
@@ -71,6 +70,33 @@
     border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
   }
 
+  /* ─── Card Hover Varieties ─── */
+  .card-hover-glow {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-hover-glow:hover {
+    box-shadow: 0 0 30px -5px rgba(29,84,79,0.18), 0 8px 24px -8px rgba(29,84,79,0.12);
+    transform: translateY(-2px);
+  }
+
+  .card-hover-border {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(229, 231, 235, 1);
+  }
+  .card-hover-border:hover {
+    border-color: rgba(29, 84, 79, 0.3);
+    box-shadow: 0 4px 20px -4px rgba(29,84,79,0.1);
+    transform: translateY(-3px);
+  }
+
+  .card-hover-lift {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-hover-lift:hover {
+    box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1);
+    transform: translateY(-6px);
+  }
+
   /* ─── Standardized Buttons ─── */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] text-white px-8 py-4 rounded-full font-bold hover:bg-[var(--color-primary)]/90 hover:-translate-y-1 transition-all duration-300 focus:ring-4 focus:ring-[var(--color-primary)]/50 focus:outline-none;
@@ -94,24 +120,73 @@
   .bg-primary-gradient {
     background: linear-gradient(135deg, #1D544F 0%, #123834 100%);
   }
+
+  /* ─── Nav link hover underline ─── */
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 2px;
+    background: var(--color-primary);
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+  }
+  .nav-link:hover::after {
+    transform: translateX(-50%) scaleX(0.8);
+  }
+
+  /* ─── Scroll Progress Bar ─── */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1D544F, #82CFB0);
+    z-index: 9999;
+    transition: width 0.05s linear;
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* ─── Styled Date Input ─── */
+  .date-input-wrapper {
+    position: relative;
+  }
+  .date-input-wrapper input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+  }
+  .date-input-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
 }
 
 /* ─── Optimized Image System ─── */
 
-/* Container: ensures no layout shift */
 .optimized-image-container {
   display: block;
   line-height: 0;
-  background-color: #f3f4f6; /* gray-100 — placeholder bg */
+  background-color: #f3f4f6;
 }
 
-/* Image: GPU-accelerated transitions */
 .optimized-image {
   will-change: filter, transform;
   backface-visibility: hidden;
 }
 
-/* Aspect ratio containers */
 .image-aspect-container,
 .image-fixed-container {
   display: block;

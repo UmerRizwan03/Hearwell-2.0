@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Globe, ArrowRight } fr
 const Footer = () => {
   return (
     <footer className="bg-[#0c2623] pt-20 pb-10 mt-auto border-t-[8px] border-primary">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           
           {/* Brand Col */}

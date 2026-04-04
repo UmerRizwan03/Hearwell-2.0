@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import PageHeader from '../components/PageHeader';
 import { Phone, Mail, MapPin, MessageCircle, ChevronDown, CheckCircle, Loader2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { FadeIn, SectionReveal, StaggerContainer, StaggerItem } from '../components/Motion';
+import { heroContainer, heroItem } from '../utils/motion';
+import { MicroLabel } from '../components/MicroLabel';
 
 const faqs = [
   {
@@ -71,13 +73,30 @@ const Contact = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <PageHeader 
-        title="Contact Us" 
-        subtitle="We're here to answer your questions and help you start your journey to better health."
-        image="/images/clinic-interior.png"
-      />
+      {/* Typography-First Trust Anchor Header */}
+      <section className="relative isolate pt-6 pb-16 lg:pt-16 lg:pb-24 bg-[#F8FAF9] border-b border-gray-100 overflow-hidden">
+        <div className="container mx-auto px-6 lg:px-8">
+          <motion.div variants={heroContainer} initial="hidden" animate="visible" className="max-w-4xl">
+            <MicroLabel label="Contact Us" />
+            
+            <motion.h1 
+              variants={heroItem} 
+              className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif tracking-tight leading-[1.05] text-gray-900 mb-8"
+            >
+              Start the <br /><span className="italic">conversation.</span>
+            </motion.h1>
+            
+            <motion.p 
+              variants={heroItem} 
+              className="text-xl lg:text-2xl text-gray-600 font-sans leading-relaxed text-balance"
+            >
+              We're here to answer your questions and help you start your journey to better health.
+            </motion.p>
+          </motion.div>
+        </div>
+      </section>
 
-      <SectionReveal className="py-20 lg:py-28">
+      <SectionReveal className="pb-16 lg:pb-24 -mt-20 lg:-mt-32 relative z-20">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 max-w-6xl mx-auto">
             
@@ -219,7 +238,7 @@ const Contact = () => {
       </SectionReveal>
 
       {/* FAQ Section */}
-      <SectionReveal className="py-20 lg:py-28 bg-white border-t border-gray-100">
+      <SectionReveal className="py-16 lg:py-24 bg-white border-t border-gray-100">
         <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
           <FadeIn className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 tracking-tight">Frequently Asked Questions</h2>

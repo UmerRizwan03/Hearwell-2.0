@@ -5,14 +5,39 @@ import { ChevronRight } from 'lucide-react';
 import { heroContainer, heroItem } from '../utils/motion';
 import OptimizedImage from './OptimizedImage';
 
+type ColorScheme = 'clinical' | 'warm' | 'neutral';
+
 interface PageHeaderProps {
   title: string;
   subtitle?: string;
   image?: string;
+  colorScheme?: ColorScheme;
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ title, subtitle, image }) => {
+const colorSchemes: Record<ColorScheme, { blob1: string; blob2: string; border: string; bg: string }> = {
+  clinical: {
+    blob1: 'bg-[#1D544F]/[0.08]',
+    blob2: 'bg-[#82CFB0]/[0.1]',
+    border: 'border-[#1D544F]/5',
+    bg: 'bg-[#1D544F]/[0.02]',
+  },
+  warm: {
+    blob1: 'bg-[#D4A853]/[0.08]',
+    blob2: 'bg-[#82CFB0]/[0.06]',
+    border: 'border-[#D4A853]/10',
+    bg: 'bg-[#D4A853]/[0.015]',
+  },
+  neutral: {
+    blob1: 'bg-gray-300/20',
+    blob2: 'bg-[#1D544F]/[0.04]',
+    border: 'border-gray-200/50',
+    bg: 'bg-gray-50/50',
+  },
+};
+
+const PageHeader: React.FC<PageHeaderProps> = ({ title, subtitle, image, colorScheme = 'clinical' }) => {
   const location = useLocation();
+  const colors = colorSchemes[colorScheme];
 
   // Derive breadcrumb from path
   const pathSegments = location.pathname.split('/').filter(Boolean);
@@ -23,10 +48,10 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title, subtitle, image }) => {
     : '';
 
   return (
-    <div className="relative isolate bg-[#1D544F]/[0.02] overflow-hidden py-16 md:py-24 border-b border-[#1D544F]/5">
-      {/* Abstract background blobs */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#1D544F]/[0.06] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 -z-10 animate-float"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#82CFB0]/[0.08] rounded-full blur-3xl translate-y-1/3 -translate-x-1/2 -z-10 animate-float-reverse"></div>
+    <div className={`relative isolate ${colors.bg} overflow-hidden py-16 md:py-24 ${colors.border} border-b`}>
+      {/* Abstract background blobs — vary per scheme */}
+      <div className={`absolute top-0 right-0 w-64 h-64 ${colors.blob1} rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 -z-10 animate-float`}></div>
+      <div className={`absolute bottom-0 left-0 w-80 h-80 ${colors.blob2} rounded-full blur-3xl translate-y-1/3 -translate-x-1/2 -z-10 animate-float-reverse`}></div>
       
       {/* Abstract Soundwave Graphic */}
       <svg className="absolute top-[40%] left-0 w-[150%] h-[120%] -translate-y-1/2 opacity-[0.03] text-[#1D544F] min-w-[1200px] -z-10 pointer-events-none animate-pulse-subtle" viewBox="0 0 1200 200" preserveAspectRatio="none">

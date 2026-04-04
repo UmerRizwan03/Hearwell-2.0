@@ -4,7 +4,7 @@ import { FadeIn } from '../components/Motion';
 const PrivacyPolicy = () => {
   return (
     <div className="bg-white">
-      <SectionReveal className="py-20 lg:py-28 pt-32">
+      <SectionReveal className="py-20 lg:py-28">
         <div className="container mx-auto px-6 lg:px-8">
           <FadeIn className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8 tracking-tight">Privacy Policy</h1>

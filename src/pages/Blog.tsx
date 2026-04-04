@@ -1,24 +1,42 @@
-import PageHeader from '../components/PageHeader';
 import { CalendarDays, ExternalLink } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { FadeIn, FadeScaleIn, SectionReveal, StaggerContainer, StaggerItem } from '../components/Motion';
+import { heroContainer, heroItem } from '../utils/motion';
 import OptimizedImage from '../components/OptimizedImage';
+import { MicroLabel } from '../components/MicroLabel';
 
 const Blog = () => {
   return (
     <div className="bg-white">
-      <PageHeader 
-        title="Health Resources" 
-        subtitle="Expert insights and the latest updates in speech and hearing care."
-        image="/images/blog-banner.png"
-      />
+      {/* Typography-First Journal Header */}
+      <section className="relative isolate pt-6 pb-16 lg:pt-16 lg:pb-24 bg-[#F8FAF9] border-b border-gray-100 overflow-hidden">
+        <div className="container mx-auto px-6 lg:px-8">
+          <motion.div variants={heroContainer} initial="hidden" animate="visible" className="max-w-4xl">
+            <MicroLabel label="Our Journal" />
+            
+            <motion.h1 
+              variants={heroItem} 
+              className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif tracking-tight leading-[1.05] text-gray-900 mb-8"
+            >
+              Insights & <br /><span className="italic">Research.</span>
+            </motion.h1>
+            
+            <motion.p 
+              variants={heroItem} 
+              className="text-xl lg:text-2xl text-gray-600 font-sans leading-relaxed text-balance"
+            >
+              Expert insights and the latest updates in speech and hearing care, curated for our community.
+            </motion.p>
+          </motion.div>
+        </div>
+      </section>
 
       <SectionReveal className="py-16 md:py-24">
         <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
           
           {/* Featured Article */}
           <FadeScaleIn className="mb-20">
-            <Link to="#" className="group block bg-white modern-card relative overflow-hidden rounded-[32px] overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition-all relative">
+            <article className="group block bg-white modern-card card-hover-lift relative overflow-hidden rounded-[32px] overflow-hidden shadow-md border border-gray-100">
                <div className="absolute top-6 left-6 z-20 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
                  Featured
                </div>
@@ -37,7 +55,7 @@ const Blog = () => {
                     </h2>
                  </div>
                </div>
-            </Link>
+            </article>
           </FadeScaleIn>
 
           {/* Article List */}
@@ -61,9 +79,9 @@ const Blog = () => {
                       How Custom Hearing Aids Improve Quality of Life
                    </h4>
                    <p className="text-gray-600 mb-4 line-clamp-2">Discover the profound impact that properly fitted, modern digital hearing aids can have on daily interactions and mental wellbeing.</p>
-                   <Link to="#" className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2 transition-all mt-auto">
+                   <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2 transition-all mt-auto cursor-default">
                      Read Full Article <ExternalLink size={16} />
-                   </Link>
+                   </span>
                  </div>
               </article>
             </StaggerItem>
@@ -82,9 +100,9 @@ const Blog = () => {
                       5 Signs Your Child Might Need an IEP
                    </h4>
                    <p className="text-gray-600 mb-4 line-clamp-2">Understanding the subtle early indicators that your child could benefit from an Individualised Education Program at school.</p>
-                   <Link to="#" className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2 transition-all mt-auto">
+                   <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2 transition-all mt-auto cursor-default">
                      Read Full Article <ExternalLink size={16} />
-                   </Link>
+                   </span>
                  </div>
               </article>
             </StaggerItem>
@@ -103,9 +121,9 @@ const Blog = () => {
                       What to Expect During a Newborn Hearing Screening (OAE)
                    </h4>
                    <p className="text-gray-600 mb-4 line-clamp-2">A comprehensive parent's guide to the OAE process right after birth, explaining why it is painless and utterly crucial.</p>
-                   <Link to="#" className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2 transition-all mt-auto">
+                   <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2 transition-all mt-auto cursor-default">
                      Read Full Article <ExternalLink size={16} />
-                   </Link>
+                   </span>
                  </div>
               </article>
             </StaggerItem>
@@ -118,7 +136,7 @@ const Blog = () => {
       <SectionReveal className="bg-primary-gradient py-20">
         <div className="container mx-auto px-6 lg:px-8">
           <FadeIn className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">Stay informed on hearing care.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Stay informed on hearing care.</h2>
             <p className="text-white/80 mb-10 text-lg">Subscribe to our monthly newsletter for expert tips, clinic updates, and educational resources directly to your inbox.</p>
             
             <form className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onSubmit={(e) => e.preventDefault()}>

@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import PageHeader from '../components/PageHeader';
-import { CalendarCheck, Lock, CheckCircle, Loader2 } from 'lucide-react';
+import { CalendarCheck, Lock, CheckCircle, Loader2, CalendarDays } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { FadeIn, SectionReveal } from '../components/Motion';
+import { heroContainer, heroItem, animatedDivider } from '../utils/motion';
+import { MicroLabel } from '../components/MicroLabel';
 
 const Booking = () => {
   const [selectedService, setSelectedService] = useState('Hearing Test');
@@ -26,13 +28,38 @@ const Booking = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <PageHeader 
-        title="Book Appointment" 
-        subtitle="Schedule your visit in minutes. Quick, convenient, and patient-focused."
-        image="/images/clinic-interior.png"
-      />
+      {/* Typography-First Action Utility Header */}
+      <section className="relative isolate pt-6 pb-16 lg:pt-16 lg:pb-24 bg-[#F8FAF9]">
+        <div className="container mx-auto px-6 lg:px-8">
+          <motion.div variants={heroContainer} initial="hidden" animate="visible" className="max-w-4xl">
+            <MicroLabel label="Patient Portal" />
+            
+            <motion.h1 
+              variants={heroItem} 
+              className="text-5xl md:text-7xl lg:text-[5.5rem] font-sans font-medium text-gray-900 tracking-tighter leading-[1.05] mb-8"
+            >
+              Book an <br />
+              <span className="text-gray-400 font-normal">Appointment.</span>
+            </motion.h1>
+            
+            <motion.p 
+              variants={heroItem} 
+              className="text-xl lg:text-2xl text-gray-600 font-sans leading-relaxed text-balance"
+            >
+              Take the first step toward better hearing and speech. Quick, convenient, and entirely patient-focused.
+            </motion.p>
+          </motion.div>
+        </div>
+        
+        <motion.div 
+          variants={animatedDivider} 
+          initial="hidden" 
+          animate="visible" 
+          className="absolute bottom-0 left-0 w-full h-[1px] bg-gray-200"
+        />
+      </section>
 
-      <SectionReveal className="py-20 lg:py-28">
+      <SectionReveal className="pb-16 lg:pb-24 -mt-24 lg:-mt-36 relative z-20">
         <div className="container mx-auto px-6 lg:px-8">
           <FadeIn className="max-w-3xl mx-auto bg-white modern-card relative overflow-hidden rounded-[32px] p-8 md:p-12 shadow-md border border-gray-100">
             
@@ -122,14 +149,22 @@ const Booking = () => {
                 </div>
               </div>
 
-              {/* Section 4: Date */}
+              {/* Section 4: Date — styled date picker */}
               <div className="mb-12">
                  <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-3">
                   <span className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm">4</span> 
                   Preferred Date
                 </h3>
-                <div>
-                  <input type="date" required disabled={isSubmitting} className="w-full md:w-1/2 bg-gray-50 border border-gray-200 text-gray-800 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary p-3.5 transition-colors duration-300 outline-none disabled:opacity-70" />
+                <div className="date-input-wrapper w-full md:w-1/2 relative">
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 text-primary pointer-events-none z-10">
+                    <CalendarDays size={20} />
+                  </div>
+                  <input 
+                    type="date" 
+                    required 
+                    disabled={isSubmitting} 
+                    className="w-full bg-gray-50 border border-gray-200 text-gray-800 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary p-3.5 pr-12 transition-colors duration-300 outline-none disabled:opacity-70" 
+                  />
                 </div>
               </div>
 
