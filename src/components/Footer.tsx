@@ -36,7 +36,7 @@ const Footer = () => {
             <h3 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">Quick Links</h3>
             <ul className="flex flex-col gap-4 text-sm text-white/70">
               <li><Link to="/about" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2"><ArrowRight size={14} /> About Clinic</Link></li>
-              <li><Link to="/doctor" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2"><ArrowRight size={14} /> Our Audiologist</Link></li>
+              <li><Link to="/doctor" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2"><ArrowRight size={14} /> Our Specialists</Link></li>
               <li><Link to="/services" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2"><ArrowRight size={14} /> All Services</Link></li>
               <li><Link to="/programs" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2"><ArrowRight size={14} /> Child Programs</Link></li>
               <li><Link to="/hearing-aids" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2"><ArrowRight size={14} /> Hearing Aids</Link></li>
@@ -57,7 +57,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-4 group">
                 <Mail size={20} className="text-primary shrink-0 group-hover:text-white transition-colors" />
-                <a href="mailto:care@hearwell.in" className="hover:text-white transition-colors">care@hearwell.in</a>
+                <a href="mailto:hearwellspeechandhearing@gmail.com" className="hover:text-white transition-colors">hearwellspeechandhearing@gmail.com</a>
               </li>
               <li className="flex items-start gap-4 group">
                 <MapPin size={24} className="text-primary shrink-0 group-hover:text-white transition-colors" />

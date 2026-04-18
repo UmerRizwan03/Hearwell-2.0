@@ -131,7 +131,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 mb-2">Email</h4>
-                  <a href="mailto:care@hearwell.in" className="block text-gray-600 hover:text-primary mb-1">care@hearwell.in</a>
+                  <a href="mailto:hearwellspeechandhearing@gmail.com" className="block text-gray-600 hover:text-primary mb-1">hearwellspeechandhearing@gmail.com</a>
                   <p className="text-xs text-gray-400">Response within 24 hours</p>
                 </div>
               </StaggerItem>

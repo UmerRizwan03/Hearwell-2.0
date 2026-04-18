@@ -71,7 +71,7 @@ const PrivacyPolicy = () => {
                   <strong>Hearwell Speech and Hearing Centre</strong><br />
                   Hariharraiyyer Rd, Opp. Govt Boys HSS<br />
                   Perumbavoor, Kerala<br />
-                  Email: care@hearwell.in<br />
+                  Email: hearwellspeechandhearing@gmail.com<br />
                   Phone: +91 9633626656
                 </p>
               </section>

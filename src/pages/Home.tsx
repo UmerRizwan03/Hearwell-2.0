@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, MapPin, Phone, Navigation } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { FadeIn, FadeScaleIn, SectionReveal, StaggerContainer, StaggerItem, SectionDivider } from '../components/Motion';
 import { heroContainer, heroItem, slideInLeft, slideInRight, defaultViewport } from '../utils/motion';
@@ -200,7 +200,7 @@ const Home = () => {
             >
               <div className="absolute inset-0 bg-gray-100 rounded-[40px] rotate-3 scale-105 transform -z-10"></div>
               <div className="w-full aspect-[4/5] bg-gray-200 rounded-[40px] overflow-hidden shadow-lg border-4 border-white relative z-10">
-                <OptimizedImage src="/images/doctor.png" alt="Ms. Babitha Fazal" aspectRatio="4/5" />
+                <OptimizedImage src="/images/doctor.webp" alt="Ms. Babitha Venugopal" aspectRatio="4/5" />
               </div>
 
               <div className="absolute -bottom-6 -right-6 lg:-right-10 bg-white p-5 rounded-2xl shadow-xl border border-gray-50 z-20 max-w-[200px]">
@@ -218,8 +218,8 @@ const Home = () => {
               whileInView="visible"
               viewport={defaultViewport}
             >
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Lead Audiologist</h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Ms. Babitha Fazal</h3>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Chief Audiologist</h2>
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Ms. Babitha Venugopal</h3>
               <p className="text-xl text-gray-500 font-medium mb-8 pb-8 border-b border-gray-100">16 years total experience • Audiologist</p>
 
               <blockquote className="text-xl lg:text-2xl text-gray-700 italic font-serif leading-relaxed mb-8">
@@ -231,6 +231,88 @@ const Home = () => {
               </Link>
             </motion.div>
           </div>
+        </div>
+      </SectionReveal>
+
+      {/* Locations Section */}
+      <SectionReveal className="py-20 lg:py-28 bg-[#F8FAF9] border-t border-gray-100 relative overflow-hidden">
+        {/* Subtle background decoration */}
+        <div className="absolute top-0 right-0 w-[60%] h-[100%] bg-[radial-gradient(ellipse_at_top_right,rgba(130,207,176,0.15),transparent_70%)] pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[40%] h-[80%] bg-[radial-gradient(ellipse_at_bottom_left,rgba(29,84,79,0.05),transparent_60%)] pointer-events-none"></div>
+        
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          <FadeIn className="text-center mb-16">
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Our Clinics</h2>
+            <h3 className="text-3xl md:text-5xl font-bold text-gray-800 tracking-tight">Conveniently located to serve you.</h3>
+          </FadeIn>
+
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+            {/* Perumbavoor Location */}
+            <StaggerItem className="relative bg-gradient-to-b from-white to-gray-50/50 rounded-[32px] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 overflow-hidden z-10">
+              
+              {/* Subtle Watermark */}
+              <div className="absolute -bottom-10 -right-10 text-primary/[0.03] transform group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-700 pointer-events-none z-0">
+                <MapPin size={220} />
+              </div>
+
+              {/* Accent Line */}
+              <div className="absolute top-0 left-10 w-16 h-1 bg-gradient-to-r from-primary to-primary/30 rounded-b-full z-10"></div>
+
+              <div className="relative z-10 w-14 h-14 bg-white shadow-sm border border-gray-100 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
+                <MapPin size={24} />
+              </div>
+              
+              <h4 className="relative z-10 text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300">Perumbavoor Branch</h4>
+              
+              <div className="relative z-10 pl-5 border-l-2 border-primary/20 flex-grow mb-8 text-gray-600 leading-relaxed font-medium">
+                Hariharraiyyer Rd, <br />
+                Opp. Govt Boys HSS<br />
+                Perumbavoor, Kerala
+              </div>
+              
+              <div className="relative z-10 pt-6 border-t border-gray-100 flex flex-col xl:flex-row gap-3 mt-auto">
+                <a href="https://maps.google.com/?q=Hearwell+Speech+and+Hearing+Centre+Perumbavoor" target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-4 py-3.5 rounded-full font-medium text-sm hover:bg-gray-800 hover:-translate-y-0.5 transition-all shadow-sm hover:shadow-md">
+                  <Navigation size={16} /> Get Directions
+                </a>
+                <a href="tel:+919633626656" className="flex-1 inline-flex items-center justify-center gap-2 bg-primary/10 text-primary px-4 py-3.5 rounded-full font-medium text-sm hover:bg-primary hover:text-white hover:-translate-y-0.5 transition-all">
+                  <Phone size={16} /> Call Clinic
+                </a>
+              </div>
+            </StaggerItem>
+
+            {/* Perinjanam Location */}
+            <StaggerItem className="relative bg-gradient-to-b from-white to-gray-50/50 rounded-[32px] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 overflow-hidden z-10">
+              
+              {/* Subtle Watermark */}
+              <div className="absolute -bottom-10 -right-10 text-primary/[0.03] transform group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-700 pointer-events-none z-0">
+                <MapPin size={220} />
+              </div>
+
+              {/* Accent Line */}
+              <div className="absolute top-0 left-10 w-16 h-1 bg-gradient-to-r from-primary to-primary/30 rounded-b-full z-10"></div>
+
+              <div className="relative z-10 w-14 h-14 bg-white shadow-sm border border-gray-100 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
+                <MapPin size={24} />
+              </div>
+              
+              <h4 className="relative z-10 text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300">Perinjanam Branch</h4>
+              
+              <div className="relative z-10 pl-5 border-l-2 border-primary/20 flex-grow mb-8 text-gray-600 leading-relaxed font-medium">
+                Near Vadakke Bus Stop, <br />
+                Perinjanam,<br />
+                Thrissur District
+              </div>
+              
+              <div className="relative z-10 pt-6 border-t border-gray-100 flex flex-col xl:flex-row gap-3 mt-auto">
+                <a href="https://maps.google.com/?q=Hearwell+Speech+and+Hearing+Centre+Perinjanam" target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-4 py-3.5 rounded-full font-medium text-sm hover:bg-gray-800 hover:-translate-y-0.5 transition-all shadow-sm hover:shadow-md">
+                  <Navigation size={16} /> Get Directions
+                </a>
+                <a href="tel:+919846464906" className="flex-1 inline-flex items-center justify-center gap-2 bg-primary/10 text-primary px-4 py-3.5 rounded-full font-medium text-sm hover:bg-primary hover:text-white hover:-translate-y-0.5 transition-all">
+                  <Phone size={16} /> Call Clinic
+                </a>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </SectionReveal>
     </div>

@@ -37,8 +37,7 @@ import hearingAid from '../assets/images/services/hearing-aid.png';
 import testingAidTile from '../assets/images/home/hearing-testing-aids-new.png';
 
 /* ─── Doctor Images ─── */
-// When doctor.png is available, import it here:
-// import doctorPortrait from '../assets/images/doctor/doctor.png';
+// import doctorPortrait from '../assets/images/doctor/doctor.webp';
 
 /* ─── Clinic Images ─── */
 // When clinic images are available, import them here:

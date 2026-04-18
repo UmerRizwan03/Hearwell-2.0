@@ -23,12 +23,12 @@ const Doctor = () => {
             
             {/* Left: Name & Title */}
             <div className="lg:w-7/12">
-              <MicroLabel label="Lead Audiologist & Speech Therapist" />
+              <MicroLabel label="Chief Audiologist & Speech Language Pathologist" />
               <motion.h1 
                 variants={heroItem} 
                 className="text-5xl md:text-7xl lg:text-[5rem] font-sans font-medium text-gray-900 tracking-tighter leading-none"
               >
-                Ms. Babitha Fazal
+                Ms. Babitha Venugopal
               </motion.h1>
             </div>
             
@@ -53,7 +53,7 @@ const Doctor = () => {
             <div className="w-full lg:w-5/12">
               <FadeScaleIn>
                 <div className="bg-gray-100 rounded-[32px] aspect-[3/4] mb-8 overflow-hidden relative shadow-lg">
-                  <OptimizedImage src="/images/doctor.png" alt="Ms. Babitha Fazal" aspectRatio="3/4" />
+                  <OptimizedImage src="/images/doctor.webp" alt="Ms. Babitha Venugopal" aspectRatio="3/4" />
                 </div>
               </FadeScaleIn>
 
@@ -69,6 +69,19 @@ const Doctor = () => {
                     </li>
                     <li className="flex gap-2">
                       <span className="font-semibold min-w-24">Year:</span> 2010
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="font-semibold min-w-24">CRR No:</span> A56404
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="font-semibold min-w-24">Blood Group:</span> O+ve
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="font-semibold min-w-24">Phone:</span> 9633626656
+                    </li>
+                    <li className="flex gap-2 flex-col">
+                      <span className="font-semibold min-w-24">Address:</span>
+                      <span className="text-sm">Near Vadakke Bus Stop, Perinjanam, Thrissur Dist. 9846464906</span>
                     </li>
                   </ul>
                 </div>
@@ -162,6 +175,94 @@ const Doctor = () => {
               </FadeIn>
 
             </motion.div>
+          </div>
+        </div>
+      </SectionReveal>
+
+      {/* Other Specialists */}
+      <SectionReveal className="py-16 lg:py-24 bg-[#F8FAF9] border-t border-gray-100">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Our Specialists</h2>
+            <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Dedicated professionals committed to providing exceptional care.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            
+            {/* Vandana Sanesh */}
+            <FadeIn>
+              <div className="bg-white rounded-[32px] p-8 md:p-10 shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
+                  <div className="w-28 h-28 rounded-full overflow-hidden shrink-0 border-4 border-gray-50 shadow-sm">
+                    <OptimizedImage src="/images/Vandana.webp" alt="Vandana Sanesh" aspectRatio="1/1" />
+                  </div>
+                  <div>
+                    <div className="mb-3">
+                      <MicroLabel label="Audiologist" />
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Vandana Sanesh</h3>
+                    <p className="text-primary font-medium leading-snug">Audiologist & Speech Language Pathologist</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 text-gray-600 mt-auto">
+                  <div className="flex justify-between items-center py-2 border-b border-gray-50">
+                    <span className="font-semibold text-gray-800">CRR No.</span>
+                    <span>B15690</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2 border-b border-gray-50">
+                    <span className="font-semibold text-gray-800">Blood Group</span>
+                    <span>O-ve</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2 border-b border-gray-50">
+                    <span className="font-semibold text-gray-800">Phone</span>
+                    <span>9745609672</span>
+                  </div>
+                  <div className="py-2">
+                    <span className="font-semibold text-gray-800 block mb-1">Address</span>
+                    <span className="text-sm">Opp. Govt. Boys School Ground, Perumbavoor<br/>9947314906, 9633626656</span>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Abitha K S */}
+            <FadeIn>
+              <div className="bg-white rounded-[32px] p-8 md:p-10 shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
+                  <div className="w-28 h-28 rounded-full overflow-hidden shrink-0 border-4 border-gray-50 shadow-sm">
+                    <OptimizedImage src="/images/Abitha.webp" alt="Abitha K S" aspectRatio="1/1" />
+                  </div>
+                  <div>
+                    <div className="mb-3">
+                      <MicroLabel label="Special Educator" />
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Abitha K S</h3>
+                    <p className="text-primary font-medium leading-snug">Special Educator</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 text-gray-600 mt-auto">
+                  <div className="flex justify-between items-center py-2 border-b border-gray-50">
+                    <span className="font-semibold text-gray-800">CRR No.</span>
+                    <span>A115127</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2 border-b border-gray-50">
+                    <span className="font-semibold text-gray-800">Blood Group</span>
+                    <span>O+ve</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2 border-b border-gray-50">
+                    <span className="font-semibold text-gray-800">Phone</span>
+                    <span>9562969816</span>
+                  </div>
+                  <div className="py-2">
+                    <span className="font-semibold text-gray-800 block mb-1">Address</span>
+                    <span className="text-sm">Opp. Govt. Boys School Ground, Perumbavoor<br/>9947314906, 9633626656</span>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
           </div>
         </div>
       </SectionReveal>
