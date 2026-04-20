@@ -10,14 +10,14 @@ const Programs = () => {
   return (
     <div className="bg-white">
       {/* Typography-First Layered Clarity Header */}
-      <section className="relative isolate pt-6 pb-16 lg:pt-16 lg:pb-24 bg-[#FCFBF9] border-b border-gray-100 overflow-hidden">
+      <section className="relative isolate pt-12 pb-24 lg:pt-24 lg:pb-36 bg-[#F8FAF9] border-b border-gray-100 overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8">
           <motion.div variants={heroContainer} initial="hidden" animate="visible" className="max-w-4xl">
             <MicroLabel label="Early Intervention" />
             
             <motion.h1 
               variants={heroItem} 
-              className="text-5xl md:text-7xl lg:text-[5.5rem] font-sans font-medium text-gray-900 tracking-tighter leading-[1.05] mb-8"
+              className="editorial-heading font-sans font-medium mb-8"
             >
               Nurturing <br />
               <span className="text-gray-400 font-normal">Growth & Communication</span>
@@ -34,13 +34,13 @@ const Programs = () => {
       </section>
 
       {/* Alternating Layout Sections */}
-      <SectionReveal className="py-12 lg:py-20">
-        <div className="container mx-auto px-6 lg:px-8 flex flex-col gap-20 lg:gap-32">
+      <SectionReveal className="py-24 lg:py-36">
+        <div className="container mx-auto px-6 lg:px-8 flex flex-col gap-24 lg:gap-40">
           
           {/* Program 1: Occupational Therapy */}
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
-            <FadeScaleIn className="w-full lg:w-1/2">
-               <div className="bg-gray-100 rounded-[32px] aspect-video lg:aspect-square w-full shadow-lg relative overflow-hidden">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
+            <FadeScaleIn className="w-full lg:w-1/2 lg:-translate-y-8">
+               <div className="bg-gray-100 rounded-lg aspect-video lg:aspect-square w-full shadow-[0_24px_70px_-48px_rgba(18,56,52,0.7)] relative overflow-hidden">
                  <OptimizedImage src="/images/occupational-therapy.png" alt="Occupational Therapy session" />
                </div>
             </FadeScaleIn>
@@ -51,7 +51,7 @@ const Programs = () => {
               whileInView="visible"
               viewport={defaultViewport}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Occupational Therapy</h2>
+              <h2 className="section-heading mb-6">Occupational Therapy</h2>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
                 Our Occupational Therapy program helps children develop the fine motor, sensory processing, and independent living skills necessary for daily life and learning.
               </p>
@@ -69,9 +69,9 @@ const Programs = () => {
           <SectionDivider />
 
           {/* Program 2: IEP (Reversed) */}
-          <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center">
+          <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-24 items-center">
             <FadeScaleIn className="w-full lg:w-1/2">
-               <div className="bg-gray-100 rounded-[32px] aspect-video lg:aspect-square w-full shadow-lg relative overflow-hidden">
+               <div className="bg-gray-100 rounded-lg aspect-video lg:aspect-square w-full shadow-[0_24px_70px_-48px_rgba(18,56,52,0.7)] relative overflow-hidden">
                  <OptimizedImage src="/images/child-development.png" alt="Child learning" />
                </div>
             </FadeScaleIn>
@@ -82,12 +82,12 @@ const Programs = () => {
               whileInView="visible"
               viewport={defaultViewport}
             >
-              <div className="bg-gray-50 p-8 md:p-12 rounded-[32px] border border-gray-100 shadow-sm">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">IEP (Individualised Education Program)</h2>
+              <div className="bg-gray-50 p-8 md:p-12 rounded-lg border border-gray-100 shadow-sm lg:-translate-y-10">
+                <h2 className="section-heading mb-6">IEP (Individualised Education Program)</h2>
                 <p className="text-gray-600 text-lg mb-6 leading-relaxed">
                   Every child learns differently. We develop comprehensive IEPs tailored specifically to your child's unique educational and developmental needs to ensure academic inclusion.
                 </p>
-                <div className="bg-white rounded-2xl p-5 border border-gray-100">
+                <div className="bg-white rounded-lg p-5 border border-gray-100">
                   <h4 className="font-semibold text-gray-800 mb-2">Our IEP Process:</h4>
                   <p className="text-gray-600 text-sm flex items-center gap-2 flex-wrap">
                     Assessment <ArrowRight size={14} className="text-primary" /> Goal Setting <ArrowRight size={14} className="text-primary" /> Implementation <ArrowRight size={14} className="text-primary" /> Ongoing Review
@@ -100,9 +100,9 @@ const Programs = () => {
           <SectionDivider />
 
           {/* Program 3: Special Care */}
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
             <FadeScaleIn className="w-full lg:w-1/2">
-               <div className="bg-gray-100 rounded-[32px] aspect-video lg:aspect-square w-full shadow-lg relative overflow-hidden">
+               <div className="bg-gray-100 rounded-lg aspect-video lg:aspect-square w-full shadow-[0_24px_70px_-48px_rgba(18,56,52,0.7)] relative overflow-hidden">
                  <OptimizedImage src="/images/clinic-interior.png" alt="Clinic care environment" />
                </div>
             </FadeScaleIn>
@@ -113,7 +113,7 @@ const Programs = () => {
               whileInView="visible"
               viewport={defaultViewport}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Special Care and Education</h2>
+              <h2 className="section-heading mb-6">Special Care and Education</h2>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
                 Dedicated support for children with complex needs. We provide specialized educational strategies and a nurturing environment to foster growth safely and effectively.
               </p>
@@ -132,10 +132,10 @@ const Programs = () => {
       </SectionReveal>
 
       {/* CTA Section */}
-      <SectionReveal className="bg-primary-gradient py-20">
+      <SectionReveal className="bg-primary-gradient py-24 lg:py-32">
         <div className="container mx-auto px-6 lg:px-8 text-center max-w-3xl">
           <FadeIn className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Ready to support your child's journey?</h2>
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-white mb-8">Ready to support your child's journey?</h2>
             <Link to="/booking" className="btn-white text-lg px-10">
               Book an Assessment
             </Link>

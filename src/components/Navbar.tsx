@@ -27,11 +27,6 @@ const Navbar = () => {
     };
   }, [mobileMenuOpen]);
 
-  // Close menu on route change
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [location.pathname]);
-
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -89,7 +84,7 @@ const Navbar = () => {
             <div className="flex items-center gap-4">
               <Link
                 to="/booking"
-                className="inline-flex items-center justify-center gap-2 bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-primary/90 hover:-translate-y-0.5 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 hover:-translate-y-0.5 transition-all duration-300"
                 style={{ boxShadow: '0 4px 15px -4px rgba(29,84,79,0.4)' }}
               >
                 Book Appointment

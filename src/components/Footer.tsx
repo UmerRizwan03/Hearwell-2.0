@@ -19,13 +19,13 @@ const Footer = () => {
               Professional hearing care and speech therapy services for children and adults. Dedicated to restoring the joy of sound and clear communication since 2014.
             </p>
             <div className="flex gap-4">
-              <a href="https://www.facebook.com/profile.php?id=100063747556166" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors flex items-center justify-center text-white/70 border border-white/10">
+              <a href="https://www.facebook.com/profile.php?id=100063747556166" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page" className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors flex items-center justify-center text-white/70 border border-white/10">
                 <Facebook size={18} />
               </a>
-              <a href="https://www.instagram.com/hearwell_speech_and_hearing/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors flex items-center justify-center text-white/70 border border-white/10">
+              <a href="https://www.instagram.com/hearwell_speech_and_hearing/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page" className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors flex items-center justify-center text-white/70 border border-white/10">
                 <Instagram size={18} />
               </a>
-              <a href="https://www.practo.com/ernakulam/clinic/hearwell-speech-and-hearing-centre-perumbavoor-1/audiologist-ps-62" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors flex items-center justify-center text-white/70 border border-white/10">
+              <a href="https://www.practo.com/ernakulam/clinic/hearwell-speech-and-hearing-centre-perumbavoor-1/audiologist-ps-62" target="_blank" rel="noopener noreferrer" aria-label="Book through Practo" className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors flex items-center justify-center text-white/70 border border-white/10">
                 <Globe size={18} />
               </a>
             </div>

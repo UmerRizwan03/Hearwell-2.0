@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, MessageCircle, ChevronDown, CheckCircle, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { FadeIn, SectionReveal, StaggerContainer, StaggerItem } from '../components/Motion';
@@ -72,16 +73,16 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+          <div className="bg-white min-h-[100dvh]">
       {/* Typography-First Trust Anchor Header */}
-      <section className="relative isolate pt-6 pb-16 lg:pt-16 lg:pb-24 bg-[#F8FAF9] border-b border-gray-100 overflow-hidden">
+      <section className="relative isolate pt-12 pb-28 lg:pt-24 lg:pb-44 bg-[#F8FAF9] border-b border-gray-100 overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8">
           <motion.div variants={heroContainer} initial="hidden" animate="visible" className="max-w-4xl">
             <MicroLabel label="Contact Us" />
             
             <motion.h1 
               variants={heroItem} 
-              className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif tracking-tight leading-[1.05] text-gray-900 mb-8"
+              className="editorial-heading font-serif mb-8"
             >
               Start the <br /><span className="italic">conversation.</span>
             </motion.h1>
@@ -96,15 +97,15 @@ const Contact = () => {
         </div>
       </section>
 
-      <SectionReveal className="pb-16 lg:pb-24 -mt-20 lg:-mt-32 relative z-20">
+      <SectionReveal className="pb-24 lg:pb-36 -mt-20 lg:-mt-32 relative z-20">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 max-w-6xl mx-auto">
             
             {/* Contact Details Matrix */}
             <StaggerContainer className="w-full lg:w-5/12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
               
-              <StaggerItem className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-5 hover:border-primary/20 hover:-translate-y-0.5 transition-all">
-                <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
+              <StaggerItem className="bg-white p-7 rounded-lg shadow-sm border border-gray-100 flex items-start gap-5 hover:border-primary/20 hover:-translate-y-0.5 transition-all">
+                <div className="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center shrink-0">
                   <Phone size={24} />
                 </div>
                 <div>
@@ -114,8 +115,8 @@ const Contact = () => {
                 </div>
               </StaggerItem>
 
-              <StaggerItem className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-5 hover:border-primary/20 hover:-translate-y-0.5 transition-all">
-                <div className="w-12 h-12 bg-[#25D366]/10 text-[#25D366] rounded-xl flex items-center justify-center shrink-0">
+              <StaggerItem className="bg-white p-7 rounded-lg shadow-sm border border-gray-100 flex items-start gap-5 hover:border-primary/20 hover:-translate-y-0.5 transition-all lg:translate-x-8">
+                <div className="w-12 h-12 bg-[#25D366]/10 text-[#25D366] rounded-lg flex items-center justify-center shrink-0">
                   <MessageCircle size={24} />
                 </div>
                 <div>
@@ -125,26 +126,26 @@ const Contact = () => {
                 </div>
               </StaggerItem>
 
-              <StaggerItem className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-5 hover:border-primary/20 hover:-translate-y-0.5 transition-all">
-                <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
+              <StaggerItem className="bg-white p-7 rounded-lg shadow-sm border border-gray-100 flex items-start gap-5 hover:border-primary/20 hover:-translate-y-0.5 transition-all">
+                <div className="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center shrink-0">
                   <Mail size={24} />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 mb-2">Email</h4>
-                  <a href="mailto:hearwellspeechandhearing@gmail.com" className="block text-gray-600 hover:text-primary mb-1">hearwellspeechandhearing@gmail.com</a>
+                  <a href="mailto:hearwellspeechandhearing@gmail.com" className="block text-gray-600 hover:text-primary mb-1 break-all">hearwellspeechandhearing@gmail.com</a>
                   <p className="text-xs text-gray-400">Response within 24 hours</p>
                 </div>
               </StaggerItem>
 
-              <StaggerItem className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-5 hover:border-primary/20 hover:-translate-y-0.5 transition-all">
-                <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
+              <StaggerItem className="bg-white p-7 rounded-lg shadow-sm border border-gray-100 flex items-start gap-5 hover:border-primary/20 hover:-translate-y-0.5 transition-all lg:translate-x-8">
+                <div className="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center shrink-0">
                   <MapPin size={24} />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 mb-2">Visit Us</h4>
                   <p className="text-gray-600 font-medium mb-1">Perumbavoor Branch</p>
                   <p className="text-gray-600 font-medium mb-2">Perinjanam Branch</p>
-                  <a href="/locations" className="text-xs text-primary font-semibold uppercase tracking-wider">View Maps</a>
+                  <Link to="/locations" className="text-xs text-primary font-semibold uppercase tracking-wider">View Maps</Link>
                 </div>
               </StaggerItem>
 
@@ -152,11 +153,11 @@ const Contact = () => {
 
             {/* General Inquiry Form */}
             <FadeIn className="w-full lg:w-7/12">
-              <div className="bg-white p-8 md:p-12 rounded-[32px] shadow-sm border border-gray-100 h-full">
-                <h3 className="text-3xl font-bold text-gray-800 mb-8">Send us a message</h3>
+              <div className="bg-white p-8 md:p-14 rounded-lg shadow-[0_24px_70px_-52px_rgba(18,56,52,0.8)] border border-gray-100 h-full">
+                <h3 className="text-4xl font-semibold tracking-tight text-gray-900 mb-10">Send us a message</h3>
                 
                 {isSuccess ? (
-                  <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center flex flex-col items-center justify-center h-[400px]">
+                  <div className="bg-primary/5 border border-primary/20 rounded-lg p-8 text-center flex flex-col items-center justify-center h-[400px]" aria-live="polite">
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
                       <CheckCircle size={32} />
                     </div>
@@ -172,7 +173,7 @@ const Contact = () => {
                           type="text" 
                           id="name" 
                           placeholder="John Doe" 
-                          className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl focus:ring-primary focus:border-primary block p-3.5 transition-colors duration-300 outline-none placeholder:text-gray-400"
+                          className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-lg focus:ring-primary focus:border-primary block p-4 transition-colors duration-300 outline-none placeholder:text-gray-400"
                           required
                           disabled={isSubmitting}
                         />
@@ -183,7 +184,7 @@ const Contact = () => {
                           type="tel" 
                           id="phone" 
                           placeholder="+91 99999 99999" 
-                          className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl focus:ring-primary focus:border-primary block p-3.5 transition-colors duration-300 outline-none placeholder:text-gray-400"
+                          className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-lg focus:ring-primary focus:border-primary block p-4 transition-colors duration-300 outline-none placeholder:text-gray-400"
                           required
                           disabled={isSubmitting}
                         />
@@ -196,7 +197,7 @@ const Contact = () => {
                         type="text" 
                         id="subject" 
                         placeholder="How can we help?" 
-                        className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl focus:ring-primary focus:border-primary block p-3.5 transition-colors duration-300 outline-none placeholder:text-gray-400"
+                        className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-lg focus:ring-primary focus:border-primary block p-4 transition-colors duration-300 outline-none placeholder:text-gray-400"
                         required
                         disabled={isSubmitting}
                       />
@@ -208,7 +209,7 @@ const Contact = () => {
                         id="message" 
                         rows={5}
                         placeholder="Please describe your inquiry..." 
-                        className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl focus:ring-primary focus:border-primary block p-3.5 transition-colors duration-300 outline-none resize-none placeholder:text-gray-400"
+                        className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-lg focus:ring-primary focus:border-primary block p-4 transition-colors duration-300 outline-none resize-none placeholder:text-gray-400"
                         required
                         disabled={isSubmitting}
                       ></textarea>
@@ -238,10 +239,10 @@ const Contact = () => {
       </SectionReveal>
 
       {/* FAQ Section */}
-      <SectionReveal className="py-16 lg:py-24 bg-white border-t border-gray-100">
+      <SectionReveal className="py-24 lg:py-36 bg-white border-t border-gray-100">
         <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
           <FadeIn className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 tracking-tight">Frequently Asked Questions</h2>
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900 mb-4">Frequently Asked Questions</h2>
             <p className="text-gray-500">Quick answers to the questions we hear most often.</p>
           </FadeIn>
 

@@ -27,16 +27,16 @@ const Booking = () => {
   const locations = ['Perumbavoor', 'Perinjanam'];
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-[100dvh]">
       {/* Typography-First Action Utility Header */}
-      <section className="relative isolate pt-6 pb-16 lg:pt-16 lg:pb-24 bg-[#F8FAF9]">
+      <section className="relative isolate pt-12 pb-28 lg:pt-24 lg:pb-44 bg-[#F8FAF9]">
         <div className="container mx-auto px-6 lg:px-8">
           <motion.div variants={heroContainer} initial="hidden" animate="visible" className="max-w-4xl">
             <MicroLabel label="Patient Portal" />
             
             <motion.h1 
               variants={heroItem} 
-              className="text-5xl md:text-7xl lg:text-[5.5rem] font-sans font-medium text-gray-900 tracking-tighter leading-[1.05] mb-8"
+              className="editorial-heading font-sans font-medium mb-8"
             >
               Book an <br />
               <span className="text-gray-400 font-normal">Appointment.</span>
@@ -59,12 +59,12 @@ const Booking = () => {
         />
       </section>
 
-      <SectionReveal className="pb-16 lg:pb-24 -mt-24 lg:-mt-36 relative z-20">
+      <SectionReveal className="pb-24 lg:pb-36 -mt-24 lg:-mt-36 relative z-20">
         <div className="container mx-auto px-6 lg:px-8">
-          <FadeIn className="max-w-3xl mx-auto bg-white modern-card relative overflow-hidden rounded-[32px] p-8 md:p-12 shadow-md border border-gray-100">
+          <FadeIn className="max-w-3xl mx-auto bg-white modern-card relative overflow-hidden rounded-lg p-8 md:p-14 shadow-[0_24px_70px_-52px_rgba(18,56,52,0.8)] border border-gray-100">
             
             {isSuccess ? (
-              <div className="py-20 text-center flex flex-col items-center justify-center">
+              <div className="py-20 text-center flex flex-col items-center justify-center" aria-live="polite">
                 <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
                   <CheckCircle size={40} />
                 </div>
@@ -72,7 +72,7 @@ const Booking = () => {
                 <p className="text-lg text-gray-600 max-w-md mx-auto mb-8">
                   Thank you for choosing Hearwell. Our team will contact you shortly to confirm the exact time of your appointment.
                 </p>
-                <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 inline-block text-left text-sm">
+                <div className="bg-gray-50 border border-gray-100 rounded-lg p-6 inline-block text-left text-sm">
                   <p className="text-gray-500 mb-2"><strong className="text-gray-800 font-semibold mr-2">Service:</strong> {selectedService}</p>
                   <p className="text-gray-500"><strong className="text-gray-800 font-semibold mr-2">Location:</strong> {selectedLocation}</p>
                 </div>
@@ -80,31 +80,31 @@ const Booking = () => {
             ) : (
               <form onSubmit={handleSubmit}>
               {/* Section 1: Patient Info */}
-              <div className="mb-12">
-                <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm">1</span> 
+              <div className="mb-14">
+                <h3 className="text-2xl font-semibold tracking-tight text-gray-900 mb-7 flex items-center gap-4">
+                  <span className="w-10 h-10 rounded-lg bg-primary text-white flex items-center justify-center text-sm">1</span> 
                   Patient Details
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
-                    <input type="text" className="w-full bg-gray-50 border border-gray-200 text-gray-800 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary p-3.5 transition-colors duration-300 outline-none" required />
+                    <input type="text" className="w-full bg-gray-50 border border-gray-200 text-gray-800 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary p-4 transition-colors duration-300 outline-none" required />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Age</label>
-                    <input type="number" className="w-full bg-gray-50 border border-gray-200 text-gray-800 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary p-3.5 transition-colors duration-300 outline-none" required />
+                    <input type="number" className="w-full bg-gray-50 border border-gray-200 text-gray-800 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary p-4 transition-colors duration-300 outline-none" required />
                   </div>
                   <div className="md:col-span-2">
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-                    <input type="tel" className="w-full bg-gray-50 border border-gray-200 text-gray-800 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary p-3.5 transition-colors duration-300 outline-none" required />
+                    <input type="tel" className="w-full bg-gray-50 border border-gray-200 text-gray-800 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary p-4 transition-colors duration-300 outline-none" required />
                   </div>
                 </div>
               </div>
 
               {/* Section 2: Service */}
-              <div className="mb-12 bg-gray-50/50 p-6 rounded-2xl border border-gray-100">
-                <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm">2</span> 
+              <div className="mb-14 bg-gray-50/50 p-6 rounded-lg border border-gray-100">
+                <h3 className="text-2xl font-semibold tracking-tight text-gray-900 mb-7 flex items-center gap-4">
+                  <span className="w-10 h-10 rounded-lg bg-primary text-white flex items-center justify-center text-sm">2</span> 
                   Select Service
                 </h3>
                 <div className="flex flex-wrap gap-3">
@@ -113,7 +113,7 @@ const Booking = () => {
                       key={service}
                       type="button"
                       onClick={() => setSelectedService(service)}
-                      className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border ${
+                      className={`px-5 py-3 rounded-lg text-sm font-semibold transition-all duration-300 border ${
                         selectedService === service 
                         ? 'bg-primary text-white border-primary shadow-sm scale-[1.02]' 
                         : 'bg-white text-gray-600 border-gray-200 hover:border-primary/30 hover:bg-gray-50'
@@ -126,9 +126,9 @@ const Booking = () => {
               </div>
 
               {/* Section 3: Location */}
-              <div className="mb-12">
-                <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm">3</span> 
+              <div className="mb-14">
+                <h3 className="text-2xl font-semibold tracking-tight text-gray-900 mb-7 flex items-center gap-4">
+                  <span className="w-10 h-10 rounded-lg bg-primary text-white flex items-center justify-center text-sm">3</span> 
                   Preferred Location
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
@@ -137,7 +137,7 @@ const Booking = () => {
                       key={loc}
                       type="button"
                       onClick={() => setSelectedLocation(loc)}
-                      className={`p-4 rounded-2xl text-center font-bold transition-all duration-300 border-2 ${
+                      className={`p-5 rounded-lg text-center font-bold transition-all duration-300 border ${
                         selectedLocation === loc
                         ? 'bg-primary/5 border-primary text-primary scale-[1.02]'
                         : 'bg-white border-gray-100 text-gray-500 hover:border-gray-200 hover:bg-gray-50'
@@ -150,9 +150,9 @@ const Booking = () => {
               </div>
 
               {/* Section 4: Date — styled date picker */}
-              <div className="mb-12">
-                 <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm">4</span> 
+              <div className="mb-14">
+                 <h3 className="text-2xl font-semibold tracking-tight text-gray-900 mb-7 flex items-center gap-4">
+                  <span className="w-10 h-10 rounded-lg bg-primary text-white flex items-center justify-center text-sm">4</span> 
                   Preferred Date
                 </h3>
                 <div className="date-input-wrapper w-full md:w-1/2 relative">
@@ -163,7 +163,7 @@ const Booking = () => {
                     type="date" 
                     required 
                     disabled={isSubmitting} 
-                    className="w-full bg-gray-50 border border-gray-200 text-gray-800 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary p-3.5 pr-12 transition-colors duration-300 outline-none disabled:opacity-70" 
+                    className="w-full bg-gray-50 border border-gray-200 text-gray-800 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary p-4 pr-12 transition-colors duration-300 outline-none disabled:opacity-70" 
                   />
                 </div>
               </div>

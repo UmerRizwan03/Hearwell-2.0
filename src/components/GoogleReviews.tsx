@@ -33,14 +33,14 @@ const categoryColors: Record<Review['category'], string> = {
 };
 
 const ReviewCard = ({ review }: { review: Review }) => (
-  <div className="w-[380px] shrink-0 bg-white modern-card relative overflow-hidden rounded-[24px] p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300 flex flex-col">
-    <Quote size={32} className="text-primary/10 mb-4 -ml-1" />
-    <p className="text-gray-600 leading-relaxed flex-grow mb-6 text-[15px]">
+  <div className="w-[min(420px,calc(100vw-3rem))] shrink-0 bg-white relative overflow-hidden rounded-lg p-6 sm:p-9 shadow-[0_18px_50px_-42px_rgba(18,56,52,0.55)] flex flex-col">
+    <Quote size={30} className="text-primary/15 mb-6 -ml-1" />
+    <p className="text-gray-700 leading-relaxed flex-grow mb-8 text-[17px]">
       "{review.text}"
     </p>
-    <div className="flex items-center justify-between pt-5 border-t border-gray-100">
+    <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between pt-6 border-t border-gray-100">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">
+        <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">
           {review.name.charAt(0)}
         </div>
         <div>
@@ -52,7 +52,7 @@ const ReviewCard = ({ review }: { review: Review }) => (
           </div>
         </div>
       </div>
-      <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border ${categoryColors[review.category]}`}>
+      <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-md border ${categoryColors[review.category]}`}>
         {categoryLabels[review.category]}
       </span>
     </div>
@@ -64,12 +64,12 @@ const GoogleReviews = () => {
   const duplicatedReviews = [...reviews, ...reviews];
 
   return (
-    <SectionReveal className="py-20 lg:py-28 bg-gray-50/60 border-y border-gray-100">
+    <SectionReveal className="py-24 lg:py-36 bg-gray-50/60 border-y border-gray-100">
       <div className="container mx-auto px-4 md:px-6">
 
         {/* Header */}
-        <FadeIn className="text-center mb-16">
-          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white border border-gray-200 text-sm font-semibold text-gray-600 mb-6 shadow-sm">
+        <FadeIn className="mb-20 max-w-4xl">
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-lg bg-white border border-gray-200 text-sm font-semibold text-gray-600 mb-7 shadow-sm">
             <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
               <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
               <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -78,35 +78,35 @@ const GoogleReviews = () => {
             </svg>
             Google Reviews
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4 tracking-tight">
-            Trusted by Families
+          <h2 className="section-heading mb-5">
+            Families remember how care made them feel.
           </h2>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="quiet-copy max-w-2xl">
             Real stories from real patients. See why families across Kerala trust Hearwell for their hearing and speech care needs.
           </p>
 
           {/* Aggregate Rating */}
-          <div className="mt-8 inline-flex items-center gap-3 bg-white px-6 py-3 rounded-2xl shadow-sm border border-gray-100">
+          <div className="mt-10 inline-flex flex-wrap items-center gap-3 bg-white px-5 sm:px-6 py-3 rounded-lg shadow-sm border border-gray-100">
             <span className="text-3xl font-bold text-gray-800">5.0</span>
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} size={20} className="text-amber-400 fill-amber-400" />
               ))}
             </div>
-            <span className="text-sm text-gray-400 border-l border-gray-200 pl-3 ml-1">Based on Google Reviews</span>
+            <span className="w-full sm:w-auto text-sm text-gray-400 sm:border-l border-gray-200 sm:pl-3 sm:ml-1">Based on Google Reviews</span>
           </div>
         </FadeIn>
       </div>
 
       {/* Infinite Scroll Marquee — full width, breaks out of container */}
-      <div className="relative w-full overflow-hidden group mb-12">
+      <div className="relative w-full overflow-hidden group mb-14">
         {/* Fade edges */}
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-gray-50/90 to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-gray-50/90 to-transparent" />
 
         {/* Scrolling track */}
         <div
-          className="flex gap-6 py-4 animate-[scroll_40s_linear_infinite] group-hover:[animation-play-state:paused]"
+          className="flex gap-8 py-4 animate-[scroll_45s_linear_infinite] group-hover:[animation-play-state:paused]"
           style={{ width: 'max-content' }}
         >
           {duplicatedReviews.map((review, i) => (
@@ -122,7 +122,7 @@ const GoogleReviews = () => {
             href="https://www.google.com/maps/place/Hearwell+Speech+and+Hearing+Centre/"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-primary hover:text-white hover:border-primary hover:shadow-lg transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-primary hover:text-white hover:border-primary hover:shadow-lg transition-all duration-300"
           >
             <ExternalLink size={16} />
             Review us on Google

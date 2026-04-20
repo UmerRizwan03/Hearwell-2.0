@@ -3,20 +3,25 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppCTA from './components/WhatsAppCTA';
+import ErrorBoundary from './components/ErrorBoundary';
+import SEO from './components/SEO';
 import { pageTransition } from './utils/motion';
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Doctor from './pages/Doctor';
-import Services from './pages/Services';
-import Programs from './pages/Programs';
-import HearingAids from './pages/HearingAids';
-import Locations from './pages/Locations';
-import Contact from './pages/Contact';
-import Booking from './pages/Booking';
-import Blog from './pages/Blog';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
+import { lazy, Suspense } from 'react';
+
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Doctor = lazy(() => import('./pages/Doctor'));
+const Services = lazy(() => import('./pages/Services'));
+const Programs = lazy(() => import('./pages/Programs'));
+const HearingAids = lazy(() => import('./pages/HearingAids'));
+const Locations = lazy(() => import('./pages/Locations'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Booking = lazy(() => import('./pages/Booking'));
+const Blog = lazy(() => import('./pages/Blog'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+
 import { useEffect, useState } from 'react';
 
 /* Scroll to top on route change */
@@ -60,20 +65,22 @@ function AnimatedRoutes() {
         animate="animate"
         exit="exit"
       >
-        <Routes location={location}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/doctor" element={<Doctor />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/programs" element={<Programs />} />
-          <Route path="/hearing-aids" element={<HearingAids />} />
-          <Route path="/locations" element={<Locations />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/terms" element={<TermsOfService />} />
-        </Routes>
+        <Suspense fallback={<div className="h-[100dvh] flex items-center justify-center relative"><div className="w-10 h-10 border-4 border-gray-200 border-t-primary rounded-full animate-spin"></div></div>}>
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/doctor" element={<Doctor />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/programs" element={<Programs />} />
+            <Route path="/hearing-aids" element={<HearingAids />} />
+            <Route path="/locations" element={<Locations />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/booking" element={<Booking />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} />
+          </Routes>
+        </Suspense>
       </motion.div>
     </AnimatePresence>
   );
@@ -82,12 +89,15 @@ function AnimatedRoutes() {
 function App() {
   return (
     <Router>
+      <SEO />
       <ScrollToTop />
       <ScrollProgress />
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-[100dvh]">
         <Navbar />
         <main className="flex-grow pt-[72px]">
-          <AnimatedRoutes />
+          <ErrorBoundary>
+            <AnimatedRoutes />
+          </ErrorBoundary>
         </main>
         <Footer />
         <WhatsAppCTA />

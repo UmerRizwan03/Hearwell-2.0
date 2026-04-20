@@ -10,7 +10,7 @@ const Doctor = () => {
   return (
     <div className="bg-white">
       {/* Typography-First Clinical Profile Header */}
-      <section className="relative isolate pt-6 pb-16 lg:pt-16 lg:pb-24 bg-[#F8FAF9] border-b border-gray-100">
+      <section className="relative isolate pt-12 pb-24 lg:pt-24 lg:pb-36 bg-[#F8FAF9] border-b border-gray-100">
         <motion.div 
           variants={animatedDivider} 
           initial="hidden" 
@@ -26,7 +26,7 @@ const Doctor = () => {
               <MicroLabel label="Chief Audiologist & Speech Language Pathologist" />
               <motion.h1 
                 variants={heroItem} 
-                className="text-5xl md:text-7xl lg:text-[5rem] font-sans font-medium text-gray-900 tracking-tighter leading-none"
+                className="editorial-heading font-sans font-medium"
               >
                 Ms. Babitha Venugopal
               </motion.h1>
@@ -45,38 +45,38 @@ const Doctor = () => {
         </div>
       </section>
 
-      <SectionReveal className="py-16 lg:py-24">
+      <SectionReveal className="py-24 lg:py-36">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
             
             {/* Left: Portrait & Credentials */}
             <div className="w-full lg:w-5/12">
               <FadeScaleIn>
-                <div className="bg-gray-100 rounded-[32px] aspect-[3/4] mb-8 overflow-hidden relative shadow-lg">
+                <div className="bg-gray-100 rounded-lg aspect-[3/4] mb-10 overflow-hidden relative shadow-[0_24px_70px_-48px_rgba(18,56,52,0.7)] lg:scale-105 lg:origin-top-left">
                   <OptimizedImage src="/images/doctor.webp" alt="Ms. Babitha Venugopal" aspectRatio="3/4" />
                 </div>
               </FadeScaleIn>
 
               <FadeIn>
-                <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 mb-6">
-                  <h3 className="font-bold text-gray-800 text-lg mb-2">Credentials</h3>
-                  <ul className="space-y-3 text-gray-600">
-                    <li className="flex gap-2">
+                <div className="mb-8 border-y border-gray-100 py-7">
+                  <h3 className="font-bold text-gray-800 text-lg mb-5">Credentials</h3>
+                  <ul className="space-y-4 text-gray-600">
+                    <li className="flex gap-2 border-b border-gray-50 pb-3">
                       <span className="font-semibold min-w-24">Degree:</span> BASLP
                     </li>
-                    <li className="flex gap-2">
+                    <li className="flex gap-2 border-b border-gray-50 pb-3">
                       <span className="font-semibold min-w-24">Institution:</span> AWH Special College
                     </li>
-                    <li className="flex gap-2">
+                    <li className="flex gap-2 border-b border-gray-50 pb-3">
                       <span className="font-semibold min-w-24">Year:</span> 2010
                     </li>
-                    <li className="flex gap-2">
+                    <li className="flex gap-2 border-b border-gray-50 pb-3">
                       <span className="font-semibold min-w-24">CRR No:</span> A56404
                     </li>
-                    <li className="flex gap-2">
+                    <li className="flex gap-2 border-b border-gray-50 pb-3">
                       <span className="font-semibold min-w-24">Blood Group:</span> O+ve
                     </li>
-                    <li className="flex gap-2">
+                    <li className="flex gap-2 border-b border-gray-50 pb-3">
                       <span className="font-semibold min-w-24">Phone:</span> 9633626656
                     </li>
                     <li className="flex gap-2 flex-col">
@@ -102,29 +102,29 @@ const Doctor = () => {
               whileInView="visible"
               viewport={defaultViewport}
             >
-              <StaggerContainer className="grid grid-cols-2 gap-6 mb-12">
-                <StaggerItem className="bg-primary/5 p-6 rounded-2xl border border-primary/10">
-                  <p className="text-4xl lg:text-5xl font-bold text-primary mb-2">16</p>
+              <StaggerContainer className="grid grid-cols-2 gap-6 mb-16">
+                <StaggerItem className="bg-white p-7 rounded-lg border border-gray-100 shadow-sm">
+                  <p className="text-5xl lg:text-6xl font-semibold tracking-tighter text-primary mb-2">16</p>
                   <p className="text-gray-800 font-semibold">Years Total Experience</p>
                 </StaggerItem>
-                <StaggerItem className="bg-primary/5 p-6 rounded-2xl border border-primary/10">
-                  <p className="text-4xl lg:text-5xl font-bold text-primary mb-2">10+</p>
+                <StaggerItem className="bg-white p-7 rounded-lg border border-gray-100 shadow-sm translate-y-6">
+                  <p className="text-5xl lg:text-6xl font-semibold tracking-tighter text-primary mb-2">10+</p>
                   <p className="text-gray-800 font-semibold">Years as Specialist</p>
                 </StaggerItem>
               </StaggerContainer>
 
               <FadeIn>
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8">Professional Journey</h3>
+                <h3 className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900 mb-10">Professional Journey</h3>
               </FadeIn>
               
-              <StaggerContainer className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
+              <StaggerContainer className="space-y-10 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px before:h-full before:w-px before:bg-gray-200">
                 
                 {/* Timeline Item 1 */}
                 <StaggerItem className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-gray-100 group-[.is-active]:bg-primary text-gray-500 group-[.is-active]:text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-primary text-white shadow-sm shrink-0 z-10">
+                    <div className="w-2 h-2 bg-white rounded-full" />
                   </div>
-                  <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl border border-gray-100 bg-white shadow-sm card-hover-glow">
+                  <div className="w-[calc(100%-4rem)] p-6 rounded-lg border border-gray-100 bg-white shadow-sm">
                     <div className="flex items-center justify-between space-x-2 mb-1">
                       <div className="font-bold text-gray-800">Present</div>
                       <time className="font-medium text-primary">2014 - Present</time>
@@ -135,10 +135,10 @@ const Doctor = () => {
 
                 {/* Timeline Item 2 */}
                 <StaggerItem className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-gray-100 text-gray-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-gray-100 text-gray-500 shadow-sm shrink-0 z-10">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
                   </div>
-                  <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl border border-gray-100 bg-gray-50 shadow-sm card-hover-glow">
+                  <div className="w-[calc(100%-4rem)] p-6 rounded-lg border border-gray-100 bg-gray-50 shadow-sm">
                     <div className="flex items-center justify-between space-x-2 mb-1">
                       <div className="font-bold text-gray-800">Swaram Hearing Aid Centre</div>
                       <time className="font-medium text-gray-500">2011 - 2012</time>
@@ -149,10 +149,10 @@ const Doctor = () => {
 
                 {/* Timeline Item 3 */}
                 <StaggerItem className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-gray-100 text-gray-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-gray-100 text-gray-500 shadow-sm shrink-0 z-10">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
                   </div>
-                  <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl border border-gray-100 bg-gray-50 shadow-sm card-hover-glow">
+                  <div className="w-[calc(100%-4rem)] p-6 rounded-lg border border-gray-100 bg-gray-50 shadow-sm">
                     <div className="flex items-center justify-between space-x-2 mb-1">
                       <div className="font-bold text-gray-800">Al-Shifa Hospital</div>
                       <time className="font-medium text-gray-500">2010 - 2011</time>
@@ -166,9 +166,9 @@ const Doctor = () => {
               <SectionDivider className="my-8" />
 
               <FadeIn>
-                <div className="bg-gray-50 rounded-2xl p-8 relative">
+                <div className="bg-[#F8FAF9] rounded-lg p-10 md:p-14 relative">
                    <div className="absolute top-4 left-4 text-7xl text-primary/10 font-serif leading-none">"</div>
-                   <p className="text-xl text-gray-700 italic font-serif font-medium relative z-10 leading-relaxed text-center">
+                   <p className="text-2xl md:text-4xl text-gray-800 italic font-serif font-medium relative z-10 leading-tight">
                     My commitment is to restore the joy of sound and communication to every patient through personalized, expert care.
                    </p>
                 </div>
@@ -180,10 +180,10 @@ const Doctor = () => {
       </SectionReveal>
 
       {/* Other Specialists */}
-      <SectionReveal className="py-16 lg:py-24 bg-[#F8FAF9] border-t border-gray-100">
+      <SectionReveal className="py-24 lg:py-36 bg-[#F8FAF9] border-t border-gray-100">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Our Specialists</h2>
+            <h2 className="section-heading">Our Specialists</h2>
             <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Dedicated professionals committed to providing exceptional care.</p>
           </div>
           
@@ -191,7 +191,7 @@ const Doctor = () => {
             
             {/* Vandana Sanesh */}
             <FadeIn>
-              <div className="bg-white rounded-[32px] p-8 md:p-10 shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow">
+              <div className="bg-white rounded-lg p-8 md:p-10 shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
                   <div className="w-28 h-28 rounded-full overflow-hidden shrink-0 border-4 border-gray-50 shadow-sm">
                     <OptimizedImage src="/images/Vandana.webp" alt="Vandana Sanesh" aspectRatio="1/1" />
@@ -228,7 +228,7 @@ const Doctor = () => {
 
             {/* Abitha K S */}
             <FadeIn>
-              <div className="bg-white rounded-[32px] p-8 md:p-10 shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow">
+              <div className="bg-white rounded-lg p-8 md:p-10 shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
                   <div className="w-28 h-28 rounded-full overflow-hidden shrink-0 border-4 border-gray-50 shadow-sm">
                     <OptimizedImage src="/images/Abitha.webp" alt="Abitha K S" aspectRatio="1/1" />
