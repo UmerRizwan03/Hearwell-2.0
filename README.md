@@ -19,6 +19,26 @@ Hearwell is a leading diagnostic and therapeutic centre specializing in comprehe
 
 ---
 
+## 🚀 Production-Grade Features & Optimizations
+
+The application has undergone a rigorous production audit to ensure maximum performance, security, and search engine visibility.
+
+### ⚡ Performance Architecture
+- **WebP Image Pipeline**: All static PNG assets (including the massive site logo) have been compressed and converted to highly optimized `WebP` formats, cutting initial load payloads drastically.
+- **Optimized Scroll Hook**: The global scroll progress indicator leverages a pure React DOM `ref` approach with `passive` event listeners, bypassing React's rendering lifecycle to guarantee buttery-smooth scrolling with zero frame drops.
+- **Intelligent Code Splitting**: All major page routes are lazy-loaded (`React.lazy` + `Suspense`), ensuring users only download the JavaScript necessary for the specific page they are viewing.
+
+### 🛡️ Security & Vercel Hosting
+- **Vercel Edge Configuration**: A strictly defined `vercel.json` applies critical security headers (`Content-Security-Policy`, `X-Frame-Options`, `X-XSS-Protection`) across all responses.
+- **SPA Fallbacks**: Catch-all routing rules ensure direct navigation to interior pages never hits a hard 404, alongside a beautifully designed `NotFound` fallback component.
+- **Source Map Protection**: Production source maps are completely disabled via Vite config to prevent intellectual property leakage.
+
+### 🔍 Search Engine Optimization (SEO)
+- **LocalBusiness Schema**: Implemented robust JSON-LD structured data in the root HTML, providing Google with precise clinic locations, hours, and contact details.
+- **Dynamic Metadata**: Every single route dynamically injects its own optimized `<title>`, `<meta name="description">`, and canonical URLs via a custom SEO wrapper.
+
+---
+
 ## ✨ Key Platform Features
 
 ### 👨‍⚕️ Clinical Team Showcase
@@ -59,7 +79,8 @@ This repository leverages the cutting edge of the modern web ecosystem to guaran
 src/
 ├── assets/           # Raw images automatically processed by Vite Imagetools
 ├── components/       # Heavy lifters: OptimizedImage, GoogleReviews, Motion primitives
-├── pages/            # Core routing: Home, Services, Teams (Doctor.tsx), Booking
+├── hooks/            # Custom hooks: useFormSubmit (centralized form logic)
+├── pages/            # Core routing: Home, Services, Teams, Booking, NotFound
 ├── utils/            # Shared logic: image manifest registries and motion variants
 ├── index.css         # Tailwind V4 layers and global resets
 └── App.tsx           # Global React Router and scroll-aware logic layouts
@@ -67,7 +88,7 @@ src/
 
 ---
 
-## 🚀 Local Development
+## 💻 Local Development
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v18+)
@@ -88,7 +109,7 @@ src/
    ```
 
 ### Production Build
-To spin out the heavily minified, cache-basted static assets for final CDN deployment:
+To spin out the heavily minified, cache-busted static assets for final CDN deployment:
 ```bash
 npm run build
 ```
