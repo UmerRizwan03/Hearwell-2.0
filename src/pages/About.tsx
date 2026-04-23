@@ -4,10 +4,16 @@ import { FadeIn, SectionReveal, StaggerContainer, StaggerItem, SectionDivider } 
 import { heroContainer, heroItem, slideInLeft, slideInRight, defaultViewport } from '../utils/motion';
 import OptimizedImage from '../components/OptimizedImage';
 import { MicroLabel } from '../components/MicroLabel';
+import SEO from '../components/SEO';
 
 const About = () => {
   return (
     <div className="bg-white">
+      <SEO
+        title="About Our Clinic"
+        description="Learn about Hearwell Speech & Hearing Centre — established in 2014 in Kerala with a mission to provide expert hearing and speech care."
+        url="https://hearwell.com/about"
+      />
       {/* Typography-First Trust Anchor Header */}
       <section className="relative isolate pt-12 pb-24 lg:pt-24 lg:pb-36 bg-[#F8FAF9] border-b border-gray-100 overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8">
@@ -44,7 +50,7 @@ const About = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 to-transparent z-10 pointer-events-none"></div>
                 <OptimizedImage 
-                  src="src/assets/images/about/aboutBanner.webp" 
+                  src="/images/aboutBanner.webp" 
                   alt="Hearwell Clinic Team" 
                   containerClassName="w-full h-full" 
                   priority 
@@ -90,7 +96,7 @@ const About = () => {
             >
               <div className="absolute inset-0 bg-gray-100 rounded-lg transform translate-x-4 translate-y-4"></div>
               <div className="w-full h-full bg-gray-300 rounded-lg overflow-hidden relative shadow-[0_24px_70px_-48px_rgba(18,56,52,0.7)]">
-                <OptimizedImage src="src/assets/images/about/aboutTile.webp" alt="Hearwell Clinic Interior" containerClassName="w-full h-full" />
+              <OptimizedImage src="/images/aboutTile.webp" alt="Hearwell Clinic Interior" containerClassName="w-full h-full" />
               </div>
               <div className="absolute -bottom-10 -left-4 lg:-left-12 bg-white text-gray-900 p-8 rounded-lg shadow-[0_20px_55px_-38px_rgba(18,56,52,0.85)] max-w-sm overflow-hidden border border-gray-100">
                 <div className="relative z-10">

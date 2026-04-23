@@ -2,15 +2,46 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="icon" type="image/webp" href="/logo.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts: non-blocking preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap"></noscript>
     <title>Hearwell Speech and Hearing Centre</title>
+    <!-- LocalBusiness Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Hearwell Speech and Hearing Centre",
+      "url": "https://hearwell.com",
+      "logo": "https://hearwell.com/logo.webp",
+      "image": "https://hearwell.com/images/clinic-interior.webp",
+      "description": "Expert audiology, hearing aid fitting, speech therapy, and child development programs in Perumbavoor and Perinjanam, Kerala.",
+      "telephone": "+919633626656",
+      "priceRange": "$$",
+      "openingHours": "Mo-Sa 09:00-17:30",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Opp. Govt. Boys Higher Secondary School Ground, Hariharraiyyer Road",
+          "addressLocality": "Perumbavoor",
+          "addressRegion": "Kerala",
+          "addressCountry": "IN"
+        }
+      ],
+      "sameAs": [
+        "https://www.google.com/maps/search/Hearwell+Speech+and+Hearing+Centre+Perumbavoor"
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
+

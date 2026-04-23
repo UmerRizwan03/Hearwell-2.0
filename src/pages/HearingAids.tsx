@@ -5,10 +5,16 @@ import { FadeIn, FadeScaleIn, SectionReveal, StaggerContainer, StaggerItem, Sect
 import { heroContainer, heroItem, animatedDivider } from '../utils/motion';
 import OptimizedImage from '../components/OptimizedImage';
 import { MicroLabel } from '../components/MicroLabel';
+import SEO from '../components/SEO';
 
 const HearingAids = () => {
   return (
     <div className="bg-white">
+      <SEO
+        title="Hearing Aids & Technology"
+        description="Discover cutting-edge digital hearing aids at Hearwell — IIC, RIC, and BTE styles with Bluetooth, rechargeability, and AI noise reduction."
+        url="https://hearwell.com/hearing-aids"
+      />
       {/* Typography-First Clarity Spec Header */}
       <section className="relative isolate pt-12 pb-24 lg:pt-24 lg:pb-36 bg-[#F8FAF9] border-b border-gray-100">
         <div className="container mx-auto px-6 lg:px-8">
@@ -51,7 +57,7 @@ const HearingAids = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
              <FadeScaleIn className="lg:col-span-7">
                <div className="bg-gray-50 rounded-lg aspect-[5/4] overflow-hidden shadow-[0_24px_70px_-48px_rgba(18,56,52,0.7)] border border-gray-100 p-8 md:p-14 flex items-center justify-center">
-                  <OptimizedImage src="/images/hearing-aid.png" alt="Premium Hearing Aid" objectFit="contain" />
+                  <OptimizedImage src="/images/hearing-aid.webp" alt="Premium Hearing Aid" objectFit="contain" />
                </div>
              </FadeScaleIn>
              

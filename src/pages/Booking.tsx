@@ -4,30 +4,25 @@ import { motion } from 'framer-motion';
 import { FadeIn, SectionReveal } from '../components/Motion';
 import { heroContainer, heroItem, animatedDivider } from '../utils/motion';
 import { MicroLabel } from '../components/MicroLabel';
+import SEO from '../components/SEO';
+import { useFormSubmit } from '../hooks/useFormSubmit';
 
 const Booking = () => {
   const [selectedService, setSelectedService] = useState('Hearing Test');
   const [selectedLocation, setSelectedLocation] = useState('Perumbavoor');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Simulate network request
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      // Reset after 5 seconds
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
-  };
+  const { isSubmitting, isSuccess, handleSubmit } = useFormSubmit();
 
   const services = ['Hearing Test', 'Speech Therapy', 'Hearing Aids', 'Pediatric Service'];
   const locations = ['Perumbavoor', 'Perinjanam'];
+  const todayStr = new Date().toISOString().split('T')[0];
 
   return (
     <div className="bg-gray-50 min-h-[100dvh]">
+      <SEO
+        title="Book an Appointment"
+        description="Schedule a hearing test, speech therapy session, or hearing aid consultation at Hearwell Speech & Hearing Centre."
+        url="https://hearwell.com/booking"
+      />
       {/* Typography-First Action Utility Header */}
       <section className="relative isolate pt-12 pb-28 lg:pt-24 lg:pb-44 bg-[#F8FAF9]">
         <div className="container mx-auto px-6 lg:px-8">
@@ -162,6 +157,7 @@ const Booking = () => {
                   <input 
                     type="date" 
                     required 
+                    min={todayStr}
                     disabled={isSubmitting} 
                     className="w-full bg-gray-50 border border-gray-200 text-gray-800 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary p-4 pr-12 transition-colors duration-300 outline-none disabled:opacity-70" 
                   />

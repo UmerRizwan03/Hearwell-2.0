@@ -7,7 +7,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import SEO from './components/SEO';
 import { pageTransition } from './utils/motion';
 
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useRef } from 'react';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -21,8 +21,9 @@ const Booking = lazy(() => import('./pages/Booking'));
 const Blog = lazy(() => import('./pages/Blog'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 /* Scroll to top on route change */
 function ScrollToTop() {
@@ -33,23 +34,22 @@ function ScrollToTop() {
   return null;
 }
 
-/* Scroll progress indicator */
+/* Scroll progress indicator — uses ref to avoid re-renders on every scroll */
 function ScrollProgress() {
-  const [progress, setProgress] = useState(0);
+  const barRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      setProgress(scrollPercent);
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      if (barRef.current) barRef.current.style.width = `${pct}%`;
     };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  return <div className="scroll-progress" style={{ width: `${progress}%` }} />;
+  return <div ref={barRef} className="scroll-progress" />;
 }
 
 /* Animated page wrapper */
@@ -79,6 +79,7 @@ function AnimatedRoutes() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </motion.div>
@@ -107,3 +108,4 @@ function App() {
 }
 
 export default App;
+

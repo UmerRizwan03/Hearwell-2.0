@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
               <div className="bg-white p-2 rounded-xl">
-                <img src="/logo.png" alt="Hearwell Logo" className="w-10 h-10 object-contain" />
+                <img src="/logo.webp" alt="Hearwell Logo" className="w-10 h-10 object-contain" />
               </div>
               <span className="text-2xl font-bold text-white tracking-tight">Hearwell</span>
             </Link>

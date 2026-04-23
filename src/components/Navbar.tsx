@@ -11,7 +11,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -55,7 +55,7 @@ const Navbar = () => {
         <div className="container mx-auto px-6 lg:px-8 flex justify-between items-center">
           {/* Logo area */}
           <Link to="/" className="flex items-center gap-2 relative z-[60]" onClick={closeMenu}>
-            <img src="/logo.png" alt="Hearwell Logo" className="w-10 h-10 object-contain" />
+            <img src="/logo.webp" alt="Hearwell Logo" className="w-10 h-10 object-contain" />
             <div>
               <h1 className="text-xl font-bold text-gray-800 leading-tight">Hearwell</h1>
               <p className="text-[10px] text-gray-500 font-medium uppercase tracking-wider">Speech & Hearing</p>

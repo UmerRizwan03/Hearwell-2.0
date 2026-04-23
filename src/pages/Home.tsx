@@ -6,10 +6,16 @@ import { heroContainer, heroItem, slideInLeft, slideInRight, defaultViewport } f
 import OptimizedImage from '../components/OptimizedImage';
 import { images } from '../utils/images';
 import GoogleReviews from '../components/GoogleReviews';
+import SEO from '../components/SEO';
 
 const Home = () => {
   return (
     <div className="bg-white">
+      <SEO
+        title="Hearwell Speech & Hearing Centre"
+        description="Expert hearing tests, hearing aid fitting, and speech therapy in Perumbavoor & Perinjanam, Kerala. Book an appointment today."
+        url="https://hearwell.com"
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden h-[calc(100svh-72px)] py-4 lg:py-8 bg-white">
         {/* Abstract Background Waves */}
@@ -150,7 +156,7 @@ const Home = () => {
             {/* Speech Therapy - small card */}
             <StaggerItem className="md:col-span-4 bg-primary text-white rounded-lg p-8 shadow-sm card-hover-lift flex flex-col justify-between group relative overflow-hidden">
               <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity group-hover:scale-110 transition-transform duration-700">
-                <OptimizedImage src="/images/speech-therapy.png" alt="Speech Therapy session" disableBlur />
+                <OptimizedImage src="/images/speech-therapy.webp" alt="Speech Therapy session" disableBlur />
               </div>
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold mb-3">Speech Therapy</h3>
@@ -164,7 +170,7 @@ const Home = () => {
             {/* Child Dev - wide card */}
             <StaggerItem className="md:col-span-10 md:col-start-2 bg-white modern-card card-hover-border relative overflow-hidden rounded-lg p-8 md:p-12 shadow-sm border border-gray-100 flex flex-col lg:flex-row gap-8 items-center justify-between group">
               <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 rounded-l-[100px] overflow-hidden hidden lg:block">
-                <OptimizedImage src="/images/child-development.png" alt="Pediatric Therapy" className="opacity-20 group-hover:opacity-40 transition-opacity" disableBlur />
+                <OptimizedImage src="/images/child-development.webp" alt="Pediatric Therapy" className="opacity-20 group-hover:opacity-40 transition-opacity" disableBlur />
               </div>
               <div className="max-w-2xl relative z-10">
                 <h3 className="text-2xl font-bold text-gray-800 mb-3">Child Development Programs</h3>

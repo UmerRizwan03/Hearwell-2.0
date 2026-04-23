@@ -4,10 +4,16 @@ import { FadeIn, FadeScaleIn, SectionReveal, StaggerContainer, StaggerItem } fro
 import { heroContainer, heroItem } from '../utils/motion';
 import OptimizedImage from '../components/OptimizedImage';
 import { MicroLabel } from '../components/MicroLabel';
+import SEO from '../components/SEO';
 
 const Blog = () => {
   return (
     <div className="bg-white">
+      <SEO
+        title="Hearing Health Blog"
+        description="Expert articles on hearing health, speech development, and child wellness from Hearwell Speech & Hearing Centre."
+        url="https://hearwell.com/blog"
+      />
       {/* Typography-First Journal Header */}
       <section className="relative isolate pt-12 pb-24 lg:pt-24 lg:pb-36 bg-[#F8FAF9] border-b border-gray-100 overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8">
@@ -42,7 +48,7 @@ const Blog = () => {
                </div>
                <div className="relative h-[28rem] md:h-[34rem] w-full bg-gray-200 overflow-hidden">
                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 transition-opacity group-hover:opacity-80"></div>
-                 <OptimizedImage src="/images/blog-banner.png" alt="Early intervention in speech therapy" className="transform group-hover:scale-105 transition-transform duration-700" />
+                 <OptimizedImage src="/images/blog-banner.webp" alt="Early intervention in speech therapy" className="transform group-hover:scale-105 transition-transform duration-700" />
                  
                  <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 z-20">
                     <div className="flex items-center gap-4 text-white/80 text-sm font-medium mb-3">
@@ -68,7 +74,7 @@ const Blog = () => {
             <StaggerItem>
               <article className="flex flex-col sm:flex-row gap-7 md:gap-10 group border-b border-gray-100 pb-14">
                  <div className="shrink-0 w-full sm:w-48 md:w-64 aspect-video sm:aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden relative">
-                    <OptimizedImage src="/images/hero.png" alt="" className="transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" disableBlur />
+                    <OptimizedImage src="/images/hero.webp" alt="" className="transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" disableBlur />
                  </div>
                  <div className="flex flex-col justify-center flex-grow py-2">
                    <div className="flex items-center gap-3 text-sm text-gray-500 font-medium mb-3">
@@ -89,7 +95,7 @@ const Blog = () => {
             <StaggerItem>
               <article className="flex flex-col sm:flex-row gap-7 md:gap-10 group border-b border-gray-100 pb-14">
                  <div className="shrink-0 w-full sm:w-48 md:w-64 aspect-video sm:aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden relative">
-                    <OptimizedImage src="/images/blog-child-iep.png" alt="Child in educational therapy session" className="transform group-hover:scale-110 transition-transform duration-500" disableBlur />
+                    <OptimizedImage src="/images/blog-child-iep.webp" alt="Child in educational therapy session" className="transform group-hover:scale-110 transition-transform duration-500" disableBlur />
                  </div>
                  <div className="flex flex-col justify-center flex-grow py-2">
                    <div className="flex items-center gap-3 text-sm text-gray-500 font-medium mb-3">
@@ -110,7 +116,7 @@ const Blog = () => {
             <StaggerItem>
               <article className="flex flex-col sm:flex-row gap-7 md:gap-10 group border-b border-gray-100 pb-14">
                  <div className="shrink-0 w-full sm:w-48 md:w-64 aspect-video sm:aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden relative">
-                    <OptimizedImage src="/images/blog-newborn-screening.png" alt="Newborn hearing screening" className="transform group-hover:scale-110 transition-transform duration-500" disableBlur />
+                    <OptimizedImage src="/images/blog-newborn-screening.webp" alt="Newborn hearing screening" className="transform group-hover:scale-110 transition-transform duration-500" disableBlur />
                  </div>
                  <div className="flex flex-col justify-center flex-grow py-2">
                    <div className="flex items-center gap-3 text-sm text-gray-500 font-medium mb-3">

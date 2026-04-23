@@ -3,10 +3,16 @@ import { motion } from 'framer-motion';
 import { SectionReveal, StaggerContainer, StaggerItem } from '../components/Motion';
 import { heroContainer, heroItem, animatedDivider } from '../utils/motion';
 import { MicroLabel } from '../components/MicroLabel';
+import SEO from '../components/SEO';
 
 const Locations = () => {
   return (
     <div className="bg-white z-0 relative">
+      <SEO
+        title="Our Clinic Locations"
+        description="Visit Hearwell Speech & Hearing Centre in Perumbavoor or Perinjanam, Kerala. Open Mon–Sat 9:00 AM to 5:30 PM."
+        url="https://hearwell.com/locations"
+      />
       {/* Typography-First Directory Header */}
       <section className="relative isolate pt-12 pb-24 lg:pt-24 lg:pb-36 bg-[#F8FAF9]">
         <div className="container mx-auto px-6 lg:px-8">

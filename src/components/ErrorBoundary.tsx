@@ -35,7 +35,7 @@ class ErrorBoundary extends Component<Props, State> {
             </div>
             <h1 className="text-2xl font-bold text-gray-900 mb-3">Something went wrong</h1>
             <p className="text-gray-600 mb-6 font-medium text-sm">
-              We encountered an unexpected error. Our team has been notified.
+              An unexpected error occurred. Please try refreshing the page.
             </p>
             <button
               onClick={() => window.location.href = '/'}

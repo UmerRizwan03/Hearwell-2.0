@@ -5,10 +5,16 @@ import { FadeIn, FadeScaleIn, SectionReveal, StaggerContainer, StaggerItem, Sect
 import { heroContainer, heroItem, animatedDivider } from '../utils/motion';
 import OptimizedImage from '../components/OptimizedImage';
 import { MicroLabel } from '../components/MicroLabel';
+import SEO from '../components/SEO';
 
 const Services = () => {
   return (
     <div className="bg-white">
+      <SEO
+        title="Our Clinical Services"
+        description="Hearwell offers hearing testing, audiology, speech therapy, AVT, and child development programs in Perumbavoor & Perinjanam."
+        url="https://hearwell.com/services"
+      />
       {/* Typography-First Index Framework Header */}
       <section className="relative isolate pt-12 pb-24 lg:pt-24 lg:pb-36 bg-[#F8FAF9]">
         <div className="container mx-auto px-6 lg:px-8">
@@ -48,7 +54,7 @@ const Services = () => {
           {/* Feature Block: Audiology (Full Width) */}
           <FadeIn className="flex flex-col lg:flex-row bg-white modern-card card-hover-glow relative overflow-hidden rounded-lg shadow-sm border border-gray-100 mb-14 group">
             <FadeScaleIn className="w-full lg:w-1/2 bg-gray-100 min-h-[380px] relative overflow-hidden">
-               <OptimizedImage src="/images/hearing-test.png" alt="Hearing Test Diagnostic" className="group-hover:scale-105 transition-transform duration-700" />
+               <OptimizedImage src="/images/hearing-test.webp" alt="Hearing Test Diagnostic" className="group-hover:scale-105 transition-transform duration-700" />
             </FadeScaleIn>
             <div className="w-full lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center">
               <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-8">
@@ -73,7 +79,7 @@ const Services = () => {
           <StaggerContainer className="flex flex-col lg:flex-row gap-8 mb-14">
             <StaggerItem className="w-full lg:w-1/2 bg-gray-50 rounded-lg p-10 lg:p-12 card-hover-border group relative overflow-hidden lg:translate-y-10">
               <div className="absolute inset-0 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity">
-                <OptimizedImage src="/images/speech-therapy.png" alt="" className="grayscale" disableBlur />
+                <OptimizedImage src="/images/speech-therapy.webp" alt="" className="grayscale" disableBlur />
               </div>
               <div className="relative z-10 h-full flex flex-col">
                 <div className="w-12 h-12 rounded-lg bg-white text-primary flex items-center justify-center mb-6 shadow-sm border border-gray-100">
@@ -91,7 +97,7 @@ const Services = () => {
 
             <StaggerItem className="w-full lg:w-1/2 bg-white modern-card card-hover-glow relative overflow-hidden rounded-lg p-10 lg:p-12 border border-primary/10 group">
                <div className="absolute inset-0 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity">
-                <OptimizedImage src="/images/child-development.png" alt="" className="sepia-[.2]" disableBlur />
+                <OptimizedImage src="/images/child-development.webp" alt="" className="sepia-[.2]" disableBlur />
               </div>
               <div className="relative z-10 h-full flex flex-col">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6">

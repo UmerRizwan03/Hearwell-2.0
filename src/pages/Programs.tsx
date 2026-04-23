@@ -5,10 +5,16 @@ import { FadeIn, FadeScaleIn, SectionReveal, SectionDivider } from '../component
 import { heroContainer, heroItem, slideInLeft, slideInRight, defaultViewport } from '../utils/motion';
 import OptimizedImage from '../components/OptimizedImage';
 import { MicroLabel } from '../components/MicroLabel';
+import SEO from '../components/SEO';
 
 const Programs = () => {
   return (
     <div className="bg-white">
+      <SEO
+        title="Child Development Programs"
+        description="Hearwell's occupational therapy, IEP, and special care programs help children achieve their developmental and educational potential."
+        url="https://hearwell.com/programs"
+      />
       {/* Typography-First Layered Clarity Header */}
       <section className="relative isolate pt-12 pb-24 lg:pt-24 lg:pb-36 bg-[#F8FAF9] border-b border-gray-100 overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8">
@@ -41,7 +47,7 @@ const Programs = () => {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
             <FadeScaleIn className="w-full lg:w-1/2 lg:-translate-y-8">
                <div className="bg-gray-100 rounded-lg aspect-video lg:aspect-square w-full shadow-[0_24px_70px_-48px_rgba(18,56,52,0.7)] relative overflow-hidden">
-                 <OptimizedImage src="/images/occupational-therapy.png" alt="Occupational Therapy session" />
+                 <OptimizedImage src="/images/occupational-therapy.webp" alt="Occupational Therapy session" />
                </div>
             </FadeScaleIn>
             <motion.div 
@@ -72,7 +78,7 @@ const Programs = () => {
           <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-24 items-center">
             <FadeScaleIn className="w-full lg:w-1/2">
                <div className="bg-gray-100 rounded-lg aspect-video lg:aspect-square w-full shadow-[0_24px_70px_-48px_rgba(18,56,52,0.7)] relative overflow-hidden">
-                 <OptimizedImage src="/images/child-development.png" alt="Child learning" />
+                 <OptimizedImage src="/images/child-development.webp" alt="Child learning" />
                </div>
             </FadeScaleIn>
             <motion.div 
@@ -103,7 +109,7 @@ const Programs = () => {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
             <FadeScaleIn className="w-full lg:w-1/2">
                <div className="bg-gray-100 rounded-lg aspect-video lg:aspect-square w-full shadow-[0_24px_70px_-48px_rgba(18,56,52,0.7)] relative overflow-hidden">
-                 <OptimizedImage src="/images/clinic-interior.png" alt="Clinic care environment" />
+                 <OptimizedImage src="/images/clinic-interior.webp" alt="Clinic care environment" />
                </div>
             </FadeScaleIn>
             <motion.div 

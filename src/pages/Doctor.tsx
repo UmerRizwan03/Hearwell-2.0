@@ -5,10 +5,16 @@ import { FadeIn, FadeScaleIn, SectionReveal, StaggerContainer, StaggerItem, Sect
 import { heroContainer, heroItem, slideInRight, defaultViewport, animatedDivider } from '../utils/motion';
 import OptimizedImage from '../components/OptimizedImage';
 import { MicroLabel } from '../components/MicroLabel';
+import SEO from '../components/SEO';
 
 const Doctor = () => {
   return (
     <div className="bg-white">
+      <SEO
+        title="Our Specialist Team"
+        description="Meet Ms. Babitha Venugopal and the specialist team at Hearwell — experienced audiologists and speech language pathologists."
+        url="https://hearwell.com/doctor"
+      />
       {/* Typography-First Clinical Profile Header */}
       <section className="relative isolate pt-12 pb-24 lg:pt-24 lg:pb-36 bg-[#F8FAF9] border-b border-gray-100">
         <motion.div 

@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { FadeIn, SectionReveal, StaggerContainer, StaggerItem } from '../components/Motion';
 import { heroContainer, heroItem } from '../utils/motion';
 import { MicroLabel } from '../components/MicroLabel';
+import SEO from '../components/SEO';
+import { useFormSubmit } from '../hooks/useFormSubmit';
 
 const faqs = [
   {
@@ -33,9 +35,12 @@ const faqs = [
   },
 ];
 
-const FAQItem = ({ faq, isOpen, toggle }: { faq: typeof faqs[0]; isOpen: boolean; toggle: () => void }) => (
+const FAQItem = ({ faq, isOpen, toggle, id }: { faq: typeof faqs[0]; isOpen: boolean; toggle: () => void; id: string }) => (
   <button
     onClick={toggle}
+    aria-expanded={isOpen}
+    aria-controls={`faq-answer-${id}`}
+    id={`faq-question-${id}`}
     className="w-full text-left bg-white rounded-2xl border border-gray-100 hover:border-primary/20 transition-all duration-300 overflow-hidden group"
   >
     <div className="flex items-center justify-between p-6 gap-4">
@@ -46,6 +51,9 @@ const FAQItem = ({ faq, isOpen, toggle }: { faq: typeof faqs[0]; isOpen: boolean
       />
     </div>
     <div
+      id={`faq-answer-${id}`}
+      role="region"
+      aria-labelledby={`faq-question-${id}`}
       className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
     >
       <div className="overflow-hidden">
@@ -57,23 +65,15 @@ const FAQItem = ({ faq, isOpen, toggle }: { faq: typeof faqs[0]; isOpen: boolean
 
 const Contact = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Simulate network request
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      // Reset after 5 seconds
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
-  };
+  const { isSubmitting, isSuccess, handleSubmit } = useFormSubmit();
 
   return (
-          <div className="bg-white min-h-[100dvh]">
+    <div className="bg-white min-h-[100dvh]">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Hearwell Speech & Hearing Centre. Call, WhatsApp, or send us a message to schedule a consultation."
+        url="https://hearwell.com/contact"
+      />
       {/* Typography-First Trust Anchor Header */}
       <section className="relative isolate pt-12 pb-28 lg:pt-24 lg:pb-44 bg-[#F8FAF9] border-b border-gray-100 overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8">
@@ -250,6 +250,7 @@ const Contact = () => {
             {faqs.map((faq, i) => (
               <FAQItem
                 key={i}
+                id={String(i)}
                 faq={faq}
                 isOpen={openFaq === i}
                 toggle={() => setOpenFaq(openFaq === i ? null : i)}
